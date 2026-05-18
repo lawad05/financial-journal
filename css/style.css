@@ -299,6 +299,42 @@ p { line-height: 1.75; }
   transform: scaleX(1);
 }
 
+.nav-dropdown { position: relative; }
+
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(30, 10, 10, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 0.4rem 0;
+  min-width: 140px;
+  list-style: none;
+  z-index: 200;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.nav-dropdown:hover .nav-dropdown-menu { display: block; }
+
+.nav-dropdown-menu li a {
+  display: block;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+.nav-dropdown-menu li a::after { display: none !important; }
+.nav-dropdown-menu li a:hover { color: white; }
+
 .nav-toggle {
   display: none;
   flex-direction: column;
