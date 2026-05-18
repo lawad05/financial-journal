@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Article — The University of Chicago Financial Journal">
+  <title>Article — UFJ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .article-page-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+    .article-page-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 2.5rem;
+      transition: color var(--transition);
+    }
+    .article-page-back:hover { color: var(--crimson); }
+    .article-page-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-issue {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .article-page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-byline {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+    .article-page-author {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .article-page-meta {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .article-page-body h2,
+    .article-page-body h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--text-dark);
+      margin: 2rem 0 0.75rem;
+    }
+    .article-page-body h2 { font-size: 1.4rem; }
+    .article-page-body h3 { font-size: 1.15rem; }
+    .article-page-body p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body ol,
+    .article-page-body ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body li {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .article-page-footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .article-refs {
+      background: var(--off-white);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    .article-refs h3 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .article-refs ol {
+      padding-left: 1.25rem;
+    }
+    .article-refs li {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav solid" id="nav">
+    <a href="index.html" class="nav-brand">
+      <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="nav-logo">
+      <span class="nav-name">The University of Chicago<br>Financial Journal</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="journals.html">Journals</a></li>
+      <li><a href="articles.html" class="active">Articles by Topic</a></li>
+    </ul>
+  </nav>
+
+  <section class="section section-white" style="padding-top: calc(var(--nav-height) + 2rem);">
+    <div class="article-page-wrap">
+
+      <a href="articles.html" class="article-page-back">
+        <i class="fa-solid fa-arrow-left"></i> All Articles
+      </a>
+
+      <div class="article-page-eyebrow">
+        <span class="category-tag-solid markets">Markets</span>
+        <span class="article-page-issue">Vol. 2, Issue 1 · <a href="spring-2025.html" style="color:inherit;">Spring 2025</a></span>
+      </div>
+
+      <h1 class="article-page-title">Article</h1>
+
+      <div class="article-page-byline">
+        <div>
+          <div class="article-page-author"></div>
+          <div class="article-page-meta">University of Chicago Financial Journal · Spring 2025</div>
+        </div>
+      </div>
+
+      <div class="article-page-body">
+
+        <div class="article-kicker">
+          <span class="category-tag-solid markets">Markets</span>
+          <span class="article-issue-tag">Spring 2025</span>
+        </div>
+        <h2 class="article-headline">The Return of Big Oil: Fossil Fuels Burning Down ESG</h2>
+        <div class="article-byline-row">
+          <span class="article-author-name">Percy Stillman</span>
+        </div>
+        <div class="article-body">
+          <p>Despite years of capital inflows into ESG funds and predictions of a decline in fossil fuel use, traditional oil and gas companies have recently outperformed their green-tech counterparts, forcing a reassessment of the pace and realism of the energy transition. From Trump's swift withdrawal from the Paris agreement, to the slashing of electric vehicle subsidies, to his continued pro-fossil fuel rhetoric, the new government has been a driving force behind the shift away from the often costly, green energy push.</p>
+
+          <h4>The ESG Investing Peak and Its Reversal</h4>
+          <p>The ESG investing boom peaked between 2020 and 2022, with a record $649 billion poured into ESG-focused funds worldwide through 2021, up from $542 billion in 2020 and $285 billion in 2019. The global head of stewardship at Goldman Sachs, Catherine Winner, summed up the momentum at the time: "It's not just about shareholders; it's about all stakeholders." Yet just two years later, the 2022 energy crisis — fueled by the Russo-Ukrainian war, supply chain disruptions, tariffs, and sanctions — saw oil prices surge drastically. Investments in fossil fuels were incentivized by the rising interest rates, discouraging further expensive ESG investments.</p>
+
+          <p>On February 24, 2022, Russia invaded Ukraine. Brent crude peaked above $105 a barrel, and U.S. WTI was at $100.54, record highs for both since 2014. This immediate jump was driven by speculative concerns over supply shortages and chain complications, alongside anticipated sanctions. This price increase boosted oil company profits and thus dividends.</p>
+
+          <p>Meanwhile, ESG-heavy ETFs continue to underperform. Funds like Invesco Solar (TAN) and iShares Global Clean Energy (ICLN), which once rode the ESG wave in 2021, are down 64.2% and 74.8% from their highs as of May 2025. Their struggles have disillusioned early supporters and driven many back to oil ETFs such as the United States Oil Fund LP (USO), up 210.25% over the last five years.</p>
+
+          <h4>What's Driving the Fossil Fuel Comeback?</h4>
+          <p>The Trump administration's policies in 2016 marked a turning point by encouraging big oil investments. President Trump swiftly rescinded the Biden administration's Executive Order 14008 on climate responsibility in January 2025, calling it harmful to industry. The new administration has continued to advocate for pro-fossil fuel investment.</p>
+
+          <p>Market volatility has also renewed interest in commodities as a hedge. According to Daan Struyven, head of oil research at Goldman Sachs Research, "A 1 percentage point surprise increase in US inflation has, on average, led to a real return gain of 7 percentage points for commodities, while that same trigger caused stocks and bonds to decline 3 and 4 percentage points, respectively."</p>
+
+          <h4>The Grid Problem for Renewables</h4>
+          <p>Power grids are the key to implementing alternative energy into homes and businesses across the country. They were designed for slower, centralized energy inputs from sources like coal-fired power plants. They are now being asked to accommodate intermittent renewables like wind and solar, which require significant transmission upgrades to move electricity from generation points to distribution networks. McKinsey clearly stated that "the tools and processes available at present for grid planning are not up to the task of optimizing current capacity and planning for the setup of efficient new capacity."</p>
+
+          <p>Federal support is crucial to renewable alternatives becoming competitive. Once bipartisan political backing is formed, institutional and private investors will follow and allow the sector to grow to self-sufficiency. However, under the current administration and continued geopolitical uncertainty, few appear willing to make the financial sacrifice for cleaner energy. The question remains: will political instability continue to undermine ESG in the U.S., or can it prevail through a more moderate and realistic transition?</p>
+
+          <div class="article-refs">
+            <div class="article-refs-title">References</div>
+            <p>"How Grid Operators Can Integrate the Coming Wave of Renewable Energy," McKinsey &amp; Company, October 13, 2020.</p>
+            <p>Ross Kerber, "How 2021 Became the Year of ESG Investing," Reuters, December 23, 2021.</p>
+            <p>"Which Commodities Are the Best Hedge for Inflation?," Goldman Sachs Insights, May 17, 2021.</p>
+          </div>
+        </div>
+      
+      </div>
+
+      <div class="article-page-footer">
+        <a href="articles.html" class="btn btn-outline-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          <i class="fa-solid fa-arrow-left"></i> Back to All Articles
+        </a>
+        <a href="spring-2025.html" class="btn btn-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          Read Full Issue
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="footer-logo">
+          <span class="footer-name">The University of Chicago<br>Financial Journal</span>
+        </div>
+        <p class="footer-tagline">A student-led publication dedicated to making finance accessible, rigorous, and relevant to the UChicago community.</p>
+        <div class="footer-social">
+          <a href="mailto:uchicagofj@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="journals.html">Journals</a>
+          <a href="articles.html">Articles by Topic</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Issues</div>
+        <div class="footer-links">
+          <a href="winter-2026.html">Winter 2026</a>
+          <a href="fall-2025.html">Fall 2025</a>
+          <a href="spring-2025.html">Spring 2025</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <div class="footer-links">
+          <a href="about.html#join">Join the Journal</a>
+          <a href="mailto:uchicagofj@gmail.com">Contact Us</a>
+          <a href="about.html#team">Meet the Team</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 The University of Chicago Financial Journal. All rights reserved.</span>
+      <span>University of Chicago &middot; Hyde Park, Chicago</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Article — The University of Chicago Financial Journal">
+  <title>Article — UFJ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .article-page-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+    .article-page-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 2.5rem;
+      transition: color var(--transition);
+    }
+    .article-page-back:hover { color: var(--crimson); }
+    .article-page-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-issue {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .article-page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-byline {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+    .article-page-author {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .article-page-meta {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .article-page-body h2,
+    .article-page-body h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--text-dark);
+      margin: 2rem 0 0.75rem;
+    }
+    .article-page-body h2 { font-size: 1.4rem; }
+    .article-page-body h3 { font-size: 1.15rem; }
+    .article-page-body p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body ol,
+    .article-page-body ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body li {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .article-page-footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .article-refs {
+      background: var(--off-white);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    .article-refs h3 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .article-refs ol {
+      padding-left: 1.25rem;
+    }
+    .article-refs li {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav solid" id="nav">
+    <a href="index.html" class="nav-brand">
+      <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="nav-logo">
+      <span class="nav-name">The University of Chicago<br>Financial Journal</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="journals.html">Journals</a></li>
+      <li><a href="articles.html" class="active">Articles by Topic</a></li>
+    </ul>
+  </nav>
+
+  <section class="section section-white" style="padding-top: calc(var(--nav-height) + 2rem);">
+    <div class="article-page-wrap">
+
+      <a href="articles.html" class="article-page-back">
+        <i class="fa-solid fa-arrow-left"></i> All Articles
+      </a>
+
+      <div class="article-page-eyebrow">
+        <span class="category-tag-solid markets">Markets</span>
+        <span class="article-page-issue">Vol. 2, Issue 3 · <a href="winter-2026.html" style="color:inherit;">Winter 2026</a></span>
+      </div>
+
+      <h1 class="article-page-title">Article</h1>
+
+      <div class="article-page-byline">
+        <div>
+          <div class="article-page-author"></div>
+          <div class="article-page-meta">University of Chicago Financial Journal · Winter 2026</div>
+        </div>
+      </div>
+
+      <div class="article-page-body">
+
+        <div class="article-kicker">
+          <span class="category-tag-solid markets">Markets</span>
+          <span class="article-issue-tag">Winter 2026</span>
+        </div>
+        <h2 class="article-headline">The GLP-1 Gold Rush: Its Causes and Future</h2>
+        <p class="article-dek">The GLP-1 boom isn't just a medical story — it's a collision of epidemiology, supply chain constraints, patent law, and pharmaceutical competition. The winner won't be the company with the best molecule, but the one that best balances efficacy, tolerability, manufacturing scale, and insurer access.</p>
+        <div class="article-byline-row">
+          <div>
+            <div class="article-author-name">Sam Cohn</div>
+          </div>
+        </div>
+        <div class="article-body">
+          <p>The GLP-1 boom, potentially the most significant healthcare development of the 21st century, is best explained by a collision between independent realms. Obesity rates in the US reached 41% in 2020, responsible for a major cardiometabolic disease burden. Simultaneously, incretin therapies — later known as GLP-1 therapies — were outperforming their counterparts massively in the diabetes world, while coverage rules and pricing were reshaping the healthcare landscape. These three factors would coalesce into a "gold rush" in the GLP-1 obesity space. However, this was not some utopian breakthrough that caused endless demand and boundless supplier profits. Rather, supplies for these therapies were particularly constrained, creating a field where scalable manufacturing and patent defense were paramount to success.</p>
+
+          <h3>The Epidemiological Foundation</h3>
+          <p>The GLP-1 gold rush starts with epidemiology. Adult obesity pervasiveness meant that even modest treatment implied massive volume. So massive that in late 2025, polling suggested that approximately 1 in 8 adults used GLP-1 therapy for diabetes, weight loss, and other cardiometabolic issues, giving these treatments a noticeable share of the total prescriptions that year. Government oversight illuminates this volume's budget effect, with reporting showing GLP-1 spending surged within a federal employee plan subset. In turn, pharmacy budgets were re-allocated towards incretin drugs.</p>
+
+          <p>However, a surge of demand this large produced a shortage loop. In late 2022, demand for WeGovy, a semiglutide treatment prescribed for moderate weight loss created by Novo Nordisk, outran peptide manufacturing, producing shortages and rationing. Because of this shortage, the FDA allowed licensed pharmacies to make custom versions, which were often cheaper. Once the patent-protected peptides were restocked, the reason for mass-producing these custom versions was eliminated.</p>
+
+          <p>However, this created an issue, since consumers were still buying pharmacy versions because they were cheaper, violating the patent law associated with pharmaceutical drugs. This fueled the FDA's crackdown on unapproved GLP-1 drugs, where they restricted access to key APIs and took down companies marketing these compounded GLP-1s.</p>
+
+          <h3>Current Market Leaders</h3>
+          <p>This manufacturing aspect has played a major role in determining the current winners of the GLP-1 space. The companies producing the best molecular quality drugs have not necessarily seen correlative success, but rather the ones with manufacturing throughput, a payer access strategy, and IP defense under the threat of compounding have. The two companies dominating the scene are Novo Nordisk and Eli Lilly.</p>
+
+          <p>Novo Nordisk, the semiglutide franchise, has an enormous obesity and diabetes sales base. As an early dominator of the scene, their gross margins remain high, but they experience serious capex and depreciation pressures as capacity expands. Their strategy is oriented around manufacturing, as they have recently acquired three fill-finish factories, the facilities that make a drug product ready for patients. Novo has also expanded their label into Cardiovascular outcomes and liver disease MASH, strengthening payer narratives beyond weight loss.</p>
+
+          <p>Eli Lilly, the Tirzepatide franchise, has experienced a major 2025 revenue signal from Mounjaro and Zepbound. They are currently the incumbent in the GLP-1 field, and have a large scale, creating a solid cash-funded pipeline flywheel. They are investing significant capital and formulating various pre-launch strategies for oral formulations of tirzepatide in order to break injection-only constraints.</p>
+
+          <h3>How Durable Are These Leads?</h3>
+          <p>Financial forecasts see the obesity industry as highly durable, with investment banks such as J.P Morgan, Goldman Sachs, and Morgan Stanley projecting that obesity drugs could generate enormous global sales. However, the realized market depends largely on consumer willingness-to-pay and manufacturing scale. At the base level, net price will compress due to competition-driven access-broadening. Though Novo Nordisk's expansion of GLP-1s into the cardiovascular and liver-related spheres could reframe GLP-1s as downstream cost-reducers, leading to broader coverage and institutional momentum.</p>
+
+          <h3>The Science Determines the Long-Term Winners</h3>
+          <p>Ultimately, though, the winners in ten years will be decided on a more scientific basis. Multi-agonists, compounds that target multiple GLP receptors, reflect the push in the obesity market by pharmaceutical companies to raise the efficacy ceiling and maintain or attain a portion of the market share as competition intensifies. Retratutide, a triple-agonist targeting three GLP receptors, was shown recently in Phase 2 evidence to induce visceral fat loss at a rate 7% higher than Tirzepatide, supporting the competitive significance of triple-agonist drugs.</p>
+
+          <p>Oral formulations also seem to hold value in the future, and have been split into two categories: oral peptides, which have received approval for obesity, and oral antagonists, both of which can scale the market differently but face unique tolerability and safety risks. Pfizer is a prime example of the importance of these risks, as they were forced to discontinue two different oral GLP-1s due to intense nausea and GI tract side effects.</p>
+
+          <p>Additionally, combination regimens are becoming increasingly popular, notably a pairing of amylin and incretin, due to their ability to improve tolerance, durability, and long-term outcomes. At some point, language concerning the quality of GLP-1 product may switch from "best drug" to "best regimen."</p>
+
+          <p>Considering all of the nuances involved, the key to success in the GLP-1 goldrush long-term is balance: the company that best raises the ceiling and scope of GLP-1 drugs while simultaneously keeping tolerability manageable and avoiding insurer pushback will ultimately prevail. Today's molecule may be indicative of the future, but it most definitely will not be the cause of it.</p>
+        </div>
+      
+      </div>
+
+      <div class="article-page-footer">
+        <a href="articles.html" class="btn btn-outline-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          <i class="fa-solid fa-arrow-left"></i> Back to All Articles
+        </a>
+        <a href="winter-2026.html" class="btn btn-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          Read Full Issue
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="footer-logo">
+          <span class="footer-name">The University of Chicago<br>Financial Journal</span>
+        </div>
+        <p class="footer-tagline">A student-led publication dedicated to making finance accessible, rigorous, and relevant to the UChicago community.</p>
+        <div class="footer-social">
+          <a href="mailto:uchicagofj@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="journals.html">Journals</a>
+          <a href="articles.html">Articles by Topic</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Issues</div>
+        <div class="footer-links">
+          <a href="winter-2026.html">Winter 2026</a>
+          <a href="fall-2025.html">Fall 2025</a>
+          <a href="spring-2025.html">Spring 2025</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <div class="footer-links">
+          <a href="about.html#join">Join the Journal</a>
+          <a href="mailto:uchicagofj@gmail.com">Contact Us</a>
+          <a href="about.html#team">Meet the Team</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 The University of Chicago Financial Journal. All rights reserved.</span>
+      <span>University of Chicago &middot; Hyde Park, Chicago</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

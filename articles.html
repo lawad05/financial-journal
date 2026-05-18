@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse all articles from the University of Chicago Financial Journal, organized by topic.">
+  <title>Articles by Topic — The University of Chicago Financial Journal</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* ── Articles Page Layout ── */
+    .articles-page-content {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    /* ── Sidebar ── */
+    .sidebar {
+      position: sticky;
+      top: calc(var(--nav-height) + 2rem);
+    }
+
+    .sidebar-widget {
+      background: var(--off-white);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .sidebar-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .sidebar-topics {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .sidebar-topic {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 0.75rem;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background var(--transition);
+      border: none;
+      background: none;
+      width: 100%;
+      text-align: left;
+    }
+
+    .sidebar-topic:hover { background: var(--border); }
+    .sidebar-topic.active { background: var(--crimson); }
+
+    .sidebar-topic-name {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .sidebar-topic.active .sidebar-topic-name { color: white; }
+
+    .sidebar-topic-count {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      background: white;
+      padding: 0.1rem 0.45rem;
+      border-radius: 99px;
+    }
+
+    .sidebar-topic.active .sidebar-topic-count { color: var(--crimson); }
+
+    .sidebar-recent a {
+      display: block;
+      padding: 0.65rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--text);
+      line-height: 1.4;
+      transition: color var(--transition);
+    }
+
+    .sidebar-recent a:last-child { border-bottom: none; }
+    .sidebar-recent a:hover { color: var(--crimson); }
+
+    .sidebar-recent-meta {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    /* ── Filter Bar ── */
+    .filter-section {
+      border-bottom: 1px solid var(--border);
+      background: white;
+      position: sticky;
+      top: var(--nav-height);
+      z-index: 100;
+    }
+
+    .filter-section .container {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    /* ── Article Items Main Feed ── */
+    .main-feed {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .feed-section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding: 1rem 0 0.75rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 0;
+    }
+
+    /* Count label */
+    .articles-count {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .articles-count span { font-weight: 600; color: var(--text); }
+
+    @media (max-width: 960px) {
+      .articles-page-content { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+    }
+
+    @media (max-width: 600px) {
+      .article-list-item { grid-template-columns: 1fr; }
+      .article-list-thumb { height: 160px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       NAVIGATION
+  ════════════════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-brand">
+      <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="nav-logo">
+      <span class="nav-name">The University of Chicago<br>Financial Journal</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="journals.html">Journals</a></li>
+      <li><a href="articles.html" class="active">Articles by Topic</a></li>
+    </ul>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       PAGE HERO
+  ════════════════════════════════════════ -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-hero-eyebrow">Student Research & Analysis</div>
+      <h1 class="page-hero-title">Articles by Topic</h1>
+      <div class="page-hero-divider"></div>
+      <p class="page-hero-subtitle">Original analysis, commentary, and research from UChicago student writers — filtered by coverage area.</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       FILTER BAR
+  ════════════════════════════════════════ -->
+  <div class="filter-section">
+    <div class="container">
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All Articles</button>
+        <button class="filter-btn" data-filter="markets">Markets</button>
+        <button class="filter-btn" data-filter="poliecon">Political Economy</button>
+        <button class="filter-btn" data-filter="technology">Finance &amp; Innovation</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       ARTICLES + SIDEBAR
+  ════════════════════════════════════════ -->
+  <section class="section section-white">
+    <div class="container">
+      <div class="articles-page-content">
+
+        <!-- ── Main Feed ── -->
+        <main>
+          <p class="articles-count"><span id="articleCount">24</span> articles</p>
+
+          <div class="articles-list" id="articleFeed">
+            <!-- Winter 2026 -->
+
+            <p class="feed-section-label">Winter 2026</p>
+
+            <article class="article-list-item" data-category="poliecon">
+              <div class="article-list-thumb poliecon">
+                <span class="category-tag poliecon">Political Economy</span>
+              </div>
+              <div class="article-list-body">
+                <span class="category-tag-solid poliecon">Political Economy</span>
+                <h2 class="article-list-title"><a href="article-attention-market.html" style="color:inherit;text-decoration:none;">The Attention Market</a></h2>
+                <p class="article-list-excerpt">How social media platforms monetize attention and why their algorithmic design fuels retail investing herd behavior — and what that means for market efficiency and individual financial decision-making.</p>
+                <div class="article-list-meta">
+                  <span>Ely Hamani</span>
+                  <span class="article-list-meta-dot"></span>
+                  <span>Winter 2026</span>
+                </div>
+                <a href="article-attention-market.html" class="article-list-read-more">Read Article <span>&#8594;</span></a>
+              </div>
+            </article>
+
+            <article class="article-list-item" data-category="poliecon">
+              <div class="article-list-thumb poliecon">
+                <span class="category-tag poliecon">Political Economy</span>
+              </div>
+              <div class="article-list-body">
+                <span class="category-tag-solid poliecon">Political Economy</span>
+                <h2 class="article-list-title"><a href="article-pe-sports.html" style="color:inherit;text-decoration:none;">Private Equity Is Buying Sports Teams</a></h2>
+                <p class="article-list-excerpt">Why private equity firms are flooding into professional sports franchises, what the deal economics look like, and whether franchise valuations can keep outpacing the broader market indefinitely.</p>
+                <div class="article-list-meta">
+                  <span>Emily Sensenich</span>
+                  <span class="article-list-meta-dot"></span>
+                  <span>Winter 2026</span>
+                </div>
+                <a href="article-pe-sports.html" class="article-list-read-more">Read Article <span>&#8594;</span></a>
+              </div>
+            </article>
+
+            <article class="article-list-item" data-category="markets">
+              <div class="article-list-thumb markets">
+                <span class="category-tag markets">Markets</span>
+              </div>
+              <div class="article-list-body">
+                <span class="category-tag-solid markets">Markets</span>
+                <h2 class="article-list-title"><a href="article-widow-maker.html" style="color:inherit;text-decoration:none;">Widow-Maker to Wake-Up Call: Japan&#39;s Bond Market Reckoning</a></h2>
+                <p class="article-list-excerpt">The &#34;widow-maker&#34; trade of shorting Japanese Government Bonds has finally paid off as 40-year JGB yields breached 4% &#8212; an examination of what broke, what it signals for global bond markets, and the Bank of Japan&#39;s dwindling options.</p>
+                <div class="article-list-meta">
+                  <span>Zoe McDonald</span>
+                  <span class="article-list-meta-dot"></span>
+                  <span>Winter 2026</span>
+                </div>
+                <a href="article-widow-maker.html" class="article-list-read-more">Read Article <span>&#8594;</span></a>
+              </div>
+            </article>
+
+            <article class="article-list-item" data-category="markets">
+              <div class="article-list-thumb markets">
+                <span class="category-tag markets">Markets</span>
+              </div>
+              <div class="article-list-body">
+                <span class="category-tag-solid markets">Markets</span>
+                <h2 class="article-list-title"><a href="article-glp1.html" style="color:inherit;text-decoration:none;">The GLP-1 Gold Rush: Its Causes and Future</a></h2>
+                <p class="article-list-excerpt">A deep dive into the economics behind Novo Nordisk and Eli Lilly&#39;s blockbuster obesity drugs &#8212; from patent moats and pricing power to pipeline competition and whether the valuation premiums are justified.</p>
+                <div class="article-list-meta">
+                  <span>Sam Cohn</span>
+                  <span class="article-list-meta-dot"></span>
+                  <span>Winter 2026</span>
+                </div>
+                <a href="article-glp1.html" class="article-list-read-more">Read Article <span>&#8594;</span></a>
+              </div>
+            </article>
+
+            <article class="article-list-item" data-category="technology">
+              <div class="article-list-thumb technology">
+                <span class="category-tag technology">Finance &amp; Innovation</span>
+              </div>
+              <div class="article-list-body">
+                <span class="category-tag-solid technology">Finance &amp; Innovation</span>
+                <h2 class="article-list-title"><a href="article-monte-carlo.html" style="color:inherit;text-decoration:none;">Calculated Risks: Monte Carlo Simulation and the Future of Medicine</a></h2>
+                <p class="article-list-excerpt">Monte Carlo simulation has quietly become one of medicine&#39;s most powerful tools &#8212; improving drug trial design, surgical planning, and treatment modeling. A look at how statistical computation is reshaping healthcare economics.</p>
+                <div class="article-list-meta">
+                  <span>Taran Kamat</span>
+                  <span class="article-list-meta-dot"></span>
+                  <span>Winter 2026</span>
+                </div>
+                <a href="article-monte-carlo.html" class="article-list-read-more">Read Article <span>&#8594;</span></a>
+              </div>
+            </article>
+
+            <article class="article-list-item" data-category="technology">
+              <div class="article-list-thumb technology">
+                <span class="category-tag technology">Finance &amp; Innovation</span>
+              </div>
+              <div class="article-list-body">
+                <span class="category-tag-solid technology">Finance &amp; Innovation</span>
+                <h2 class="article-list-title"><a href="article-psychedelic.html" style="color:inherit;text-decoration:none;">The Psychedelic Shift: From Counterculture to Capital Markets</a></h2>
+                <p class="article-list-excerpt">Psilocybin and MDMA are moving through regulatory pipelines as serious therapeutics. How substances once synonymous with the counterculture became a hotbed of biotech investment &#8212; and what the risks look like for early investors.</p>
+                <div class="article-list-meta">
+                  <span>Indira Naylor</span>
+                  <span class="article-list-meta-dot"></span>
+                  <span>Winter 2026</span>
+                </div>
+                <a href="article-psychedelic.html" class="article-list-read-more">Read Article <span>&#8594;</span></a>
+              </div>
+            </article>
+
+            <!-- Fall 2025 -->
+
+            <p class="feed-section-label">Fall 2025</p>
+
+            <article class="article-list-item" data-category="poliecon">
+              <div class="article-list-thumb poliecon">
+                <span class="category-tag poliecon">Political Economy</span>
+              </div>
+              <div class="article-list-body">
+                <span class="category-tag-solid poliecon">Political Economy</span>
+                <h2 class="article-list-title"><a href="article-fannie-freddie.html" style="color:inherit;text-decoration:none;">Uncle Sam&#39;s First Real IPO: Fannie, Freddie, and the $7 Trillion Question</a></h2>
+                <p class="article-list-excerpt">After 16 years in government conservatorship, the Trump administration is moving to privatize Fannie Mae and Freddie Mac. What would the world&#39;s most consequential IPO mean for mortgage rates, homeowners, and the broader housing market?</p>
+                <div class="article-list-meta">
+                  <span>Rose Shulman-Garcia</span>
+                  <span class="article-list-meta-dot"></span>
+                  <span>Fall 2025</span>
+                </div>
+                <a href="article-fannie-freddie.html" class="article-list-read-more">Read Article <span>&#8594;</span></a>
+              </div>
+            </article>
+
+            <article class="article-list-item" data-category="poliecon">
+              <div class="article-list-thumb poliecon">
+                <span class="category-tag poliecon">Political Economy</span>
+              </div>
+              <div class="article-list-body">
+                <span class="category-tag-solid poliecon">Political Economy</span>
+                <h2 class="article-list-title"><a href="article-sports-betting.html" style="color:inherit;text-decoration:none;">A High-Risk, Lightly Regulated Wall Street: Sports Betting as a Financial Market</a></h2>
+                <p class="article-list-excerpt">The legalization of sports betting has created a $100B+ industry operating with none of the consumer protections applied to financial markets. An analysis of market structure, behavioral parallels to retail trading, and the regulatory gap.</p>
+                <div class="article-list-meta">
+                  <span>Emily Sensenich</span>
+                  <span class="article-list-meta-dot"></span>
+                  <span>Fall 2025</span>
+                </div>
+                <a href="article-sports-betting.html" class="article-list-read-more">Read Article <span>&#8594;</span></a>
+              </div>
+            </article>
+
+            <article class="article-list-item" data-category="poliecon">
+              <div class="article-list-thumb poliecon">
+                <span class="category-tag poliecon">Political Economy</span>
+              </div>
+              <div class="article-list-body">
+                <span class="category-tag-solid poliecon">Political Economy</span>
+                <h2 class="article-list-title"><a href="article-progressive-tax.html" style="color:inherit;text-decoration:none;">When Progressive Taxation Backfires: The Tax Mobility Problem</a></h2>
+                <p class="article-list-excerpt">High-income taxpayer migration from high-tax states is undermining the revenue gains that progressive tax increases promise. A look at the empirical evidence on tax-driven mobility and what it means for fiscal policy design.</p>
+                <div class="article-list-meta">
+                  <span>Ely Hamani</span>
+                  <span class="article-list-meta-dot"></span>
+                  <span>Fall 2025</span>
+                </div>
+                <a href="article-progressive-tax.html" class="article-list-read-more">Read Article <span>&#8594;</span></a>
+              </div>
+            </article>
+
+            <article class="article-list-item" data-category="markets">
+              <div class="article-list-thumb markets">
+                <span class="category-tag markets">Markets</span>
+              </div>
+              <div class="article-list-body">
+                <span class="category-tag-solid markets">Markets</span>
+                <h2 class="article-list-title"><a href="article-drive-thru.html" style="color:inherit;text-decoration:none;">When the Bull Market Leaves the Drive-Thru: QSR Stocks and the Wealth Effect</a></h2>
+                <p class="article-list-excerpt">McDonald&#39;s, Yum! Brands, and Starbucks are trading at discounts not seen in years as consumers trade down. Why the quick-service restaurant sector is a surprising bellwether for consumer financial health.</p>
+                <div class="article-list-meta">
+                  <span>Antonio Macedo</span>
+                  <span class="article-list-meta-dot"></span>
+                  <span>Fall 2025</span>
+                </div>
+                <a href="article-drive-thru.html" class="article-list-read-more">Read Article <span>&#8594;</span></a>
+              </div>
+            </article>
+
+            <article class="article-list-item" data-category="markets">
+              <div class="article-list-thumb markets">
+                <span class="category-tag markets">Markets</span>
+              </div>
+              <div class="article-list-body">
+                <span class="category-tag-solid markets">Markets</span>
+                <h2 class="article-list-title"><a href="article-private-credit.html" style="color:inherit;text-decoration:none;">The Rise of Private Credit: Inside a $2 Trillion Market</a></h2>
+                <p class="article-list-excerpt">Private credit has exploded from a niche product to a $2T asset class, displacing bank lending across the middle market. An examination of the structural drivers, yield premium dynamics, and the systemic risks building inside the industry.</p>
+                <div class="article-list-meta">
+                  <span>Jack De Picciotto</span>
+                  <span class="article-list-meta-dot"></span>
+                  <span>Fall 2025</span>
+                </div>
+                <a href="article-private-credit.html" class="article-list-read-more">Read Article <span>&#8594;</span></a>
+              </div>
+            </article>
+
+            <article class="article-list-item" data-category="markets">
+              <div class="article-list-thumb markets">
+                <span class="category-tag markets">Markets</span>
+              </div>
+              <div class="article-list-body">
+                <span class="category-tag-solid markets">Markets</span>
+                <h2 class="article-list-title"><a href="article-ai-power.html" style="color:inherit;text-decoration:none;">AI Compute and the Change in North American Power Markets</a></h2>
+                <p class="article-list-excerpt">Hyperscaler data center buildouts are overwhelming regional power grids from Virginia to Texas. How AI infrastructure demand is reshaping electricity markets, creating investment opportunities in utilities and transmission, and straining grid operators.</p>
+                <div class="article-list-meta">
+                  <span>Thibaud Dubois-Denis</span>
+                  <span class="article-list-meta-dot"></span>
+                  <span>Fall 2025</span>
+                </div>
+                <a href="article-ai-power.html" class="article-list-read-more">Read Article <span>&#8594;</span></a>
+              </div>
+            </article>
+
+            <article class="article-list-item" data-category="markets">
+              <div class="article-list-thumb markets">
+                <span class="category-tag markets">Markets</span>
+              </div>
+              <div class="article-list-body">
+                <span class="category-tag-solid markets">Markets</span>
+                <h2 class="article-list-title"><a href="article-amd.html" style="color:inherit;text-decoration:none;">AMD: Open Ecosystem AI Ambition Meets the Earnings Test</a></h2>
+                <p class="article-list-excerpt">AMD&#39;s ROCm software stack and MI300X GPU are credible challengers to Nvidia&#39;s CUDA dominance &#8212; on paper. An industry analysis of where AMD&#39;s AI strategy is succeeding, where it&#39;s struggling, and what the next 18 months require.</p>
+                <div class="article-list-meta">
+                  <span>Armaan Gill</span>
+                  <span class="article-list-meta-dot"></span>
+                  <span>Fall 2025</span>
+                </div>
+                <a href="article-amd.html" class="article-list-read-more">Read Article <span>&#8594;</span></a>
+              </div>
+            </article>
+
+            <article class="article-list-item" data-category="markets">
+              <div class="article-list-thumb markets">
+                <span class="category-tag markets">Markets</span>
+              </div>
+              <div class="article-list-body">
+                <span class="category-tag-solid markets">Markets</span>
+                <h2 class="article-list-title"><a href="article-oracle.html" style="color:inherit;text-decoration:none;">Oracle&#39;s Debt-Fueled AI Gamble: From Market Darling to Credit Risk</a></h2>
+                <p class="article-list-excerpt">Oracle levered up aggressively to build out cloud infrastructure and chase the AI wave. As margins compress and the stock re-rates, an industry analysis of whether Oracle&#39;s AI bet can justify its mounting debt load.</p>
+                <div class="article-list-meta">
+                  <span>Tomas Kay</span>
+                  <span class="article-list-meta-dot"></span>
+                  <span>Fall 2025</span>
+                </div>
+                <a href="article-oracle.html" class="article-list-read-more">Read Article <span>&#8594;</span></a>
+              </div>
+            </article>
+
+            <!-- Spring 2025 -->
+
+            <p class="feed-section-label">Spring 2025</p>
+
+            <article class="article-list-item" data-category="poliecon">
+              <div class="article-list-thumb poliecon">
+                <span class="category-tag poliecon">Political Economy</span>
+              </div>
+              <div class="article-list-body">
+                <span class="category-tag-solid poliecon">Political Economy</span>
+                <h2 class="article-list-title"><a href="article-borderline.html" style="color:inherit;text-decoration:none;">Borderline Breakdown: The Economic Fallout of Mass Deportation Policies</a></h2>
+                <p class="article-list-excerpt">Mass deportation would remove millions of workers from agriculture, construction, and hospitality &#8212; industries where the labor supply cannot easily be replaced. An analysis of the economic costs and distributional consequences.</p>
+                <div class="article-list-meta">
+                  <span>Armaan Gill</span>
+                  <span class="article-list-meta-dot"></span>
+                  <span>Spring 2025</span>
+                </div>
+                <a href="article-borderline.html" class="article-list-read-more">Read Article <span>&#8594;</span></a>
+              </div>
+            </article>
+
+            <article class="article-list-item" data-category="poliecon">
+              <div class="article-list-thumb poliecon">
+                <span class="category-tag poliecon">Political Economy</span>
+              </div>
+              <div class="article-list-body">
+                <span class="category-tag-solid poliecon">Political Economy</span>
+                <h2 class="article-list-title"><a href="article-trump-immigration.html" style="color:inherit;text-decoration:none;">Why Trump&#39;s Immigration Ideas Won&#39;t Stimulate the Economy as He Hopes</a></h2>
+                <p class="article-list-excerpt">The economic rationale for restricting immigration rests on wage competition assumptions that decades of empirical research have largely undermined. An examination of what the data actually says about immigration&#39;s impact on native-born workers.</p>
+                <div class="article-list-meta">
+                  <span>Ely Hamani</span>
+                  <span class="article-list-meta-dot"></span>
+                  <span>Spring 2025</span>
+                </div>
+                <a href="article-trump-immigration.html" class="article-list-read-more">Read Article <span>&#8594;</span></a>
+              </div>
+            </article>
+
+            <article class="article-list-item" data-category="markets">
+              <div class="article-list-thumb markets">
+                <span class="category-tag markets">Markets</span>
+              </div>
+              <div class="article-list-body">
+                <span class="category-tag-solid markets">Markets</span>
+                <h2 class="article-list-title"><a href="article-ipo.html" style="color:inherit;text-decoration:none;">IPOs Are on Standhold: Will Political Uncertainty Stop the 2025 Market Optimism?</a></h2>
+                <p class="article-list-excerpt">The IPO pipeline entered 2025 loaded with tech and fintech unicorns awaiting public markets. Tariff uncertainty and equity volatility have frozen the window shut &#8212; an analysis of what conditions are needed to reopen it.</p>
+                <div class="article-list-meta">
+                  <span>Fabricio Grillo</span>
+                  <span class="article-list-meta-dot"></span>
+                  <span>Spring 2025</span>
+                </div>
+                <a href="article-ipo.html" class="article-list-read-more">Read Article <span>&#8594;</span></a>
+              </div>
+            </article>
+
+            <article class="article-list-item" data-category="markets">
+              <div class="article-list-thumb markets">
+                <span class="category-tag markets">Markets</span>
+              </div>
+              <div class="article-list-body">
+                <span class="category-tag-solid markets">Markets</span>
+                <h2 class="article-list-title"><a href="article-venture-global.html" style="color:inherit;text-decoration:none;">Venture Global Bull Case</a></h2>
+                <p class="article-list-excerpt">Venture Global LNG went public in 2025 as a key player in America&#39;s LNG export boom. An analysis of the company&#39;s cost structure, long-term contract book, and why bulls argue the stock is misunderstood by traditional energy investors.</p>
+                <div class="article-list-meta">
+                  <span>Nathaniel Kelley</span>
+                  <span class="article-list-meta-dot"></span>
+                  <span>Spring 2025</span>
+                </div>
+                <a href="article-venture-global.html" class="article-list-read-more">Read Article <span>&#8594;</span></a>
+              </div>
+            </article>
+
+            <article class="article-list-item" data-category="markets">
+              <div class="article-list-thumb markets">
+                <span class="category-tag markets">Markets</span>
+              </div>
+              <div class="article-list-body">
+                <span class="category-tag-solid markets">Markets</span>
+                <h2 class="article-list-title"><a href="article-eggshells.html" style="color:inherit;text-decoration:none;">Shopping on Eggshells: How Tariffs Will Affect Consumer Sentiment</a></h2>
+                <p class="article-list-excerpt">Broad-based tariffs function as a consumption tax hitting lower-income households hardest. An examination of how the tariff regime is reshaping consumer expectations, retail sales data, and credit card spending patterns.</p>
+                <div class="article-list-meta">
+                  <span>Zoe McDonald</span>
+                  <span class="article-list-meta-dot"></span>
+                  <span>Spring 2025</span>
+                </div>
+                <a href="article-eggshells.html" class="article-list-read-more">Read Article <span>&#8594;</span></a>
+              </div>
+            </article>
+
+            <article class="article-list-item" data-category="markets">
+              <div class="article-list-thumb markets">
+                <span class="category-tag markets">Markets</span>
+              </div>
+              <div class="article-list-body">
+                <span class="category-tag-solid markets">Markets</span>
+                <h2 class="article-list-title"><a href="article-fractional.html" style="color:inherit;text-decoration:none;">Fractional Real Estate: Is Buying 1/1000th of a Home Worth the Investment?</a></h2>
+                <p class="article-list-excerpt">Platforms like Arrived and Fundrise promise to democratize real estate investing. An analysis of the fee structures, liquidity risks, and return profiles of fractional ownership &#8212; and whether they actually deliver for retail investors.</p>
+                <div class="article-list-meta">
+                  <span>Rose Shulman Garcia</span>
+                  <span class="article-list-meta-dot"></span>
+                  <span>Spring 2025</span>
+                </div>
+                <a href="article-fractional.html" class="article-list-read-more">Read Article <span>&#8594;</span></a>
+              </div>
+            </article>
+
+            <article class="article-list-item" data-category="markets">
+              <div class="article-list-thumb markets">
+                <span class="category-tag markets">Markets</span>
+              </div>
+              <div class="article-list-body">
+                <span class="category-tag-solid markets">Markets</span>
+                <h2 class="article-list-title"><a href="article-big-oil.html" style="color:inherit;text-decoration:none;">The Return of Big Oil: Fossil Fuels Burning Down ESG</a></h2>
+                <p class="article-list-excerpt">Energy majors reversed years of ESG-driven capex restraint, generating record shareholder returns as the green transition stalled politically. An analysis of how the ESG backlash is reshaping capital allocation in the oil and gas sector.</p>
+                <div class="article-list-meta">
+                  <span>Percy Stillman</span>
+                  <span class="article-list-meta-dot"></span>
+                  <span>Spring 2025</span>
+                </div>
+                <a href="article-big-oil.html" class="article-list-read-more">Read Article <span>&#8594;</span></a>
+              </div>
+            </article>
+
+            <article class="article-list-item" data-category="markets">
+              <div class="article-list-thumb markets">
+                <span class="category-tag markets">Markets</span>
+              </div>
+              <div class="article-list-body">
+                <span class="category-tag-solid markets">Markets</span>
+                <h2 class="article-list-title"><a href="article-fed.html" style="color:inherit;text-decoration:none;">What&#39;s Going On at the Federal Reserve?</a></h2>
+                <p class="article-list-excerpt">A plainspoken guide to the Fed&#39;s current posture &#8212; why it&#39;s holding rates longer than the market expected, what &#34;data dependent&#34; means in practice, and how the dual mandate creates genuine tensions between inflation and employment goals.</p>
+                <div class="article-list-meta">
+                  <span>Sophia Paesano</span>
+                  <span class="article-list-meta-dot"></span>
+                  <span>Spring 2025</span>
+                </div>
+                <a href="article-fed.html" class="article-list-read-more">Read Article <span>&#8594;</span></a>
+              </div>
+            </article>
+
+            <article class="article-list-item" data-category="technology">
+              <div class="article-list-thumb technology">
+                <span class="category-tag technology">Technology</span>
+              </div>
+              <div class="article-list-body">
+                <span class="category-tag-solid technology">Technology</span>
+                <h2 class="article-list-title"><a href="article-remote-work.html" style="color:inherit;text-decoration:none;">Office Space or Headspace? Wall Street&#39;s Remote-Work Reckoning</a></h2>
+                <p class="article-list-excerpt">Major banks are mandating in-office returns while tech firms continue to embrace hybrid models. An analysis of the productivity research, commercial real estate implications, and what it means for junior finance talent markets.</p>
+                <div class="article-list-meta">
+                  <span>Jack De Picciotto</span>
+                  <span class="article-list-meta-dot"></span>
+                  <span>Spring 2025</span>
+                </div>
+                <a href="article-remote-work.html" class="article-list-read-more">Read Article <span>&#8594;</span></a>
+              </div>
+            </article>
+
+            <article class="article-list-item" data-category="technology">
+              <div class="article-list-thumb technology">
+                <span class="category-tag technology">Technology</span>
+              </div>
+              <div class="article-list-body">
+                <span class="category-tag-solid technology">Technology</span>
+                <h2 class="article-list-title"><a href="article-ai-panic.html" style="color:inherit;text-decoration:none;">From Prompt to Panic: How Generative AI Turns Rumors into Market Ripples</a></h2>
+                <p class="article-list-excerpt">LLMs are accelerating the spread of financial rumors, from fake earnings leaks to AI-generated analyst notes. An investigation into how generative AI is already influencing short-term price action and what that means for market microstructure.</p>
+                <div class="article-list-meta">
+                  <span>Tomas Kay</span>
+                  <span class="article-list-meta-dot"></span>
+                  <span>Spring 2025</span>
+                </div>
+                <a href="article-ai-panic.html" class="article-list-read-more">Read Article <span>&#8594;</span></a>
+              </div>
+            </article>
+
+          </div><!-- /articleFeed -->
+        </main>
+
+        <!-- ── Sidebar ── -->
+        <aside class="sidebar">
+
+          <div class="sidebar-widget">
+            <div class="sidebar-title">Browse by Topic</div>
+            <div class="sidebar-topics">
+              <button class="sidebar-topic active" data-filter="all">
+                <span class="sidebar-topic-name">All Articles</span>
+                <span class="sidebar-topic-count">24</span>
+              </button>
+              <button class="sidebar-topic" data-filter="markets">
+                <span class="sidebar-topic-name">Markets</span>
+                <span class="sidebar-topic-count">13</span>
+              </button>
+              <button class="sidebar-topic" data-filter="poliecon">
+                <span class="sidebar-topic-name">Political Economy</span>
+                <span class="sidebar-topic-count">7</span>
+              </button>
+              <button class="sidebar-topic" data-filter="technology">
+                <span class="sidebar-topic-name">Finance &amp; Innovation</span>
+                <span class="sidebar-topic-count">4</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="sidebar-widget">
+            <div class="sidebar-title">Most Recent</div>
+            <div class="sidebar-recent">
+              <a href="article-attention-market.html">
+                The Attention Market
+                <div class="sidebar-recent-meta">Political Economy · Winter 2026</div>
+              </a>
+              <a href="article-widow-maker.html">
+                Widow-Maker to Wake-Up Call: Japan's Bond Market Reckoning
+                <div class="sidebar-recent-meta">Markets · Winter 2026</div>
+              </a>
+              <a href="article-glp1.html">
+                The GLP-1 Gold Rush: Its Causes and Future
+                <div class="sidebar-recent-meta">Markets · Winter 2026</div>
+              </a>
+              <a href="article-psychedelic.html">
+                The Psychedelic Shift: From Counterculture to Capital Markets
+                <div class="sidebar-recent-meta">Finance &amp; Innovation · Winter 2026</div>
+              </a>
+            </div>
+          </div>
+
+          <div class="sidebar-widget" style="background: var(--crimson); text-align: center;">
+            <div style="font-size: 1.3rem; margin-bottom: 0.75rem;">✍️</div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: white; margin-bottom: 0.5rem;">Write for Us</div>
+            <p style="font-size: 0.82rem; color: rgba(255,255,255,0.75); line-height: 1.5; margin-bottom: 1rem;">All UChicago students are welcome to pitch an article.</p>
+            <a href="mailto:uchicagofj@gmail.com" class="btn btn-white" style="font-size: 0.8rem; padding: 0.6rem 1.2rem; width: 100%; justify-content: center;">Submit a Pitch</a>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="footer-logo">
+          <span class="footer-name">The University of Chicago<br>Financial Journal</span>
+        </div>
+        <p class="footer-tagline">A student-led publication dedicated to making finance accessible, rigorous, and relevant to the UChicago community.</p>
+        <div class="footer-social">
+          <a href="mailto:uchicagofj@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="journals.html">Journals</a>
+          <a href="articles.html">Articles by Topic</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Topics</div>
+        <div class="footer-links">
+          <a href="articles.html">Markets</a>
+          <a href="articles.html">Technology</a>
+          <a href="articles.html">Political Economy</a>
+          <a href="articles.html">On Campus</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <div class="footer-links">
+          <a href="about.html#join">Join the Journal</a>
+          <a href="mailto:uchicagofj@gmail.com">Contact Us</a>
+          <a href="about.html#team">Meet the Team</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 The University of Chicago Financial Journal. All rights reserved.</span>
+      <span>University of Chicago · Hyde Park, Chicago</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // ── Enhanced filter for articles page ─────
+    const filterBtns = document.querySelectorAll('.filter-btn, .sidebar-topic');
+    const articleItems = document.querySelectorAll('[data-category]');
+    const countEl = document.getElementById('articleCount');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const category = btn.dataset.filter;
+
+        // Sync all filter buttons
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.sidebar-topic').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll(`[data-filter="${category}"]`).forEach(b => b.classList.add('active'));
+
+        // Filter and count
+        let count = 0;
+        articleItems.forEach(item => {
+          const match = category === 'all' || item.dataset.category === category;
+          item.style.display = match ? '' : 'none';
+          if (match) count++;
+        });
+
+        if (countEl) countEl.textContent = count;
+      });
+    });
+  </script>
+</body>
+</html>

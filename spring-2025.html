@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Spring 2025 Issue — The University of Chicago Financial Journal. Articles on immigration policy, IPO markets, LNG energy, tariffs, ESG, and AI.">
+  <title>Spring 2025 — The University of Chicago Financial Journal</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .issue-meta {
+      background: var(--off-white);
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 0;
+    }
+    .issue-meta-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .issue-meta-item { display: flex; flex-direction: column; gap: 0.25rem; }
+    .issue-meta-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .issue-meta-value {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+
+    .pdf-section {
+      background: var(--crimson-dark);
+      padding: 3rem 0;
+    }
+    .pdf-section-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .pdf-section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .pdf-section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: white;
+    }
+    .pdf-embed-wrap {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      background: white;
+    }
+    .pdf-embed-wrap iframe {
+      display: block;
+      border: none;
+      width: 100%;
+      height: 780px;
+    }
+    .pdf-fallback {
+      padding: 3rem;
+      text-align: center;
+      color: var(--text-light);
+    }
+
+    .toc-section {
+      background: var(--off-white);
+      border-bottom: 1px solid var(--border);
+      padding: 2.5rem 0;
+    }
+    .toc-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .toc-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+    }
+    .toc-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      transition: background var(--transition);
+    }
+    .toc-item:last-child { border-bottom: none; }
+    .toc-item:hover .toc-item-title { color: var(--crimson); }
+    .toc-item-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--border);
+      min-width: 2rem;
+      line-height: 1.3;
+    }
+    .toc-item-text {}
+    .toc-item-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.35;
+      transition: color var(--transition);
+    }
+    .toc-item-author {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+    }
+
+    .articles-content { background: white; }
+    .articles-content-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .journal-article {
+      padding: 5rem 0;
+      border-bottom: 2px solid var(--border);
+    }
+    .journal-article:last-child { border-bottom: none; }
+
+    .article-kicker {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-issue-tag {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .article-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .article-dek {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
+      font-style: italic;
+    }
+    .article-byline-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2rem;
+    }
+    .article-author-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+    }
+    .article-body { font-size: 1rem; line-height: 1.85; color: var(--text); }
+    .article-body p { margin-bottom: 1.4rem; }
+    .article-body p:last-child { margin-bottom: 0; }
+    .article-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin: 2rem 0 1rem;
+    }
+    .article-body h4 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      margin: 1.75rem 0 0.75rem;
+    }
+    .article-refs {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .article-refs-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+    .article-refs p {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.55;
+      margin-bottom: 0.4rem;
+    }
+    @media (max-width: 768px) {
+      .toc-grid { grid-template-columns: 1fr; }
+      .pdf-embed-wrap iframe { height: 500px; }
+      .issue-meta-inner { gap: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav solid" id="nav">
+    <a href="index.html" class="nav-brand">
+      <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="nav-logo">
+      <span class="nav-name">The University of Chicago<br>Financial Journal</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="journals.html" class="active">Journals</a></li>
+      <li><a href="articles.html">Articles by Topic</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero" style="padding-bottom: 50px;">
+    <div class="page-hero-inner">
+      <a href="journals.html" style="display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 1rem; text-decoration: none;">
+        <i class="fa-solid fa-arrow-left" style="font-size: 0.7rem;"></i> All Issues
+      </a>
+      <div class="page-hero-eyebrow">Spring 2025 · Issue 1</div>
+      <h1 class="page-hero-title">Spring 2025 Edition</h1>
+      <div class="page-hero-divider"></div>
+      <p class="page-hero-subtitle">Immigration policy, IPO markets, LNG energy, consumer sentiment, ESG, and the future of AI in finance.</p>
+    </div>
+  </div>
+
+  <div class="issue-meta">
+    <div class="issue-meta-inner">
+      <div class="issue-meta-item">
+        <span class="issue-meta-label">Editor in Chief</span>
+        <span class="issue-meta-value">Ana Barcinski</span>
+      </div>
+      <div class="issue-meta-item">
+        <span class="issue-meta-label">Section Editors</span>
+        <span class="issue-meta-value">Sammy Pichler &amp; Yoav Rosenthal</span>
+      </div>
+      <div class="issue-meta-item">
+        <span class="issue-meta-label">Articles</span>
+        <span class="issue-meta-value">10 Articles</span>
+      </div>
+      <div class="issue-meta-item">
+        <span class="issue-meta-label">Published</span>
+        <span class="issue-meta-value">Spring 2025</span>
+      </div>
+      <div style="margin-left: auto;">
+        <a href="Articles/UFJ%20Spring%202025%20-%20Google%20Docs.pdf" download class="btn btn-crimson" style="font-size: 0.82rem; padding: 0.65rem 1.25rem;">
+          <i class="fa-solid fa-download"></i> Download PDF
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="pdf-section">
+    <div class="pdf-section-inner">
+      <div class="pdf-section-header">
+        <div class="pdf-section-title">Read the Full Issue</div>
+        <a href="Articles/UFJ%20Spring%202025%20-%20Google%20Docs.pdf" target="_blank" class="btn btn-outline-white" style="font-size: 0.8rem; padding: 0.6rem 1.2rem;">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Open in New Tab
+        </a>
+      </div>
+      <div class="pdf-embed-wrap">
+        <iframe src="Articles/UFJ%20Spring%202025%20-%20Google%20Docs.pdf" title="UFJ Spring 2025">
+          <div class="pdf-fallback">
+            <p>Your browser doesn't support inline PDFs. <a href="Articles/UFJ%20Spring%202025%20-%20Google%20Docs.pdf" style="color: var(--crimson);">Download the PDF here.</a></p>
+          </div>
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-inner">
+      <div class="toc-title">Table of Contents</div>
+      <div class="toc-grid">
+        <a href="#article-borderline" class="toc-item">
+          <span class="toc-item-num">01</span>
+          <div class="toc-item-text">
+            <div class="toc-item-title">Borderline Breakdown: The Economic Fallout of Mass Deportation Policies</div>
+            <div class="toc-item-author">Armaan Gill · Political Economy</div>
+          </div>
+        </a>
+        <a href="#article-trump-immigration" class="toc-item">
+          <span class="toc-item-num">02</span>
+          <div class="toc-item-text">
+            <div class="toc-item-title">Why Trump's Immigration Ideas Won't Stimulate the Economy as He Hopes</div>
+            <div class="toc-item-author">Ely Hamani · Political Economy</div>
+          </div>
+        </a>
+        <a href="#article-ipo" class="toc-item">
+          <span class="toc-item-num">03</span>
+          <div class="toc-item-text">
+            <div class="toc-item-title">IPOs are on Standhold: Will Political Uncertainty Stop the 2025 Market Optimism?</div>
+            <div class="toc-item-author">Fabricio Grillo · Markets</div>
+          </div>
+        </a>
+        <a href="#article-venture-global" class="toc-item">
+          <span class="toc-item-num">04</span>
+          <div class="toc-item-text">
+            <div class="toc-item-title">Venture Global Bull Case</div>
+            <div class="toc-item-author">Nathaniel Kelley · Markets</div>
+          </div>
+        </a>
+        <a href="#article-eggshells" class="toc-item">
+          <span class="toc-item-num">05</span>
+          <div class="toc-item-text">
+            <div class="toc-item-title">Shopping on Eggshells: How Tariffs Will Affect Consumer Sentiment</div>
+            <div class="toc-item-author">Zoe McDonald · Markets</div>
+          </div>
+        </a>
+        <a href="#article-fractional" class="toc-item">
+          <span class="toc-item-num">06</span>
+          <div class="toc-item-text">
+            <div class="toc-item-title">Fractional Real Estate: Is Buying 1/1000th of a Home Worth the Investment?</div>
+            <div class="toc-item-author">Rose Shulman Garcia · Markets</div>
+          </div>
+        </a>
+        <a href="#article-big-oil" class="toc-item">
+          <span class="toc-item-num">07</span>
+          <div class="toc-item-text">
+            <div class="toc-item-title">The Return of Big Oil: Fossil Fuels Burning Down ESG</div>
+            <div class="toc-item-author">Percy Stillman · Markets</div>
+          </div>
+        </a>
+        <a href="#article-fed" class="toc-item">
+          <span class="toc-item-num">08</span>
+          <div class="toc-item-text">
+            <div class="toc-item-title">What's Going On at the Federal Reserve?</div>
+            <div class="toc-item-author">Sophia Paesano · Markets</div>
+          </div>
+        </a>
+        <a href="#article-remote-work" class="toc-item">
+          <span class="toc-item-num">09</span>
+          <div class="toc-item-text">
+            <div class="toc-item-title">Office Space or Headspace? Wall Street's Remote-Work Reckoning</div>
+            <div class="toc-item-author">Jack De Picciotto · Technology</div>
+          </div>
+        </a>
+        <a href="#article-ai-panic" class="toc-item">
+          <span class="toc-item-num">10</span>
+          <div class="toc-item-text">
+            <div class="toc-item-title">From Prompt to Panic: How Generative AI Turns Rumors into Market Ripples</div>
+            <div class="toc-item-author">Tomas Kay · Technology</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="articles-content">
+    <div class="articles-content-inner">
+
+      <!-- ARTICLE 1 -->
+      <article class="journal-article" id="article-borderline">
+        <div class="article-kicker">
+          <span class="category-tag-solid poliecon">Political Economy</span>
+          <span class="article-issue-tag">Spring 2025</span>
+        </div>
+        <h2 class="article-headline">Borderline Breakdown: The Economic Fallout of Mass Deportation Policies</h2>
+        <div class="article-byline-row">
+          <span class="article-author-name">Armaan Gill</span>
+        </div>
+        <div class="article-body">
+          <p>Particularly in border areas like Texas, Arizona, and California, the United States has seen a recent boom in immigration policy enforcement. Thousands of illegal immigrants have been taken out of the workforce thanks to the mass deportation programs. Although some argue these actions are required for national security, the financial consequences are clear, particularly locally. In areas like agriculture, construction, and service businesses, deportation has upset sectors depending on foreign labor. While the long-term effects are more subtle, the short-term effects are clear-cut.</p>
+
+          <p>The most obvious short-term disturbance brought on by significant deportations is the labor scarcity in essential sectors. Service, construction, and agriculture companies are left searching to cover critical tasks. Fewer workers means that salaries in these sectors must rise as businesses fight to draw in labor. Although this might seem to be a favorable change for employees at first glance, the reality is more nuanced. Employers fight to reconcile pay increases with profit margins, often accepting expenses that compromise their financial stability. Rising wages without matching productivity growth can cause financial difficulty for many companies, particularly smaller ones.</p>
+
+          <p>Furthermore, labor scarcity has broader economic implications. Businesses in services, construction, and agriculture raise pay; the cost of doing business also increases. Reduced consumer spending aggravates this inflationary pressure since deported workers, who usually boost the local economy as buyers, renters, and service consumers, are absent. Local businesses that depend on immigrant communities for consumption suddenly find a void. The lack of these customers thereby compromises the financial foundation of certain border states even more.</p>
+
+          <h4>The Agricultural Impact</h4>
+          <p>The industry most affected by workforce loss resulting from widespread deportations is probably agriculture. Long the backbone of agricultural labor in the United States, migrant workers have been involved in everything from crop collecting to packaging and delivery. Deportation has immediate disastrous consequences in the short run. As farmers struggle to find enough workers to reach their output goals, harvest delays and crop losses become regular occurrences. Unharvested crops in the fields cause immediate financial losses and disturb the national and regional supply chains.</p>
+
+          <p>Some farmers try to adapt to the medium term by investing in automated technologies. However, these developments are not without their challenges. Automation calls for significant capital expenditure, training, and time to fit current production lines. While some businesses could withstand these changes, smaller, family-owned farms with fewer resources could face challenges they cannot overcome. The long-term situation for agriculture in border states raises even more issues. Industry shrinkage most likely results from the absence of reasonably priced, skilled workers combined with the significant expenses of automation.</p>
+
+          <h4>Broader Economic and Political Consequences</h4>
+          <p>Mass deportation has effects much beyond the particular industries losing labor. Eliminating significant portions of the immigrant labor compromises the stability of local economies in border states. Businesses are compelled to boost prices to cover the higher labor costs when fewer low-wage workers are available. Although this price inflation helps those with greater incomes, it hurts the whole economy, particularly in lower-income areas dependent on reasonably priced goods and services.</p>
+
+          <p>Businesses also struggle more to make expansion plans. The erratic character of the labor market generates uncertainty that makes it challenging for businesses to scale activities properly. This stunts long-term economic growth and causes local employment markets to stagnate. Once thriving because of the active labor force supplied by immigrant workers, communities today suffer economic slowdown and increasing instability as businesses try to adjust to changing demographics.</p>
+
+          <p>One cannot overlook the political consequences of large deportation programs. Many times, local administrations in border areas have opposed mass deportation programs since they understand how negatively these policies affect their respective economies. The conflict between local and national interests sometimes drives voter division. Deportation rules cause significant tensions in areas like Texas, Arizona, and California, where immigrant populations are vital to the economy.</p>
+
+          <p>Although mass deportation laws may be presented as required for economic protectionism and national security, their most direct and negative consequences are felt locally. Mass deportations would ultimately probably prove more expensive than anticipated, as border areas try to adjust to the loss of their most crucial workforce.</p>
+
+          <div class="article-refs">
+            <div class="article-refs-title">References</div>
+            <p>American Immigration Council — "The Economic Cost of Mass Deportations"</p>
+            <p>Axios — "ICE, IRS and the Shrinking Shadow Economy"</p>
+            <p>Brookings Institution — "The Labor Market Impact of Deportations"</p>
+            <p>Joint Economic Committee — "Mass Deportations Would Have Catastrophic Impact on Economy"</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- ARTICLE 2 -->
+      <article class="journal-article" id="article-trump-immigration">
+        <div class="article-kicker">
+          <span class="category-tag-solid poliecon">Political Economy</span>
+          <span class="article-issue-tag">Spring 2025</span>
+        </div>
+        <h2 class="article-headline">Why Trump's Immigration Ideas Won't Stimulate the Economy as He Hopes</h2>
+        <div class="article-byline-row">
+          <span class="article-author-name">Ely Hamani</span>
+        </div>
+        <div class="article-body">
+          <p>Donald Trump's recent immigration proposals reflect a strategic pivot: attract wealthy investors, retain college-educated foreigners, and expel individuals seen as politically or ideologically undesirable. While these initiatives may appear economically pragmatic, they rest on shallow assumptions and deliver limited long-term value. The promise is that America can stimulate growth, reduce deficits, and protect national interests through more selective immigration. But beneath the surface, these policies are inconsistent, economically inefficient, and potentially damaging to sectors relying on openness and stability. Beneath the numbers lies a choice: retreat into fear, or embrace the idea that growth flows not from walls, but from welcome.</p>
+
+          <h4>I. Student Visa Revocations Undermine a Critical Economic Engine</h4>
+          <p>International students are one of America's most valuable educational exports, contributing over $40 billion annually to the U.S. economy. When Trump's administration began revoking student visas en masse, often for political reasons such as pro-Palestinian social media activity, it sent shockwaves through universities and the broader economy. Institutions like Columbia University rely on international enrollment for nearly half of their tuition revenue, and these abrupt disruptions threaten their financial stability. Beyond tuition, international students fuel local economies: they rent housing, and support jobs in college towns nationwide.</p>
+
+          <p>The State Department's "Catch and Revoke" initiative — an AI-powered social scraper to detect foreign nationals who appear to support designated terror groups — risks chilling future enrollment as students weigh more welcoming alternatives like Canada or the UK. Once the U.S. loses its status as a preferred destination for global talent, the economic consequences could cascade across education, real estate, and consumer sectors. Moreover, these policies create uncertainty: universities cannot make enrollment projections, landlords face vacancy risks, and employers lose access to future workers educated under the American system. In economic terms, policy unpredictability is a tax on growth, and this tax is rising fast.</p>
+
+          <h4>II. The "Gold Card" Visa: Capital Without Productivity</h4>
+          <p>Trump's proposed "Gold Card" visa, offering U.S. residency for a $5 million investment, is designed to generate quick revenue and appeal to high-net-worth individuals. But in practice, the economic benefit is overstated. Unlike the EB-5 visa, which it aims to replace, the Gold Card visa requires no job creation or investment in actual U.S. businesses. The funds go directly to the government, limiting the multiplier effect normally flowing through construction, employment, or entrepreneurship. While the program has raised several billion dollars, it remains a niche solution with limited reach and questionable legality.</p>
+
+          <p>The focus on passive capital rather than productive activity also distorts immigration incentives. The U.S. economy doesn't need money — it needs builders, innovators, and employers. A visa regime that equates wealth with economic contribution misses this distinction and may exacerbate housing inequality by driving luxury real estate demand without generating corresponding benefits for labor markets or GDP.</p>
+
+          <h4>III. Skilled Immigration Reform: Good Idea, Poor Execution</h4>
+          <p>Trump's most economically sound proposal is to offer green cards to U.S. college graduates, including those from two-year programs. Retaining skilled, U.S.-educated talent is supported by research showing that immigrants with college degrees produce long-term fiscal surpluses, boost innovation, and fill key gaps in STEM industries. In principle, this policy aligns with a merit-based immigration model that many economists endorse.</p>
+
+          <p>However, the credibility of such a policy is undermined by its surrounding context. It coexists with restrictive, inconsistent measures — like visa revocations and hostile rhetoric — that signal instability to prospective students and skilled migrants. If the U.S. wants to retain talent, it must offer policy benefits and institutional trust, and right now, that trust is fraying. In addition, implementing this policy would require legislative approval, something that may prove politically unviable given Trump's broader anti-immigrant platform.</p>
+
+          <p>Trump's immigration proposals may be framed as economically strategic, but they suffer from fundamental contradictions. Revoking student visas harms a vital export sector, while the Gold Card visa delivers capital without labor or innovation. Sustainable economic growth depends not on performative restriction or isolated incentives, but on coherent, inclusive, and forward-looking immigration policy. Without that, the U.S. risks trading long-term prosperity for short-term optics.</p>
+        </div>
+      </article>
+
+      <!-- ARTICLE 3 -->
+      <article class="journal-article" id="article-ipo">
+        <div class="article-kicker">
+          <span class="category-tag-solid markets">Markets</span>
+          <span class="article-issue-tag">Spring 2025</span>
+        </div>
+        <h2 class="article-headline">IPOs are on Standhold: Will Political Uncertainty Stop the 2025 Market Optimism?</h2>
+        <div class="article-byline-row">
+          <span class="article-author-name">Fabricio Grillo</span>
+        </div>
+        <div class="article-body">
+          <p>As IPO forecasts predicted, an increase in activity was expected for 2025. However, the recent political and economic shifts now risk stalling the anticipated revival of the IPO market. This article explains why companies are increasingly opting not to go public.</p>
+
+          <p>Market analysts at the Financial Analyst Magazine anticipated a return of IPO activity in 2025, following a decrease in the previous year. Public offerings were expected to increase at the start of the year due to the easing of inflation, recent Federal Reserve interest rate cuts, and a spark in investor confidence, which helped create more favorable market conditions. Specialists at Ernst Young were looking forward to an "increased optimism" in the IPO market because of "strong stock market valuations, a declining interest rate environment and solid performance by the 'IPO class of 2024.'"</p>
+
+          <p>However, the current political frenzy and the resulting economic instability have quickly changed those early-year expectations for the worst. This quick and unexpected change in market sentiment is a reaction that reflects past periods of volatility in response to political changes. Additionally, despite numerous optimistic forecasts for IPO activity in 2025, political and economic risks are causing public offerings to be quickly postponed, and alternative capital-raising options are becoming more frequent.</p>
+
+          <h4>A Pattern Rooted in History</h4>
+          <p>The IPO activity has fluctuated over the past few years. However, the rapid decline began in 2022 due to rising interest rates and political tensions — such as the Ukraine War — which altered the direction of companies evaluating going public. However, the IPO market showed positive signs of recovery in 2024, including a 15% increase in global public listings according to data from Renaissance Capital. Nonetheless, firms are still hesitant about going public because of the market's volatility and inflation. Political and economic uncertainties, particularly regarding trade policies and regulatory tensions, have been key factors hindering the expected growth of IPO listings through 2025.</p>
+
+          <p>Throughout a long economic history, political decisions have had a significant impact on IPO activity. This pattern was evident in periods such as 2021, when IPO activity decreased by 30% in a single quarter following major regulatory changes, according to a PwC study. A similar trend is occurring today, as trade policy reversals, corporate tax shifts, and more demanding disclosure conditions create notable market hesitation.</p>
+
+          <h4>Private Markets as the Alternative</h4>
+          <p>Considering the significant risks associated with public offerings, companies are exploring alternative ways to raise capital. Private equity investments, secondary market deals, and debt have become more appealing in times of uncertainty. According to PitchBook, private equity funding increased by a substantial 20% in the first quarter of 2025 because companies are opting to remain private longer to avoid the volatility of public markets.</p>
+
+          <p>A notable example is the announcement by Walgreens Boots Alliance in early 2025 that it would be taken private after a significant leveraged buyout. This move highlights how even large, established public companies are seeking private capital solutions due to current market instability. There has also been increased activity in debt markets, with corporate bond issuances up 18% year-over-year as firms leverage low interest rates to secure funding.</p>
+
+          <p>The anticipated IPO resurgence for 2025 is facing significant headwinds from political and economic uncertainties. While some analysts express at least slight optimism, most agree that a rebound in IPO activity requires market stabilization. Factors like lower interest rates, more transparent regulations, and reduced geopolitical tensions could revive IPO activity by 2026, according to Goldman Sachs. Until then, companies are likely to rely on private funding and alternative financing strategies.</p>
+
+          <div class="article-refs">
+            <div class="article-refs-title">References</div>
+            <p>Anani, Karim, and Mark Schwartz. "IPO Market in 2025." Ernst &amp; Young.</p>
+            <p>PitchBook. "Q1 2025 US Public PE and GP Deal Roundup."</p>
+            <p>PricewaterhouseCoopers. "IPO Market Faces Renewed Uncertainty."</p>
+            <p>Renaissance Capital. IPO Outlook 2024.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- ARTICLE 4 -->
+      <article class="journal-article" id="article-venture-global">
+        <div class="article-kicker">
+          <span class="category-tag-solid markets">Markets</span>
+          <span class="article-issue-tag">Spring 2025</span>
+        </div>
+        <h2 class="article-headline">Venture Global Bull Case</h2>
+        <div class="article-byline-row">
+          <span class="article-author-name">Nathaniel Kelley</span>
+        </div>
+        <div class="article-body">
+          <p>When Venture Global launched its IPO on January 24th it was meant to be a sign of great things to come. The firm, which had disrupted the LNG industry with its low-cost development method, was riding the tailwinds of increasing global gas demand over the past decade and the re-election of Donald Trump, a friend to Oil and Gas firms. Yet despite this the stock would have dreadful returns in the months to follow with its value cratering from $110 billion to around $20 billion. I think that this performance does not properly reflect the long-term value of Venture Global and that the stock (as of May 3, 2025) is currently underpriced.</p>
+
+          <h4>The Role of LNG in Global Energy</h4>
+          <p>The role that LNG plays in the global energy industry is crucial. By super chilling natural gas into a liquid, transporting natural gas on ships becomes economically viable. This is crucial as it vastly expands the scope and flexibility of the market for natural gas. Where pipelines could only send gas from one point to another at incredible capital costs, fleets of LNG tankers allow for greater optionality and responsiveness as seen after the Russian invasion of Ukraine. Some of the leading developers and operators of LNG terminals in the US include Cheniere Energy, Sempra LNG, Golden Pass, and Venture Global.</p>
+
+          <p>When Venture Global's bankers first revealed the structure of the IPO, they implicitly valued the firm at $110 billion — making them not just the most valuable LNG firm but more valuable than BP's market cap of $85 billion at the time. This valuation was absurd, and the IPO was restructured to $65 billion. The stock would fall below its IPO price of $27 on the first day of trading and never looked back. As of May 3, 2025, the stock is trading at $8.82.</p>
+
+          <h4>The Three Headwinds</h4>
+          <p>The fall of LNG's Icarus has three main drivers. First is a large arbitration battle with Shell, BP, and other customers over Venture Global's marketing of LNG cargos. They are accused of violating their SPAs when they sold cargoes while their Calcasieu Pass terminal was still commissioning — customers seek $5 billion in lost profits. The second issue is increasing construction costs: Venture Global's Calcasieu Pass and Plaquemines LNG terminals have both seen cost increases in the billions as tariffs and reliability issues have dogged their development. The last major headwind is a shifting contracting environment: European and Asian utilities are preferring shorter terms from multiple sources of supply.</p>
+
+          <h4>The Bull Case</h4>
+          <p>While these three threats have done a number to Venture Global's stock price, they are not as severe as the market has made them out to be. Starting with the arbitration case, there is still a chance that Venture Global could escape relatively unharmed. Even if they lose the case, it is just a one-time charge, not a recurring drag on earnings. Fundamentally, there are simply too few terminals and too few people with the knowledge of how to build them for customers to be choosy with who they work with.</p>
+
+          <p>Venture Global's use of midscale trains becomes important in addressing cost concerns — the smaller size means they can be constructed off site for cheaper on a MTPA basis than the larger trains used by competitors. While Venture Global might be under pressure from cost increases, these pressures will be more acute for their competitors. On contracting, portfolio buyers (oil supermajors) and major gas E&amp;Ps such as Devon Energy and EQT are strong enough to underwrite the construction of major LNG terminals that Venture Global plans to build.</p>
+
+          <p>The true source of the bull case is in the underlying fundamentals of gas and LNG. JP Morgan Chase sees US LNG producing a third of global supply by 2030. The modularity of Venture Global's terminal construction means they are best positioned to profit in an uncertain demand environment: they can develop supplies in smaller increments and serve utilities who are not looking to commit to massive long-term SPAs. Venture Global could act as something of a marginal producer, increasing production in small increments to meet the needs of a customer base racked with uncertainty.</p>
+        </div>
+      </article>
+
+      <!-- ARTICLE 5 -->
+      <article class="journal-article" id="article-eggshells">
+        <div class="article-kicker">
+          <span class="category-tag-solid markets">Markets</span>
+          <span class="article-issue-tag">Spring 2025</span>
+        </div>
+        <h2 class="article-headline">Shopping on Eggshells: How Tariffs Will Affect Consumer Sentiment</h2>
+        <div class="article-byline-row">
+          <span class="article-author-name">Zoe McDonald</span>
+        </div>
+        <div class="article-body">
+          <p>Consumer expectations have fallen to the lowest in over 12 years, with the measure far below the threshold researchers say often signals a recession ahead, according to The Conference Board's monthly index. For the culprit of this sharp decline, we need not look further than President Donald Trump's April 2nd unveiling of sweeping 'reciprocal' tariffs, provoking widespread panic despite his insistence that 'we are being very kind.' Although most of the higher rates have been suspended for 90 days, the recently imposed 'minimum baseline tariffs' of 10% on all global imports still stand.</p>
+
+          <p>With the University of Michigan's survey showing the steepest three-month percentage decline in consumer expectations since the 1990 recession, there is every right to be concerned. Consumers are overwhelmingly negative about tariffs. According to data from the Ipsos Synthesio AI-powered social intelligence platform, 79% of the conversations around tariffs across languages, continents, and social platforms have been negative. From markets to shopping carts, the unease is hard to miss.</p>
+
+          <h4>The Pre-emptive Spending Surge</h4>
+          <p>Somewhat counterintuitively, as Deloitte Insights also predicts, future anticipation of inflation may lead consumers to spend now in 2025 and pull back in 2026. A rise in big-ticket purchases — especially with products like smartphones and cars — began in anticipation of tariffs as early as March according to the U.S. News report. What is evident is that in anticipation of sharply higher prices, consumers are 'clearing the store shelves and picking up bargains while they can,' according to Christopher S. Rupkey, chief economist at FWDBonds LLC.</p>
+
+          <p>Larger effects will come in the long run. Alexander Mackay of Harvard Business School says, 'evidence indicates consumers may take three years or longer to adjust to price changes.' Their spending changes may mark the end of the 'resilient consumer.' Consumers have to make larger and larger cuts to their spending, and consumer choice is steadily falling.</p>
+
+          <h4>The Bond Market Signal</h4>
+          <p>The bond market offers valuable insight, and with recent headlines like CNBC's 'Volatility is here to stay in the bond market for the foreseeable future,' it is not looking hopeful. There is hardly an indicator of uncertainty stronger than this. Trump's assurance that 'ultimately, more production at home will mean stronger competition and lower prices for consumers' is largely unfounded, and even if true, would only be realized many years in the future.</p>
+
+          <p>What Trump does not seem to have forgotten (yet still seems to blunder) is that managing uncertainty is key. A large part of the impact of the tariffs will be how they are perceived and how expectations are shaped. 85% of U.S. shoppers are concerned about the impact of tariffs on their finances or shopping. Yet what spells even worse news is that data says consumers do not understand tariffs. Still, if the public perceives tariffs as catastrophic, their impact will be catastrophic as well.</p>
+
+          <p>Undeniably, government policy is volatile and so GDP growth will slow. Managing uncertainty is key if consumer confidence is to be controlled. Unfortunately, government policy is looking to be just as volatile as the bond market.</p>
+        </div>
+      </article>
+
+      <!-- ARTICLE 6 -->
+      <article class="journal-article" id="article-fractional">
+        <div class="article-kicker">
+          <span class="category-tag-solid markets">Markets</span>
+          <span class="article-issue-tag">Spring 2025</span>
+        </div>
+        <h2 class="article-headline">Fractional Real Estate: Is Buying 1/1000th of a Home Worth the Investment?</h2>
+        <div class="article-byline-row">
+          <span class="article-author-name">Rose Shulman Garcia</span>
+        </div>
+        <div class="article-body">
+          <p>For a generation priced out of homeownership, fractional real estate investing — buying a fraction of a luxury condo for the price of a coffee — feels like a great shortcut. But that low barrier to entry can come with locked-up shares and hidden fees. Even worse, the platforms can disappear overnight.</p>
+
+          <p>Homeownership in the U.S. has declined significantly since its early 2000s peak, with only a modest rebound after the 2008 financial crisis. This prolonged dip has left many younger Americans shut out of the housing market, fueling interest in alternative investment models like fractional real estate ownership.</p>
+
+          <p>Platforms like Arrived and Lofty boast claims that with an investment as low as $10, you too could be a homeowner with their pre-vetted properties and "hands off" management. While they claim benefits such as no huge down-payments and no landlord responsibilities, it is far from the 'ideal' investment strategy for young investors that they tout it as. It is advertised as diversification without debt — but is it financial empowerment? Or do the hidden fees, platform governance, and concerns with the lack of regulation outweigh its supposed benefits?</p>
+
+          <h4>The Liquidity Illusion</h4>
+          <p>One of the primary attractions of fractional investing is the advertised ability to buy and sell shares. Platforms make it seem like they are offering liquidity akin to stocks. Lofty positions itself as a leader with a secondary marketplace where tokens can be traded. However, the reality is less promising. While Lofty charges a 2.5% fee on each transaction, the actual liquidity is limited — the secondary market is confined to Lofty's platform, which limits investors seeking to liquidate their holdings promptly.</p>
+
+          <p>Lofty's main competitor, Arrived, has yet to launch its secondary market. They have plans to do so in the summer of 2025. Until then, investors are left with a holding period that could span five to seven years, according to Arrived's own documents. This significantly diminishes the flexibility that investors might have expected.</p>
+
+          <h4>Hidden Fees and Governance Concerns</h4>
+          <p>While fractional investing platforms advertise low minimum investments and passive income, they often conceal the fees that can erode returns. Lofty charges a 2.5% fee for each transaction on its secondary market. Additionally, investors may incur fees ranging from 2.9% to 3.9% when funding their accounts via credit or debit cards. These costs can accumulate quickly.</p>
+
+          <p>Beyond financial considerations, governance structures raise significant concerns. Lofty's use of blockchain-based tokens means ownership is represented digitally with decisions made through a decentralized autonomous organization (DAO). The requirement for a supermajority of 60% for decisions to pass can lead to gridlock that hinders timely and effective property management.</p>
+
+          <h4>Platform Risk and Market Implications</h4>
+          <p>It is important to note that this is a relatively new investment vehicle — Arrived and Lofty were founded in 2019 and 2018, respectively. The volatility of the startup ecosystem poses another risk to investors. The abrupt shutdown of Here.co in January 2024 serves as a stark reminder of the fragility inherent in these platforms. Despite raising nearly $2 million in 2023, Here.co ceased operations, citing unfavorable economic conditions and high-interest rates. Houses were sold at a loss, and investors were left with little recourse.</p>
+
+          <p>While fractional investing platforms democratize access to real estate, they also contribute to the financialization of the housing market. In cities like Atlanta, Jacksonville, Charlotte, and Tampa, institutional investors own significant portions of single-family rentals, with shares ranging from 15% to 25%. The trend of turning homes into tradable assets exacerbates housing affordability crises.</p>
+
+          <p>Fractional real estate investing does present a new approach to property ownership, but the realities of liquidity constraints, hidden fees, governance complexities, platform instability, and broader market impacts suggest that this model may not provide the flexibility it claims. The path to financial empowerment may not be as straightforward as these platforms make it seem — or at the very least, it won't come at the cost of a cup of coffee.</p>
+        </div>
+      </article>
+
+      <!-- ARTICLE 7 -->
+      <article class="journal-article" id="article-big-oil">
+        <div class="article-kicker">
+          <span class="category-tag-solid markets">Markets</span>
+          <span class="article-issue-tag">Spring 2025</span>
+        </div>
+        <h2 class="article-headline">The Return of Big Oil: Fossil Fuels Burning Down ESG</h2>
+        <div class="article-byline-row">
+          <span class="article-author-name">Percy Stillman</span>
+        </div>
+        <div class="article-body">
+          <p>Despite years of capital inflows into ESG funds and predictions of a decline in fossil fuel use, traditional oil and gas companies have recently outperformed their green-tech counterparts, forcing a reassessment of the pace and realism of the energy transition. From Trump's swift withdrawal from the Paris agreement, to the slashing of electric vehicle subsidies, to his continued pro-fossil fuel rhetoric, the new government has been a driving force behind the shift away from the often costly, green energy push.</p>
+
+          <h4>The ESG Investing Peak and Its Reversal</h4>
+          <p>The ESG investing boom peaked between 2020 and 2022, with a record $649 billion poured into ESG-focused funds worldwide through 2021, up from $542 billion in 2020 and $285 billion in 2019. The global head of stewardship at Goldman Sachs, Catherine Winner, summed up the momentum at the time: "It's not just about shareholders; it's about all stakeholders." Yet just two years later, the 2022 energy crisis — fueled by the Russo-Ukrainian war, supply chain disruptions, tariffs, and sanctions — saw oil prices surge drastically. Investments in fossil fuels were incentivized by the rising interest rates, discouraging further expensive ESG investments.</p>
+
+          <p>On February 24, 2022, Russia invaded Ukraine. Brent crude peaked above $105 a barrel, and U.S. WTI was at $100.54, record highs for both since 2014. This immediate jump was driven by speculative concerns over supply shortages and chain complications, alongside anticipated sanctions. This price increase boosted oil company profits and thus dividends.</p>
+
+          <p>Meanwhile, ESG-heavy ETFs continue to underperform. Funds like Invesco Solar (TAN) and iShares Global Clean Energy (ICLN), which once rode the ESG wave in 2021, are down 64.2% and 74.8% from their highs as of May 2025. Their struggles have disillusioned early supporters and driven many back to oil ETFs such as the United States Oil Fund LP (USO), up 210.25% over the last five years.</p>
+
+          <h4>What's Driving the Fossil Fuel Comeback?</h4>
+          <p>The Trump administration's policies in 2016 marked a turning point by encouraging big oil investments. President Trump swiftly rescinded the Biden administration's Executive Order 14008 on climate responsibility in January 2025, calling it harmful to industry. The new administration has continued to advocate for pro-fossil fuel investment.</p>
+
+          <p>Market volatility has also renewed interest in commodities as a hedge. According to Daan Struyven, head of oil research at Goldman Sachs Research, "A 1 percentage point surprise increase in US inflation has, on average, led to a real return gain of 7 percentage points for commodities, while that same trigger caused stocks and bonds to decline 3 and 4 percentage points, respectively."</p>
+
+          <h4>The Grid Problem for Renewables</h4>
+          <p>Power grids are the key to implementing alternative energy into homes and businesses across the country. They were designed for slower, centralized energy inputs from sources like coal-fired power plants. They are now being asked to accommodate intermittent renewables like wind and solar, which require significant transmission upgrades to move electricity from generation points to distribution networks. McKinsey clearly stated that "the tools and processes available at present for grid planning are not up to the task of optimizing current capacity and planning for the setup of efficient new capacity."</p>
+
+          <p>Federal support is crucial to renewable alternatives becoming competitive. Once bipartisan political backing is formed, institutional and private investors will follow and allow the sector to grow to self-sufficiency. However, under the current administration and continued geopolitical uncertainty, few appear willing to make the financial sacrifice for cleaner energy. The question remains: will political instability continue to undermine ESG in the U.S., or can it prevail through a more moderate and realistic transition?</p>
+
+          <div class="article-refs">
+            <div class="article-refs-title">References</div>
+            <p>"How Grid Operators Can Integrate the Coming Wave of Renewable Energy," McKinsey &amp; Company, October 13, 2020.</p>
+            <p>Ross Kerber, "How 2021 Became the Year of ESG Investing," Reuters, December 23, 2021.</p>
+            <p>"Which Commodities Are the Best Hedge for Inflation?," Goldman Sachs Insights, May 17, 2021.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- ARTICLE 8 -->
+      <article class="journal-article" id="article-fed">
+        <div class="article-kicker">
+          <span class="category-tag-solid markets">Markets</span>
+          <span class="article-issue-tag">Spring 2025</span>
+        </div>
+        <h2 class="article-headline">What's Going On at the Federal Reserve?</h2>
+        <p class="article-dek">The current economic outlook and wait-and-see method of the Federal Reserve.</p>
+        <div class="article-byline-row">
+          <span class="article-author-name">Sophia Paesano</span>
+        </div>
+        <div class="article-body">
+          <p>Chicagoan Ferris Bueller once said, "Life moves pretty fast." Those were also the closing words of Federal Reserve Chair Jerome H. Powell's recent speech on the U.S. economic outlook — an unexpected but fitting nod to the pace of change the Fed is currently navigating. In many ways, it captures the central bank's approach to interest rates in 2025: waiting, watching, and responding only once the economic picture becomes clearer.</p>
+
+          <p>With inflation pressures rising due to a new wave of import tariffs and growth showing signs of slowing, the Fed finds itself at a crossroads. As Powell cautioned, tariffs could keep borrowing costs elevated even as they weigh on demand, setting the stage for a policy dilemma. In the meantime, uncertainty itself has become a force in the economy, and investors are learning to adapt to a new normal of heightened volatility.</p>
+
+          <h4>Tariffs and Their Economic Outlook</h4>
+          <p>Trade policy had rapidly become the dominant wildcard for the 2025 economic trajectory. In early April, President Trump announced a sweeping set of global import tariffs — a move that Fed officials describe as one of the "biggest shocks to affect the U.S. economy in many decades." Although a 90-day pause was later placed on some of these tariffs, the effective tariff rate is still set to jump dramatically — potentially to over 20% on average, from about 3% at the start of the year.</p>
+
+          <p>Powell has warned that the announced tariff increases are "significantly larger than anticipated" and likely to result in "higher inflation and slower growth." In his April 16th remarks, Powell stated plainly that "tariffs are highly likely to generate at least a temporary rise in inflation," with potentially more persistent effects depending on how long they last and how businesses and consumers adapt.</p>
+
+          <h4>The Fed's Dual Mandate Under Pressure</h4>
+          <p>The Federal Reserve's dual mandate — stable prices and maximize employment — is being tested as these objectives diverge. At the start of the year, conditions seemed close to ideal with unemployment hovering around 4% and inflation trending down towards the 2% goal. The shock from tariffs has disrupted this balance. By driving prices higher as they diminish growth, the tariffs threatened to put the Fed's two goals into direct conflict.</p>
+
+          <p>Many policymakers are arguing for a wait-and-see approach until it's clear where the economy is headed, and stress that policy may need to be biased toward controlling inflation to prevent a rise in long-run inflation expectations. If the Fed were to let inflation get out of control, it would ultimately do more harm to the economy, including employment, in the long run.</p>
+
+          <h4>Policy Outlook for 2025</h4>
+          <p>Given this backdrop, what is the Fed's likely path for interest rates in 2025? Patience. Powell's core message has been that the Fed can afford to hold steady until it gets a better read on how the economy is evolving. "For the time being, we are well positioned to wait for greater clarity before considering any adjustments to our policy stance," Powell said, encapsulating the wait-and-see approach.</p>
+
+          <p>The benchmark federal funds rate remains in the 4.25%-4.50% range after the cuts implemented in 2024, and officials have signaled it could stay there for a while as they study incoming data. The most probable outlook is that the Fed will hold rates steady through at least the first half of 2025, barring a major surprise in economic data.</p>
+
+          <p>In summary, the Federal Reserve's 2025 interest rate strategy reflects a cautious, deliberate response to growing uncertainty. While these policy debates may seem distant, they shape the borrowing costs on mortgages, student loans, and credit cards, and influence how stable the job market feels. Powell's message tells us the Fed is signaling that it will act when necessary, and only when necessary, to steer the economy toward a sustainable path in 2025 and beyond.</p>
+
+          <div class="article-refs">
+            <div class="article-refs-title">References</div>
+            <p>Powell, J. H. (2025, April 16). Economic outlook [Speech]. Board of Governors of the Federal Reserve System.</p>
+            <p>Morgan Stanley. (2025, April 3). Tariffs could jeopardize growth outlook and rate cuts.</p>
+            <p>U.S. Bank. (2025). Federal Reserve calibrates interest rate policy amid softer hiring and lingering inflation.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- ARTICLE 9 -->
+      <article class="journal-article" id="article-remote-work">
+        <div class="article-kicker">
+          <span class="category-tag-solid technology">Technology</span>
+          <span class="article-issue-tag">Spring 2025</span>
+        </div>
+        <h2 class="article-headline">Office Space or Headspace? Wall Street's Remote-Work Reckoning</h2>
+        <p class="article-dek">An analysis of remote vs. in-office work at JPMorgan, Morgan Stanley, and Goldman Sachs.</p>
+        <div class="article-byline-row">
+          <span class="article-author-name">Jack De Picciotto</span>
+        </div>
+        <div class="article-body">
+          <p>Remote work may have felt like a revolution — but for Wall Street's biggest banks, it's starting to look like a costly detour. In the aftermath of the COVID-19 pandemic, firms like JPMorgan, Goldman Sachs, and Morgan Stanley adopted remote policies out of necessity. What began as a stopgap quickly became popular with employees. Yet today, those same firms are walking back that flexibility with force.</p>
+
+          <p>Leaders across these banks contend that remote work, while convenient, erodes the pillars that sustain high-performance finance: mentorship, innovation, culture, and long-term well-being. For a business model built on apprenticeship and rapid, collaborative problem-solving, the hidden costs of staying remote can outweigh the near-term benefits.</p>
+
+          <h4>Mental Health and Well-Being</h4>
+          <p>Employee experience across JPMorgan, Goldman Sachs, and Morgan Stanley reveals a complicated picture. Many at JPMorgan lauded the hybrid period for being "beneficial for mental health, family life and workplace diversity." But the pendulum swung back in early 2025 when JPMorgan announced a full-time office mandate, prompting hundreds of intranet comments about rising stress, commuting costs, and childcare burdens. Roughly 950 employees signed a petition urging the firm to retain hybrid work. CEO Jamie Dimon's town-hall response was blunt: "Don't waste time on it. I don't care how many people sign that petition." The message was clear: employees unhappy with the policy could work elsewhere.</p>
+
+          <p>Goldman Sachs had its own flashpoints. A leaked 2021 internal survey captured how remote work blurred boundaries for juniors: first-year analysts described "inhumane" 100-hour WFH weeks that "severely affected their mental health." "I was not eating, showering or doing anything else other than working from morning until after midnight," wrote one respondent. By 2023, most Goldman staff had returned to the office.</p>
+
+          <p>Morgan Stanley charted a similar course: when its wealth management division implemented a four-days-in-office guideline for 2025, the memo acknowledged pandemic fatigue but asserted that "the vast majority of us do our best work when we are together in person."</p>
+
+          <h4>Mentorship and Apprenticeship</h4>
+          <p>If there is one theme uniting all three firms, it is the conviction that apprenticeship cannot thrive remotely. JPMorgan's Jamie Dimon has tied the office mandate directly to training the next generation: "Being together greatly enhances mentoring, learning, brainstorming and getting things done." He has warned that fully remote arrangements "don't work for young people," undermining spontaneity, culture, and management.</p>
+
+          <p>Goldman CEO David Solomon describes Goldman as an "apprenticeship culture" where in-office time is foundational to teaching and innovation. "For a business like ours, which is an innovative, collaborative apprenticeship culture, this is not ideal for us" to be remote. Former Morgan Stanley CEO James Gorman put it most starkly: "This is not an employee choice." People don't choose their promotion or pay, and they don't choose to stay home five days a week.</p>
+
+          <h4>Innovation and the Hybrid Reality</h4>
+          <p>A second shared rationale is that proximity improves creativity and execution. JPMorgan, Goldman, and Morgan Stanley each argue that when teams are co-located, ideas flow and decisions accelerate. Goldman ties its innovative edge to physical proximity: traders shouting across a floor, bankers huddling to refine a model, the "lightbulb moments" that Slack can't replicate.</p>
+
+          <p>Despite hard lines in public, none of the three is pretending it's 2019. Hybrid has survived, especially where teams set clear in-person anchors — shared office days for mentoring, pipeline reviews, and training — and reserve remote days for deep work or logistics. The difference is the default: in-office is the norm to which exceptions are made, not vice versa.</p>
+
+          <p>For top investment banks, remote work isn't just a logistical choice; it's a strategic bet on how excellence is produced. The evidence from JPMorgan, Goldman Sachs, and Morgan Stanley points to a consistent view: while working from home can boost morale and convenience for some, it also blurs boundaries, weakens mentorship, and dulls the informal, fast-paced collaboration that drives innovation. The signal for future analysts is unmistakable: flexibility is valuable, but proximity remains power.</p>
+        </div>
+      </article>
+
+      <!-- ARTICLE 10 -->
+      <article class="journal-article" id="article-ai-panic">
+        <div class="article-kicker">
+          <span class="category-tag-solid technology">Technology</span>
+          <span class="article-issue-tag">Spring 2025</span>
+        </div>
+        <h2 class="article-headline">From Prompt to Panic: How Generative AI Turns Rumors into Market Ripples</h2>
+        <div class="article-byline-row">
+          <span class="article-author-name">Tomas Kay</span>
+        </div>
+        <div class="article-body">
+          <p>Most people tend to associate artificial intelligence with regular chatbots, developed to retrieve predefined answers and regurgitate information back to the user in mere seconds. Although their capabilities are shocking, this commercialized AI is only a small part of AI's capabilities. Today's generative AI models can draft full earnings releases, create deceiving images, and push updates through media outlets that can cause millions of dollars of mishandled money.</p>
+
+          <h4>AI in Financial Markets</h4>
+          <p>In the financial world, generative AI has a shocking ability to process market-relevant signals and actively make decisions in seconds. What used to be a cycle of people reacting to news and then adjusting their trading positions has now turned into an automated loop between social media platforms and trading algorithms that make decisions based on the news.</p>
+
+          <h4>The Pentagon Fake Image Incident</h4>
+          <p>This relationship between AI-generated content and trading algorithms was clearly illustrated in May 2023, when a fake image of smoke near the Pentagon hinted at a potential attack on the U.S. Although the image was soon exposed as fake, the damage had already been done: within just four minutes, the Dow Jones Industrial Average fell by 85 points and the S&amp;P 500 declined by around 0.3%. A few hours later, as the image spread again, both indexes sharply rebounded, underscoring how one fabricated headline triggered whipsaw volatility in the markets. The broader takeaway is that while AI promises speed and responsiveness, it also highlights a critical weakness — machines often struggle to assess the validity of information in real time.</p>
+
+          <h4>Speed vs. Herd Behavior</h4>
+          <p>Response speed isn't the only issue — herd behaviour in investing is more drastic than ever before. Traditionally, when AI-generated stories land on every screen at once, they push investors to move as a crowd. However, as human-operated traders are starting to be replaced with algorithms derived from generative AI, these mechanisms react to the signals simultaneously with lower reaction times, causing a stampede of trades instead of a more gradual increase in trading volume.</p>
+
+          <p>One notable example surfaced during 2024, when online fraudsters distributed AI-generated videos of Elon Musk promoting a new cryptocurrency platform called Quantum AI. After these videos began populating across social media platforms worldwide, blockchain forensics firms noted a surge of deposits into wallets that were related to the scam. When institutions like the Central Bank of Ireland and Hong Kong's Securities and Futures Commission began to call out the fraudulent platform, there was an equally abrupt outflow of money from the accounts. This sharp wave of money flowing in and out produced a massive spike in traded volume, creating systemic instability.</p>
+
+          <h4>Regulatory Blind Spots</h4>
+          <p>A clear by-product of this contest between AI mechanisms is the widening of blind spots in financial regulations. Financial-market rules were primarily written for human investors who file 10-Ks, report quarterly earnings, and can be punished for not abiding by the SEC's regulations. However, Generative AI mechanisms can slip through the cracks of the SEC's framework, and cannot be held accountable for their actions as current policies do not mandate authentication protocols or content-origin tracing.</p>
+
+          <p>A telling example of regulatory vulnerability came in February 2024, when Lyft's earnings release mistakenly projected a 500-basis-point margin expansion instead of 50. The error sent the stock up 67% in just 42 minutes, briefly adding $3 billion in market value before the correction erased the gains. If a similar distortion were AI-generated and spread across social media, the market impact could be just as severe while responsibility would be far harder to assign.</p>
+
+          <p>As financial institutions compete to become more efficient, it is clear that AI-generated mechanisms have revolutionized the trading of securities. From tightening reaction times to seconds, fueling herd behavior through identical trades, and slipping through outdated regulations, financial markets have become increasingly volatile. The responsibility now lies with regulators to stabilize markets roiled by rapid-fire trading — but the ultimate question remains: how will regulation evolve to parallel this technological revolution?</p>
+
+          <div class="article-refs">
+            <div class="article-refs-title">References</div>
+            <p>Niemeyer, Kenneth. "A Hong Kong-based Crypto Exchange Used Deepfakes of Elon Musk." Business Insider, May 2024.</p>
+            <p>Sellman, Mark. "US Stock Market Falls after AI Fake of Pentagon 'Explosion.'" The Times, 23 May 2023.</p>
+            <p>Stempel, Jonathan. "Lyft Wins Dismissal of Shareholder Lawsuit over Earnings Report Error."</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <div class="cta-inner">
+      <span class="section-eyebrow light">More Issues</span>
+      <h2>Read Other Issues</h2>
+      <p>Explore our Fall 2025 and Winter 2026 editions for more student research and analysis.</p>
+      <div class="cta-actions">
+        <a href="fall-2025.html" class="btn btn-white">Fall 2025 Issue</a>
+        <a href="winter-2026.html" class="btn btn-outline-white">Winter 2026 Issue</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="footer-logo">
+          <span class="footer-name">The University of Chicago<br>Financial Journal</span>
+        </div>
+        <p class="footer-tagline">A student-led publication dedicated to making finance accessible, rigorous, and relevant to the UChicago community.</p>
+        <div class="footer-social">
+          <a href="mailto:uchicagofj@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="journals.html">Journals</a>
+          <a href="articles.html">Articles by Topic</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Issues</div>
+        <div class="footer-links">
+          <a href="winter-2026.html">Winter 2026</a>
+          <a href="fall-2025.html">Fall 2025</a>
+          <a href="spring-2025.html">Spring 2025</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <div class="footer-links">
+          <a href="about.html#join">Join the Journal</a>
+          <a href="mailto:uchicagofj@gmail.com">Contact Us</a>
+          <a href="about.html#team">Meet the Team</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 The University of Chicago Financial Journal. All rights reserved.</span>
+      <span>University of Chicago · Hyde Park, Chicago</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Article — The University of Chicago Financial Journal">
+  <title>Article — UFJ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .article-page-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+    .article-page-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 2.5rem;
+      transition: color var(--transition);
+    }
+    .article-page-back:hover { color: var(--crimson); }
+    .article-page-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-issue {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .article-page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-byline {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+    .article-page-author {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .article-page-meta {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .article-page-body h2,
+    .article-page-body h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--text-dark);
+      margin: 2rem 0 0.75rem;
+    }
+    .article-page-body h2 { font-size: 1.4rem; }
+    .article-page-body h3 { font-size: 1.15rem; }
+    .article-page-body p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body ol,
+    .article-page-body ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body li {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .article-page-footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .article-refs {
+      background: var(--off-white);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    .article-refs h3 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .article-refs ol {
+      padding-left: 1.25rem;
+    }
+    .article-refs li {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav solid" id="nav">
+    <a href="index.html" class="nav-brand">
+      <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="nav-logo">
+      <span class="nav-name">The University of Chicago<br>Financial Journal</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="journals.html">Journals</a></li>
+      <li><a href="articles.html" class="active">Articles by Topic</a></li>
+    </ul>
+  </nav>
+
+  <section class="section section-white" style="padding-top: calc(var(--nav-height) + 2rem);">
+    <div class="article-page-wrap">
+
+      <a href="articles.html" class="article-page-back">
+        <i class="fa-solid fa-arrow-left"></i> All Articles
+      </a>
+
+      <div class="article-page-eyebrow">
+        <span class="category-tag-solid technology">Technology</span>
+        <span class="article-page-issue">Vol. 2, Issue 1 · <a href="spring-2025.html" style="color:inherit;">Spring 2025</a></span>
+      </div>
+
+      <h1 class="article-page-title">Article</h1>
+
+      <div class="article-page-byline">
+        <div>
+          <div class="article-page-author"></div>
+          <div class="article-page-meta">University of Chicago Financial Journal · Spring 2025</div>
+        </div>
+      </div>
+
+      <div class="article-page-body">
+
+        <div class="article-kicker">
+          <span class="category-tag-solid technology">Technology</span>
+          <span class="article-issue-tag">Spring 2025</span>
+        </div>
+        <h2 class="article-headline">From Prompt to Panic: How Generative AI Turns Rumors into Market Ripples</h2>
+        <div class="article-byline-row">
+          <span class="article-author-name">Tomas Kay</span>
+        </div>
+        <div class="article-body">
+          <p>Most people tend to associate artificial intelligence with regular chatbots, developed to retrieve predefined answers and regurgitate information back to the user in mere seconds. Although their capabilities are shocking, this commercialized AI is only a small part of AI's capabilities. Today's generative AI models can draft full earnings releases, create deceiving images, and push updates through media outlets that can cause millions of dollars of mishandled money.</p>
+
+          <h4>AI in Financial Markets</h4>
+          <p>In the financial world, generative AI has a shocking ability to process market-relevant signals and actively make decisions in seconds. What used to be a cycle of people reacting to news and then adjusting their trading positions has now turned into an automated loop between social media platforms and trading algorithms that make decisions based on the news.</p>
+
+          <h4>The Pentagon Fake Image Incident</h4>
+          <p>This relationship between AI-generated content and trading algorithms was clearly illustrated in May 2023, when a fake image of smoke near the Pentagon hinted at a potential attack on the U.S. Although the image was soon exposed as fake, the damage had already been done: within just four minutes, the Dow Jones Industrial Average fell by 85 points and the S&amp;P 500 declined by around 0.3%. A few hours later, as the image spread again, both indexes sharply rebounded, underscoring how one fabricated headline triggered whipsaw volatility in the markets. The broader takeaway is that while AI promises speed and responsiveness, it also highlights a critical weakness — machines often struggle to assess the validity of information in real time.</p>
+
+          <h4>Speed vs. Herd Behavior</h4>
+          <p>Response speed isn't the only issue — herd behaviour in investing is more drastic than ever before. Traditionally, when AI-generated stories land on every screen at once, they push investors to move as a crowd. However, as human-operated traders are starting to be replaced with algorithms derived from generative AI, these mechanisms react to the signals simultaneously with lower reaction times, causing a stampede of trades instead of a more gradual increase in trading volume.</p>
+
+          <p>One notable example surfaced during 2024, when online fraudsters distributed AI-generated videos of Elon Musk promoting a new cryptocurrency platform called Quantum AI. After these videos began populating across social media platforms worldwide, blockchain forensics firms noted a surge of deposits into wallets that were related to the scam. When institutions like the Central Bank of Ireland and Hong Kong's Securities and Futures Commission began to call out the fraudulent platform, there was an equally abrupt outflow of money from the accounts. This sharp wave of money flowing in and out produced a massive spike in traded volume, creating systemic instability.</p>
+
+          <h4>Regulatory Blind Spots</h4>
+          <p>A clear by-product of this contest between AI mechanisms is the widening of blind spots in financial regulations. Financial-market rules were primarily written for human investors who file 10-Ks, report quarterly earnings, and can be punished for not abiding by the SEC's regulations. However, Generative AI mechanisms can slip through the cracks of the SEC's framework, and cannot be held accountable for their actions as current policies do not mandate authentication protocols or content-origin tracing.</p>
+
+          <p>A telling example of regulatory vulnerability came in February 2024, when Lyft's earnings release mistakenly projected a 500-basis-point margin expansion instead of 50. The error sent the stock up 67% in just 42 minutes, briefly adding $3 billion in market value before the correction erased the gains. If a similar distortion were AI-generated and spread across social media, the market impact could be just as severe while responsibility would be far harder to assign.</p>
+
+          <p>As financial institutions compete to become more efficient, it is clear that AI-generated mechanisms have revolutionized the trading of securities. From tightening reaction times to seconds, fueling herd behavior through identical trades, and slipping through outdated regulations, financial markets have become increasingly volatile. The responsibility now lies with regulators to stabilize markets roiled by rapid-fire trading — but the ultimate question remains: how will regulation evolve to parallel this technological revolution?</p>
+
+          <div class="article-refs">
+            <div class="article-refs-title">References</div>
+            <p>Niemeyer, Kenneth. "A Hong Kong-based Crypto Exchange Used Deepfakes of Elon Musk." Business Insider, May 2024.</p>
+            <p>Sellman, Mark. "US Stock Market Falls after AI Fake of Pentagon 'Explosion.'" The Times, 23 May 2023.</p>
+            <p>Stempel, Jonathan. "Lyft Wins Dismissal of Shareholder Lawsuit over Earnings Report Error."</p>
+          </div>
+        </div>
+      
+      </div>
+
+      <div class="article-page-footer">
+        <a href="articles.html" class="btn btn-outline-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          <i class="fa-solid fa-arrow-left"></i> Back to All Articles
+        </a>
+        <a href="spring-2025.html" class="btn btn-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          Read Full Issue
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="footer-logo">
+          <span class="footer-name">The University of Chicago<br>Financial Journal</span>
+        </div>
+        <p class="footer-tagline">A student-led publication dedicated to making finance accessible, rigorous, and relevant to the UChicago community.</p>
+        <div class="footer-social">
+          <a href="mailto:uchicagofj@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="journals.html">Journals</a>
+          <a href="articles.html">Articles by Topic</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Issues</div>
+        <div class="footer-links">
+          <a href="winter-2026.html">Winter 2026</a>
+          <a href="fall-2025.html">Fall 2025</a>
+          <a href="spring-2025.html">Spring 2025</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <div class="footer-links">
+          <a href="about.html#join">Join the Journal</a>
+          <a href="mailto:uchicagofj@gmail.com">Contact Us</a>
+          <a href="about.html#team">Meet the Team</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 The University of Chicago Financial Journal. All rights reserved.</span>
+      <span>University of Chicago &middot; Hyde Park, Chicago</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

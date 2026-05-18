@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Article — The University of Chicago Financial Journal">
+  <title>Article — UFJ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .article-page-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+    .article-page-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 2.5rem;
+      transition: color var(--transition);
+    }
+    .article-page-back:hover { color: var(--crimson); }
+    .article-page-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-issue {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .article-page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-byline {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+    .article-page-author {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .article-page-meta {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .article-page-body h2,
+    .article-page-body h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--text-dark);
+      margin: 2rem 0 0.75rem;
+    }
+    .article-page-body h2 { font-size: 1.4rem; }
+    .article-page-body h3 { font-size: 1.15rem; }
+    .article-page-body p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body ol,
+    .article-page-body ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body li {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .article-page-footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .article-refs {
+      background: var(--off-white);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    .article-refs h3 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .article-refs ol {
+      padding-left: 1.25rem;
+    }
+    .article-refs li {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav solid" id="nav">
+    <a href="index.html" class="nav-brand">
+      <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="nav-logo">
+      <span class="nav-name">The University of Chicago<br>Financial Journal</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="journals.html">Journals</a></li>
+      <li><a href="articles.html" class="active">Articles by Topic</a></li>
+    </ul>
+  </nav>
+
+  <section class="section section-white" style="padding-top: calc(var(--nav-height) + 2rem);">
+    <div class="article-page-wrap">
+
+      <a href="articles.html" class="article-page-back">
+        <i class="fa-solid fa-arrow-left"></i> All Articles
+      </a>
+
+      <div class="article-page-eyebrow">
+        <span class="category-tag-solid poliecon">Political Economy</span>
+        <span class="article-page-issue">Vol. 2, Issue 2 · <a href="fall-2025.html" style="color:inherit;">Fall 2025</a></span>
+      </div>
+
+      <h1 class="article-page-title">Article</h1>
+
+      <div class="article-page-byline">
+        <div>
+          <div class="article-page-author"></div>
+          <div class="article-page-meta">University of Chicago Financial Journal · Fall 2025</div>
+        </div>
+      </div>
+
+      <div class="article-page-body">
+
+        <div class="article-kicker">
+          <span class="category-tag-solid poliecon">Political Economy</span>
+          <span class="article-issue-tag">Fall 2025</span>
+        </div>
+        <h2 class="article-headline">A High-Risk, Lightly Regulated Wall Street</h2>
+        <p class="article-dek">Legal sports betting now mirrors financial markets in structure and behavior — yet operates without the regulatory safeguards that protect investors. That asymmetry demands a policy response.</p>
+        <div class="article-byline-row">
+          <div>
+            <div class="article-author-name">Emily Sensenich</div>
+          </div>
+        </div>
+        <div class="article-body">
+          <p>In less than a decade, sports betting in the United States has transformed from an underground pastime into a multibillion-dollar financial industry embedded in everyday consumer life. This shift began in 2018, when the Supreme Court overturned the Professional and Amateur Sports Protection Act, allowing states to legalize and regulate sports wagering.</p>
+
+          <p>Since then, sportsbooks have adopted market-based pricing, real-time data modeling, and aggressive consumer incentives that closely resemble those used in traditional financial markets. However, this resemblance masks a critical imbalance. Unlike those markets, legalized sports betting has expanded with far fewer regulatory safeguards, exposing consumers to financial risk without the protections typically afforded to investors. A legal system that operates like a financial market should be regulated like one.</p>
+
+          <p>One of the strongest arguments in favor of legalization is its impact on the illegal sports betting market. According to the American Gaming Association, "As legal sports betting has grown, the illegal market has shrunk dramatically — from $150 billion pre-legalization to around $64 billion today." Clearly, sports betting has already been successfully integrated into the United State's formal economy. However, legalization alone does not ensure consumer protection.</p>
+
+          <p>A huge part of the growth of sportsbetting is founded in the convenience of online sportsbooks. In fact StatNews reports more than 90 percent of wagers are now placed online rather than in physical sportsbooks and yet, this participation is still growing. According to Business of Apps, "sports betting apps in the United States brought in $13.7 billion in revenue in 2024, a 25.6% increase from the previous year." With a single click, bets are placed instantaneously, allowing continuous participation with minimal friction.</p>
+
+          <p>These books such as DraftKings, FanDuel, BetMGM and others function like market makers in equity and foreign exchange markets, providing continuous liquidity in the market. With just a quick google search, these sports books are always ready to trade, executing bets almost instantaneously, even during periods of "low trading activity." In fact, Sports books' primary purpose is to manage exposure.</p>
+
+          <p>To describe this system in another perspective: sports-bettors speculate on fluctuating prices, respond to information shocks, exhibit identifiable behavioral biases, and compete in a marketplace structured by institutional players who manage liquidity and risk. Yet this market uniquely operates with minimal regulatory oversight and without the investor protections built into traditional financial infrastructure.</p>
+
+          <h3>Examining the Counterarguments</h3>
+          <p>This characterization of sports betting as a financial market can be criticized, specifically when arguing that key economic features distinguish wagering from investment. A sports bet has no intrinsic value, does not generate future cash flows, and cannot be held as a productive asset. From this perspective, a sports bet is a zero-sum transaction, not a market. Others suggest that sportsbooks do not fully mirror market makers because they do not always neutralize risks through balanced books — instead sports books can occasionally assume directional exposure, especially in low liquidity environments.</p>
+
+          <p>These arguments do not negate that these sports books act in an increasingly similar way to traditional markets. The lack of intrinsic value in these sports bets should not halt the comparison. Options and futures are both derivative products that trade on regulated exchanges. Additionally, the occasional directional exposure assumed by sportsbooks does not undermine the fact that they continuously set prices and adjust spreads in ways that are very similar to market makers. The fact that sports bets lack intrinsic value does not mean they should escape regulation. Financial markets already regulate speculative products that carry no intrinsic value because they still expose participants to real financial harm.</p>
+
+          <p>Additionally the idea that sports betting is written off because it is legally classified as "entertainment" is an oversight. This industry is not merely entertainment. This argument undermines the speculative environment and true economic consequences of sports betting.</p>
+
+          <h3>Behavioral Risk and Structural Exploitation</h3>
+          <p>Behavioral economists have long shown that individuals systematically overestimate their ability to outperform markets and display strong loss aversion, leading to increasingly risky behavior following losses. These same dynamics are evident in sports betting. Despite the evidence that the "house always wins," sports bettors still wager their money, attempting to redeem their losses by making riskier, larger bets.</p>
+
+          <p>In fact, the market actually exposes participants to higher levels of behavioral risk. These sports books will strategically implement promotions and parlay "multipliers" in order to generate more revenue. According to an experimental study on effects of inducements on sports gambling and decision-errors, "self-reported survey data also indicate[s] that inducements increase gambling participation and spend as well as risky behaviours, such as impulsive in-play betting." With these tactics, sports bettors increasingly act as inexperienced traders during unpredictable periods.</p>
+
+          <p>When sportsbooks profit from predictable human biases, losses can no longer be explained as purely the result of individual choice. In markets where firms actively encourage risky behavior, regulation exists to limit harm, not to remove personal responsibility.</p>
+
+          <h3>Market Structures and Liquidity Parallels</h3>
+          <p>Sports betting also shows differences between high-liquidity and low liquidity assets. Games like NFL playoffs, Baseball World Series, March Madness basketball, and more attract more significant betting volume and in turn exhibit highly efficient pricing. This is comparable to large cap equities.</p>
+
+          <p>In contrast, smaller conferences, lower-division sports, and lesser known players do not attract large volumes of bets and thus exhibit significant inefficiencies. In these bets, opportunities still exist, but there is more price volatility and less information surrounding these bets — and therefore comparable to emerging markets and small-cap stocks.</p>
+
+          <p>Speculation and gambling are synonymous depending who is defining the pair. Speculation involves taking calculated risks, and many may argue that is the intent of gambling on sports. Looking at statistics and probability, sports betting can be incredibly calculated — not just based on chance and luck.</p>
+
+          <p>Bets on long term outcomes such as MVP winners or world champions function similarly to derivatives. These bets are low probability and prices fluctuate depending on conditions like performance and injuries. Meanwhile, with in-game bets or live betting, odds are recalculated after every play in real time response, similar to high-frequency trading in equity markets.</p>
+
+          <p>Sports betting operates as a dynamic financial marketplace that features speculation, market making, arbitrage, liquidity management, and robust behavioral components. Yet it lacks the regulatory guardrails that protect participants in traditional financial systems. Treating sports betting more like a financial market would not eliminate risk, but it could introduce clearer disclosures, limits on promotional practices, and stronger consumer protections.</p>
+
+          <p>While financial markets are subject to suitability requirements, disclosure standards, and consumer protections, sports betting operates largely outside these frameworks. As millions of Americans enter this market daily, policymakers and analysts face an urgent imperative: should a system that mirrors Wall Street so closely continue to operate without comparable oversight?</p>
+        </div>
+      
+      </div>
+
+      <div class="article-page-footer">
+        <a href="articles.html" class="btn btn-outline-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          <i class="fa-solid fa-arrow-left"></i> Back to All Articles
+        </a>
+        <a href="fall-2025.html" class="btn btn-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          Read Full Issue
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="footer-logo">
+          <span class="footer-name">The University of Chicago<br>Financial Journal</span>
+        </div>
+        <p class="footer-tagline">A student-led publication dedicated to making finance accessible, rigorous, and relevant to the UChicago community.</p>
+        <div class="footer-social">
+          <a href="mailto:uchicagofj@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="journals.html">Journals</a>
+          <a href="articles.html">Articles by Topic</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Issues</div>
+        <div class="footer-links">
+          <a href="winter-2026.html">Winter 2026</a>
+          <a href="fall-2025.html">Fall 2025</a>
+          <a href="spring-2025.html">Spring 2025</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <div class="footer-links">
+          <a href="about.html#join">Join the Journal</a>
+          <a href="mailto:uchicagofj@gmail.com">Contact Us</a>
+          <a href="about.html#team">Meet the Team</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 The University of Chicago Financial Journal. All rights reserved.</span>
+      <span>University of Chicago &middot; Hyde Park, Chicago</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Article — The University of Chicago Financial Journal">
+  <title>Article — UFJ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .article-page-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+    .article-page-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 2.5rem;
+      transition: color var(--transition);
+    }
+    .article-page-back:hover { color: var(--crimson); }
+    .article-page-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-issue {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .article-page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-byline {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+    .article-page-author {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .article-page-meta {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .article-page-body h2,
+    .article-page-body h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--text-dark);
+      margin: 2rem 0 0.75rem;
+    }
+    .article-page-body h2 { font-size: 1.4rem; }
+    .article-page-body h3 { font-size: 1.15rem; }
+    .article-page-body p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body ol,
+    .article-page-body ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body li {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .article-page-footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .article-refs {
+      background: var(--off-white);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    .article-refs h3 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .article-refs ol {
+      padding-left: 1.25rem;
+    }
+    .article-refs li {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav solid" id="nav">
+    <a href="index.html" class="nav-brand">
+      <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="nav-logo">
+      <span class="nav-name">The University of Chicago<br>Financial Journal</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="journals.html">Journals</a></li>
+      <li><a href="articles.html" class="active">Articles by Topic</a></li>
+    </ul>
+  </nav>
+
+  <section class="section section-white" style="padding-top: calc(var(--nav-height) + 2rem);">
+    <div class="article-page-wrap">
+
+      <a href="articles.html" class="article-page-back">
+        <i class="fa-solid fa-arrow-left"></i> All Articles
+      </a>
+
+      <div class="article-page-eyebrow">
+        <span class="category-tag-solid poliecon">Political Economy</span>
+        <span class="article-page-issue">Vol. 2, Issue 3 · <a href="winter-2026.html" style="color:inherit;">Winter 2026</a></span>
+      </div>
+
+      <h1 class="article-page-title">Article</h1>
+
+      <div class="article-page-byline">
+        <div>
+          <div class="article-page-author"></div>
+          <div class="article-page-meta">University of Chicago Financial Journal · Winter 2026</div>
+        </div>
+      </div>
+
+      <div class="article-page-body">
+
+        <div class="article-kicker">
+          <span class="category-tag-solid poliecon">Political Economy</span>
+          <span class="article-issue-tag">Winter 2026</span>
+        </div>
+        <h2 class="article-headline">Private Equity Is Buying Sports Teams. Is That Good or Bad for Fans and Players?</h2>
+        <p class="article-dek">Major leagues have opened their doors to institutional investors, redefining sports franchises as financial assets. The risk is not immediate collapse — it's gradual transformation into portfolio holdings first and civic symbols second.</p>
+        <div class="article-byline-row">
+          <div>
+            <div class="article-author-name">Emily Sensenich</div>
+          </div>
+        </div>
+        <div class="article-body">
+          <p>Over the past several years, major leagues including the National Football League, National Basketball Association, Major League Baseball, and National Hockey League have adjusted ownership rules to allow institutional investors to purchase minority stakes in teams. The change reflects a simple reality: sports franchises have become some of the most valuable and financially stable assets in the global economy. It also marks a turning point. What were once primarily civic institutions are increasingly being redefined as financial instruments. As one investor noted in a recent Fortune report, "the NFL is the gold standard" — a statement that captures how these teams are now viewed as premier investment vehicles.</p>
+
+          <h3>The Financial Case for Sports Franchises</h3>
+          <p>From a financial perspective, the appeal is obvious. Professional teams are scarce assets with limited supply and durable demand. Franchise valuations have risen consistently, supported by long term media rights contracts that lock in billions from television networks and streaming platforms. Sponsorship agreements and global merchandising provide additional revenue streams. For private equity firms seeking predictable cash flows and appreciation potential, sports teams resemble premium alternative investments. Even access reflects exclusivity, as investors compete for "the biggest share the league allows PE firms to hold" in a tightly controlled market.</p>
+
+          <p>Proponents argue that this capital will strengthen organizations. Additional funding can support upgraded facilities, enhanced stadium technology, and expanded analytics departments. Institutional investors may introduce financial discipline and operational efficiency. Yet this defense obscures a more fundamental shift. Private equity firms emphasize that they are "non voting, passive minority shareholders" and claim "we are not here to tell anybody how to run their franchise." In practice, influence does not require formal control. Capital shapes priorities. When that capital is governed by return targets and exit timelines, the logic of decision making inevitably changes.</p>
+
+          <h3>The Tension at the Core</h3>
+          <p>That tension is the central issue. Private equity operates on defined investment horizons, typically seeking returns within five to ten years. Funds are structured around performance benchmarks, valuation growth, and eventual liquidity events. This framework prioritizes monetization. Sports teams, by contrast, have historically been owned by individuals or families whose incentives often included legacy, community standing, and long term stewardship. Even if firms insist that "our role is to serve the owners that we partner with," they introduce a system in which financial optimization becomes the dominant lens.</p>
+
+          <h3>What This Means for Fans</h3>
+          <p>Fans experience this shift first. Teams are not interchangeable consumer goods but civic institutions embedded in local identity. When ownership decisions become explicitly tied to return on investment, predictable consequences follow. Ticket prices rise, concession costs increase, and revenue extraction becomes more aggressive. Loyal fan bases provide pricing power, and private equity is trained to maximize it. The same emotional attachment that makes sports valuable also makes fans vulnerable to exploitation.</p>
+
+          <h3>What This Means for Players</h3>
+          <p>Players are affected as well. While salary caps and collective bargaining agreements impose constraints, ownership philosophy still shapes competitive strategy. Investment in player development, contract structures, and roster construction can all be influenced by broader financial priorities. Winning remains valuable, but it is no longer an end in itself. It becomes one variable in a broader calculation of cost, risk, and return.</p>
+
+          <h3>A Gradual Redefinition</h3>
+          <p>Ultimately, the entry of private equity forces a redefinition of what a sports franchise is. Are teams community institutions that happen to generate revenue, or financial assets that happen to play games? Increasingly, the latter is taking precedence. Investors openly frame leagues like the NFL as "the highest and most important mountain for us to climb," revealing the mindset driving this shift. The risk is not that private equity will immediately undermine sports. The risk is that it will gradually reshape them, turning teams into portfolio holdings first and civic symbols second. That transformation is difficult to reverse and even harder to measure in purely financial terms.</p>
+
+          <div class="article-refs">
+            <div class="article-refs-title">Sources</div>
+            <p>"Private Equity Is Buying Sports Teams. Is That Good or Bad for Fans and Players?" Fortune, January 22, 2025.</p>
+          </div>
+        </div>
+      
+      </div>
+
+      <div class="article-page-footer">
+        <a href="articles.html" class="btn btn-outline-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          <i class="fa-solid fa-arrow-left"></i> Back to All Articles
+        </a>
+        <a href="winter-2026.html" class="btn btn-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          Read Full Issue
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="footer-logo">
+          <span class="footer-name">The University of Chicago<br>Financial Journal</span>
+        </div>
+        <p class="footer-tagline">A student-led publication dedicated to making finance accessible, rigorous, and relevant to the UChicago community.</p>
+        <div class="footer-social">
+          <a href="mailto:uchicagofj@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="journals.html">Journals</a>
+          <a href="articles.html">Articles by Topic</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Issues</div>
+        <div class="footer-links">
+          <a href="winter-2026.html">Winter 2026</a>
+          <a href="fall-2025.html">Fall 2025</a>
+          <a href="spring-2025.html">Spring 2025</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <div class="footer-links">
+          <a href="about.html#join">Join the Journal</a>
+          <a href="mailto:uchicagofj@gmail.com">Contact Us</a>
+          <a href="about.html#team">Meet the Team</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 The University of Chicago Financial Journal. All rights reserved.</span>
+      <span>University of Chicago &middot; Hyde Park, Chicago</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

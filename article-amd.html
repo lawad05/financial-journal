@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Article — The University of Chicago Financial Journal">
+  <title>Article — UFJ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .article-page-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+    .article-page-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 2.5rem;
+      transition: color var(--transition);
+    }
+    .article-page-back:hover { color: var(--crimson); }
+    .article-page-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-issue {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .article-page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-byline {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+    .article-page-author {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .article-page-meta {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .article-page-body h2,
+    .article-page-body h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--text-dark);
+      margin: 2rem 0 0.75rem;
+    }
+    .article-page-body h2 { font-size: 1.4rem; }
+    .article-page-body h3 { font-size: 1.15rem; }
+    .article-page-body p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body ol,
+    .article-page-body ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body li {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .article-page-footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .article-refs {
+      background: var(--off-white);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    .article-refs h3 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .article-refs ol {
+      padding-left: 1.25rem;
+    }
+    .article-refs li {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav solid" id="nav">
+    <a href="index.html" class="nav-brand">
+      <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="nav-logo">
+      <span class="nav-name">The University of Chicago<br>Financial Journal</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="journals.html">Journals</a></li>
+      <li><a href="articles.html" class="active">Articles by Topic</a></li>
+    </ul>
+  </nav>
+
+  <section class="section section-white" style="padding-top: calc(var(--nav-height) + 2rem);">
+    <div class="article-page-wrap">
+
+      <a href="articles.html" class="article-page-back">
+        <i class="fa-solid fa-arrow-left"></i> All Articles
+      </a>
+
+      <div class="article-page-eyebrow">
+        <span class="category-tag-solid markets">Industry Coverage</span>
+        <span class="article-page-issue">Vol. 2, Issue 2 · <a href="fall-2025.html" style="color:inherit;">Fall 2025</a></span>
+      </div>
+
+      <h1 class="article-page-title">Article</h1>
+
+      <div class="article-page-byline">
+        <div>
+          <div class="article-page-author"></div>
+          <div class="article-page-meta">University of Chicago Financial Journal · Fall 2025</div>
+        </div>
+      </div>
+
+      <div class="article-page-body">
+
+        <div class="article-kicker">
+          <span class="category-tag-solid technology">Industry Coverage</span>
+          <span class="article-issue-tag">Fall 2025</span>
+        </div>
+        <h2 class="article-headline">AMD: Open Ecosystem AI Ambition Meets the Earnings Test</h2>
+        <p class="article-dek">With MI350 ramping, ROCm 7 maturing, and multi-OEM adoption broadening, the investment debate shifts from participation to durability — whether AMD can sustain share and margin momentum amid rising competitive intensity.</p>
+        <div class="article-byline-row">
+          <div>
+            <div class="article-author-name">Armaan Gill</div>
+          </div>
+        </div>
+        <div class="article-body">
+          <p><strong>Price:</strong> $257.87 · <strong>Market Cap:</strong> $420B · <strong>Sector:</strong> Semiconductors / AI Infrastructure</p>
+
+          <h4>Investment View</h4>
+          <p>Advanced Micro Devices (AMD) continues to expand its role in data-center AI infrastructure through an open-ecosystem strategy that integrates silicon, systems, and software. With MI350 ramping, ROCm 7 maturing, and multi-OEM adoption broadening, the key question shifts from participation to durability — and whether AMD can sustain share and margin momentum amid rising competitive intensity.</p>
+
+          <h4>Product and Platform Momentum</h4>
+          <p>Advanced Micro Devices (AMD) designs high-performance CPUs and data-center GPUs for cloud and enterprise AI Workloads. The Instinct lineup has progressed from MI300 to MI350, which is now supported by the ROCm 7 software stack, an open platform for both training and inference that has demonstrated significant performance gains compared to ROCm 6, addressing prior concerns about software maturity. Azure's (MSFT) ND MI300X v5 virtual machines deploy eight MI300X GPUs per node, which support fine-tuning and high-throughput inference at production scale. AMD and Azure jointly provide detailed provisioning driver guidance, which reduces the friction for infrastructure teams and signals readiness for large-scale deployment.</p>
+
+          <p>Supermicro introduced H14 systems that feature Instinct MI350 GPUs, which broaden its OEM base beyond a single hyperscaler. The availability of both air-cooled and liquid-cooled options for MI350 systems demonstrates flexibility across various data center configurations, thereby shortening deployment timelines.</p>
+
+          <h4>Building Toward Full-Stack Integration</h4>
+          <p>AMD's strategy now extends beyond chip design to full-stack systems. AMD acquired Enosemi, which brings in-house photonics and co-packaged optics expertise, critical for managing power, latency, and interconnect costs as clusters scale. AMD has stated that Enosemi's technology will be quickly incorporated into next-generation AI systems, reinforcing its rack-scale ambitions.</p>
+
+          <h4>Financial Performance and Capital Allocation</h4>
+          <p>Financials show momentum alongside policy noise. In Q2 FY25, AMD reported record revenue of $7.7 billion, led by strength in the data center and client segments. The earnings deck detailed export-control-related inventory and charge effects, along with non-GAAP adjustments, which helped investors model the margin trajectory through the product transition.</p>
+
+          <p>Street consensus for 2H 2025 assumes continued data center growth as MI350 volume ramps and ROCm 7 adoption deepens. The focus now lies on sustained shipments and software progress, rather than one-off announcements. As OEMs ship H14 platforms and Azure expands regional availability, the question shifts from participation to the durability of share and margin.</p>
+
+          <p>Capital returns provide a cushion: In May 2025, AMD approved a $6 billion share-repurchase program, increasing total capacity to approximately $10 billion and offering flexibility as AI investments accelerate.</p>
+
+          <h4>Investment Thesis</h4>
+          <p>AMD's open-ecosystem approach can sustain demand beyond a single cloud anchor. Azure validation reduces perceived risk for hyperscalers seeking a second GPU supplier, while ROCm 7 advancements narrow the software gap with NVIDIA, improving developer retention and workload portability. The Enosemi acquisition strengthens AMD's long-term path toward rack-scale optical systems, aligning with the broader industry shift toward photonics.</p>
+
+          <h4>Key Near-Term Catalysts</h4>
+          <ul>
+            <li>Incremental MI350 design wins and third-party benchmark results</li>
+            <li>Additional OEM platform launches and Azure regional availability</li>
+            <li>Earnings commentary on AI mix and data center margin trends</li>
+          </ul>
+
+          <h4>Risks</h4>
+          <ul>
+            <li>Execution on ROCm 7 maturity and ecosystem adoption</li>
+            <li>Competitive pressure from rival GPU roadmaps</li>
+            <li>Policy or export-control constraints affecting shipment timing and gross-margin mix</li>
+          </ul>
+
+          <h4>Bottom Line</h4>
+          <p>AMD's open stack platform now has tangible production footprints. The investment debate transitions from proof of concept to proof of consistency. If MI350 deployments expand across clouds and OEMs, while ROCm and optical integration progress as planned, Street expectations could rise. Conversely, delays in execution or policy headwinds could leave limited room for multiple expansions.</p>
+        </div>
+      
+      </div>
+
+      <div class="article-page-footer">
+        <a href="articles.html" class="btn btn-outline-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          <i class="fa-solid fa-arrow-left"></i> Back to All Articles
+        </a>
+        <a href="fall-2025.html" class="btn btn-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          Read Full Issue
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="footer-logo">
+          <span class="footer-name">The University of Chicago<br>Financial Journal</span>
+        </div>
+        <p class="footer-tagline">A student-led publication dedicated to making finance accessible, rigorous, and relevant to the UChicago community.</p>
+        <div class="footer-social">
+          <a href="mailto:uchicagofj@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="journals.html">Journals</a>
+          <a href="articles.html">Articles by Topic</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Issues</div>
+        <div class="footer-links">
+          <a href="winter-2026.html">Winter 2026</a>
+          <a href="fall-2025.html">Fall 2025</a>
+          <a href="spring-2025.html">Spring 2025</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <div class="footer-links">
+          <a href="about.html#join">Join the Journal</a>
+          <a href="mailto:uchicagofj@gmail.com">Contact Us</a>
+          <a href="about.html#team">Meet the Team</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 The University of Chicago Financial Journal. All rights reserved.</span>
+      <span>University of Chicago &middot; Hyde Park, Chicago</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

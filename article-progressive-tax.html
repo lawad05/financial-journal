@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Article — The University of Chicago Financial Journal">
+  <title>Article — UFJ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .article-page-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+    .article-page-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 2.5rem;
+      transition: color var(--transition);
+    }
+    .article-page-back:hover { color: var(--crimson); }
+    .article-page-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-issue {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .article-page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-byline {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+    .article-page-author {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .article-page-meta {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .article-page-body h2,
+    .article-page-body h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--text-dark);
+      margin: 2rem 0 0.75rem;
+    }
+    .article-page-body h2 { font-size: 1.4rem; }
+    .article-page-body h3 { font-size: 1.15rem; }
+    .article-page-body p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body ol,
+    .article-page-body ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body li {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .article-page-footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .article-refs {
+      background: var(--off-white);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    .article-refs h3 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .article-refs ol {
+      padding-left: 1.25rem;
+    }
+    .article-refs li {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav solid" id="nav">
+    <a href="index.html" class="nav-brand">
+      <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="nav-logo">
+      <span class="nav-name">The University of Chicago<br>Financial Journal</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="journals.html">Journals</a></li>
+      <li><a href="articles.html" class="active">Articles by Topic</a></li>
+    </ul>
+  </nav>
+
+  <section class="section section-white" style="padding-top: calc(var(--nav-height) + 2rem);">
+    <div class="article-page-wrap">
+
+      <a href="articles.html" class="article-page-back">
+        <i class="fa-solid fa-arrow-left"></i> All Articles
+      </a>
+
+      <div class="article-page-eyebrow">
+        <span class="category-tag-solid poliecon">Political Economy</span>
+        <span class="article-page-issue">Vol. 2, Issue 2 · <a href="fall-2025.html" style="color:inherit;">Fall 2025</a></span>
+      </div>
+
+      <h1 class="article-page-title">Article</h1>
+
+      <div class="article-page-byline">
+        <div>
+          <div class="article-page-author"></div>
+          <div class="article-page-meta">University of Chicago Financial Journal · Fall 2025</div>
+        </div>
+      </div>
+
+      <div class="article-page-body">
+
+        <div class="article-kicker">
+          <span class="category-tag-solid poliecon">Political Economy</span>
+          <span class="article-issue-tag">Fall 2025</span>
+        </div>
+        <h2 class="article-headline">When Progressive Taxation Backfires: The Mobility Problem Lawmakers Ignore</h2>
+        <p class="article-dek">IRS migration data reveals a persistent and underappreciated truth: once tax rates exceed competitive thresholds, high-income taxpayers leave — and the revenue base shrinks, not expands.</p>
+        <div class="article-byline-row">
+          <div>
+            <div class="article-author-name">Ely Hamani</div>
+          </div>
+        </div>
+        <div class="article-body">
+          <p>Progressive lawmakers like Zohran Mamdani argue that raising taxes on high earners will close budget gaps and strengthen social programs. But recent IRS and Census migration data suggest that the mobility of wealthy taxpayers is far more relevant than policymakers assume. In a world of remote work, mobile businesses, and widening interstate tax gaps, a small number of departing high earners can cause disproportionate revenue losses. This article examines the elasticity of high-income taxpayers and argues that beyond a certain threshold, aggressive progressive taxation backfires — reducing state revenues instead of expanding them.</p>
+
+          <h4>Why This Matters for College Students</h4>
+          <p>Graduates deciding where to live and work are entering a landscape shaped by interstate tax competition. States with unstable revenue bases often cut funding for public universities, financial aid programs, and early-career professional services — while fast-growing low-tax states expand them. Remote work has widened your menu of choices, but it's also amplified states' need to retain high earners. Understanding how tax mobility affects state budgets helps explain why opportunities flourish in some regions and contract in others.</p>
+
+          <h3>Are High Earners "Sticky?"</h3>
+          <p>Supporters of higher top-bracket taxes argue that wealthy residents are deeply rooted in their communities. They point to entrenched industries, cultural amenities, family obligations, and strong professional networks as anchors that reduce geographic mobility. From this lens, incremental tax hikes merely tap into an abundant and reliable revenue source. Because high earners historically did not migrate at high rates, the assumption is that they lack both incentive and ability to relocate.</p>
+
+          <p>Yet the conditions that once kept high earners geographically anchored have changed. Remote work, industry decentralization, and expanding tax arbitrage opportunities — the restructuring of income in a way that legally reduces one's tax burden — have weakened the traditional constraints on mobility. What was once a safe assumption — that the wealthy cannot or will not leave — no longer holds in the same way.</p>
+
+          <h3>Migration Data Tells a Different Story</h3>
+          <p>IRS Statistics of Income (SOI) migration data reveals persistent outflows of high-income households from high-tax states like New York and California. Between 2013 and 2022, both states experienced steady losses of residents earning over $200,000, while Florida and Texas saw strong net inflows among the same group. In 2022, New York lost roughly $14.1 billion in adjusted gross income to other states, while California lost approximately $23 billion.</p>
+
+          <p>Critics often argue that weather, housing costs, or lifestyle changes drive migration more than taxes. While these factors matter, they do not fully explain the selective exit of top earners. The data show that higher-income households account for a disproportionate share of out-migration from high-tax jurisdictions. This pattern indicates that tax differentials play an important role, particularly when alternative states offer comparable urban amenities or business environments.</p>
+
+          <p>Further, Florida and Texas' reliance on sales and property taxes, rather than income, creates more stable revenues that are less vulnerable to shifts among top earners. The success of these states reflects structural tax design that reduces sensitivity to migration. High-tax states ignore these structural differences at their own peril.</p>
+
+          <p>The fiscal consequences are significant because the top 1% contribute an outsized share of state tax revenue. In New York, roughly 46% of income tax revenue comes from the top 1%. In California, the figure is close to 49%. When even a small portion of this group relocates, the resulting loss materially affects state budgets.</p>
+
+          <h3>What About States With High Taxes and Strong Economies?</h3>
+          <p>Some argue that high-tax states like New York or California remain economic powerhouses precisely because they invest heavily in public services, infrastructure, and innovation ecosystems. From this view, raising taxes on the rich strengthens long-term competitiveness by funding education, transit, and research. These states, the argument goes, offer unique value that low-tax states cannot replicate — reducing the incentive for high earners to leave.</p>
+
+          <p>This perspective has merit, but it assumes that the value proposition remains strong enough to offset rising tax differentials. The current migration data suggests that this balance is shifting, and that the economic "premium" of living in high-tax states is no longer compensating for the widening fiscal gap.</p>
+
+          <h3>Elasticity at the Top</h3>
+          <p>The economic concept of tax elasticity measures how sensitive taxpayers are to changes in tax rates. Recent studies challenge the assumption that high earners have low mobility. Research from the Stanford Institute for Economic Policy Research (2022) finds that millionaires do migrate in response to higher taxes, particularly when rate differentials widen significantly. Federal Reserve research (Kitao and Sahin, 2020) similarly reports moderate but meaningful elasticity among top-income earners.</p>
+
+          <p>Because high earners represent such a large share of tax receipts, even minimal elasticity carries major fiscal implications. Policymakers who ignore elasticity risk basing budgets on projections that collapse when mobility increases.</p>
+
+          <p>Progressive taxation works only when taxpayers have limited alternatives. In an economy where high earners and businesses can relocate with minimal friction, ignoring tax-driven mobility carries significant fiscal risk. The evidence shows that once tax rates exceed competitive thresholds, the elasticity of high-income taxpayers becomes large enough to shrink the revenue base. For states that rely heavily on their wealthiest residents, sustainable fiscal policy requires respecting these constraints rather than dismissing them. If policymakers ignore mobility, they risk undermining the very social programs they seek to expand.</p>
+        </div>
+      
+      </div>
+
+      <div class="article-page-footer">
+        <a href="articles.html" class="btn btn-outline-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          <i class="fa-solid fa-arrow-left"></i> Back to All Articles
+        </a>
+        <a href="fall-2025.html" class="btn btn-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          Read Full Issue
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="footer-logo">
+          <span class="footer-name">The University of Chicago<br>Financial Journal</span>
+        </div>
+        <p class="footer-tagline">A student-led publication dedicated to making finance accessible, rigorous, and relevant to the UChicago community.</p>
+        <div class="footer-social">
+          <a href="mailto:uchicagofj@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="journals.html">Journals</a>
+          <a href="articles.html">Articles by Topic</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Issues</div>
+        <div class="footer-links">
+          <a href="winter-2026.html">Winter 2026</a>
+          <a href="fall-2025.html">Fall 2025</a>
+          <a href="spring-2025.html">Spring 2025</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <div class="footer-links">
+          <a href="about.html#join">Join the Journal</a>
+          <a href="mailto:uchicagofj@gmail.com">Contact Us</a>
+          <a href="about.html#team">Meet the Team</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 The University of Chicago Financial Journal. All rights reserved.</span>
+      <span>University of Chicago &middot; Hyde Park, Chicago</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

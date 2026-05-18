@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Article — The University of Chicago Financial Journal">
+  <title>Article — UFJ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .article-page-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+    .article-page-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 2.5rem;
+      transition: color var(--transition);
+    }
+    .article-page-back:hover { color: var(--crimson); }
+    .article-page-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-issue {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .article-page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-byline {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+    .article-page-author {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .article-page-meta {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .article-page-body h2,
+    .article-page-body h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--text-dark);
+      margin: 2rem 0 0.75rem;
+    }
+    .article-page-body h2 { font-size: 1.4rem; }
+    .article-page-body h3 { font-size: 1.15rem; }
+    .article-page-body p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body ol,
+    .article-page-body ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body li {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .article-page-footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .article-refs {
+      background: var(--off-white);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    .article-refs h3 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .article-refs ol {
+      padding-left: 1.25rem;
+    }
+    .article-refs li {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav solid" id="nav">
+    <a href="index.html" class="nav-brand">
+      <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="nav-logo">
+      <span class="nav-name">The University of Chicago<br>Financial Journal</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="journals.html">Journals</a></li>
+      <li><a href="articles.html" class="active">Articles by Topic</a></li>
+    </ul>
+  </nav>
+
+  <section class="section section-white" style="padding-top: calc(var(--nav-height) + 2rem);">
+    <div class="article-page-wrap">
+
+      <a href="articles.html" class="article-page-back">
+        <i class="fa-solid fa-arrow-left"></i> All Articles
+      </a>
+
+      <div class="article-page-eyebrow">
+        <span class="category-tag-solid poliecon">Political Economy</span>
+        <span class="article-page-issue">Vol. 2, Issue 1 · <a href="spring-2025.html" style="color:inherit;">Spring 2025</a></span>
+      </div>
+
+      <h1 class="article-page-title">Article</h1>
+
+      <div class="article-page-byline">
+        <div>
+          <div class="article-page-author"></div>
+          <div class="article-page-meta">University of Chicago Financial Journal · Spring 2025</div>
+        </div>
+      </div>
+
+      <div class="article-page-body">
+
+        <div class="article-kicker">
+          <span class="category-tag-solid poliecon">Political Economy</span>
+          <span class="article-issue-tag">Spring 2025</span>
+        </div>
+        <h2 class="article-headline">Why Trump's Immigration Ideas Won't Stimulate the Economy as He Hopes</h2>
+        <div class="article-byline-row">
+          <span class="article-author-name">Ely Hamani</span>
+        </div>
+        <div class="article-body">
+          <p>Donald Trump's recent immigration proposals reflect a strategic pivot: attract wealthy investors, retain college-educated foreigners, and expel individuals seen as politically or ideologically undesirable. While these initiatives may appear economically pragmatic, they rest on shallow assumptions and deliver limited long-term value. The promise is that America can stimulate growth, reduce deficits, and protect national interests through more selective immigration. But beneath the surface, these policies are inconsistent, economically inefficient, and potentially damaging to sectors relying on openness and stability. Beneath the numbers lies a choice: retreat into fear, or embrace the idea that growth flows not from walls, but from welcome.</p>
+
+          <h4>I. Student Visa Revocations Undermine a Critical Economic Engine</h4>
+          <p>International students are one of America's most valuable educational exports, contributing over $40 billion annually to the U.S. economy. When Trump's administration began revoking student visas en masse, often for political reasons such as pro-Palestinian social media activity, it sent shockwaves through universities and the broader economy. Institutions like Columbia University rely on international enrollment for nearly half of their tuition revenue, and these abrupt disruptions threaten their financial stability. Beyond tuition, international students fuel local economies: they rent housing, and support jobs in college towns nationwide.</p>
+
+          <p>The State Department's "Catch and Revoke" initiative — an AI-powered social scraper to detect foreign nationals who appear to support designated terror groups — risks chilling future enrollment as students weigh more welcoming alternatives like Canada or the UK. Once the U.S. loses its status as a preferred destination for global talent, the economic consequences could cascade across education, real estate, and consumer sectors. Moreover, these policies create uncertainty: universities cannot make enrollment projections, landlords face vacancy risks, and employers lose access to future workers educated under the American system. In economic terms, policy unpredictability is a tax on growth, and this tax is rising fast.</p>
+
+          <h4>II. The "Gold Card" Visa: Capital Without Productivity</h4>
+          <p>Trump's proposed "Gold Card" visa, offering U.S. residency for a $5 million investment, is designed to generate quick revenue and appeal to high-net-worth individuals. But in practice, the economic benefit is overstated. Unlike the EB-5 visa, which it aims to replace, the Gold Card visa requires no job creation or investment in actual U.S. businesses. The funds go directly to the government, limiting the multiplier effect normally flowing through construction, employment, or entrepreneurship. While the program has raised several billion dollars, it remains a niche solution with limited reach and questionable legality.</p>
+
+          <p>The focus on passive capital rather than productive activity also distorts immigration incentives. The U.S. economy doesn't need money — it needs builders, innovators, and employers. A visa regime that equates wealth with economic contribution misses this distinction and may exacerbate housing inequality by driving luxury real estate demand without generating corresponding benefits for labor markets or GDP.</p>
+
+          <h4>III. Skilled Immigration Reform: Good Idea, Poor Execution</h4>
+          <p>Trump's most economically sound proposal is to offer green cards to U.S. college graduates, including those from two-year programs. Retaining skilled, U.S.-educated talent is supported by research showing that immigrants with college degrees produce long-term fiscal surpluses, boost innovation, and fill key gaps in STEM industries. In principle, this policy aligns with a merit-based immigration model that many economists endorse.</p>
+
+          <p>However, the credibility of such a policy is undermined by its surrounding context. It coexists with restrictive, inconsistent measures — like visa revocations and hostile rhetoric — that signal instability to prospective students and skilled migrants. If the U.S. wants to retain talent, it must offer policy benefits and institutional trust, and right now, that trust is fraying. In addition, implementing this policy would require legislative approval, something that may prove politically unviable given Trump's broader anti-immigrant platform.</p>
+
+          <p>Trump's immigration proposals may be framed as economically strategic, but they suffer from fundamental contradictions. Revoking student visas harms a vital export sector, while the Gold Card visa delivers capital without labor or innovation. Sustainable economic growth depends not on performative restriction or isolated incentives, but on coherent, inclusive, and forward-looking immigration policy. Without that, the U.S. risks trading long-term prosperity for short-term optics.</p>
+        </div>
+      
+      </div>
+
+      <div class="article-page-footer">
+        <a href="articles.html" class="btn btn-outline-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          <i class="fa-solid fa-arrow-left"></i> Back to All Articles
+        </a>
+        <a href="spring-2025.html" class="btn btn-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          Read Full Issue
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="footer-logo">
+          <span class="footer-name">The University of Chicago<br>Financial Journal</span>
+        </div>
+        <p class="footer-tagline">A student-led publication dedicated to making finance accessible, rigorous, and relevant to the UChicago community.</p>
+        <div class="footer-social">
+          <a href="mailto:uchicagofj@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="journals.html">Journals</a>
+          <a href="articles.html">Articles by Topic</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Issues</div>
+        <div class="footer-links">
+          <a href="winter-2026.html">Winter 2026</a>
+          <a href="fall-2025.html">Fall 2025</a>
+          <a href="spring-2025.html">Spring 2025</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <div class="footer-links">
+          <a href="about.html#join">Join the Journal</a>
+          <a href="mailto:uchicagofj@gmail.com">Contact Us</a>
+          <a href="about.html#team">Meet the Team</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 The University of Chicago Financial Journal. All rights reserved.</span>
+      <span>University of Chicago &middot; Hyde Park, Chicago</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

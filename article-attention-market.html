@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Article — The University of Chicago Financial Journal">
+  <title>Article — UFJ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .article-page-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+    .article-page-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 2.5rem;
+      transition: color var(--transition);
+    }
+    .article-page-back:hover { color: var(--crimson); }
+    .article-page-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-issue {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .article-page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-byline {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+    .article-page-author {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .article-page-meta {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .article-page-body h2,
+    .article-page-body h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--text-dark);
+      margin: 2rem 0 0.75rem;
+    }
+    .article-page-body h2 { font-size: 1.4rem; }
+    .article-page-body h3 { font-size: 1.15rem; }
+    .article-page-body p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body ol,
+    .article-page-body ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body li {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .article-page-footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .article-refs {
+      background: var(--off-white);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    .article-refs h3 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .article-refs ol {
+      padding-left: 1.25rem;
+    }
+    .article-refs li {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav solid" id="nav">
+    <a href="index.html" class="nav-brand">
+      <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="nav-logo">
+      <span class="nav-name">The University of Chicago<br>Financial Journal</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="journals.html">Journals</a></li>
+      <li><a href="articles.html" class="active">Articles by Topic</a></li>
+    </ul>
+  </nav>
+
+  <section class="section section-white" style="padding-top: calc(var(--nav-height) + 2rem);">
+    <div class="article-page-wrap">
+
+      <a href="articles.html" class="article-page-back">
+        <i class="fa-solid fa-arrow-left"></i> All Articles
+      </a>
+
+      <div class="article-page-eyebrow">
+        <span class="category-tag-solid poliecon">Political Economy</span>
+        <span class="article-page-issue">Vol. 2, Issue 3 · <a href="winter-2026.html" style="color:inherit;">Winter 2026</a></span>
+      </div>
+
+      <h1 class="article-page-title">Article</h1>
+
+      <div class="article-page-byline">
+        <div>
+          <div class="article-page-author"></div>
+          <div class="article-page-meta">University of Chicago Financial Journal · Winter 2026</div>
+        </div>
+      </div>
+
+      <div class="article-page-body">
+
+        <div class="article-kicker">
+          <span class="category-tag-solid poliecon">Political Economy</span>
+          <span class="article-issue-tag">Winter 2026</span>
+        </div>
+        <h2 class="article-headline">The Attention Market</h2>
+        <p class="article-dek">Social media has supercharged herd behavior, replaced analysis with hype, and handed retail investors a faster way to lose money on tips from strangers. The fundamentals still matter — they're just harder to hear.</p>
+        <div class="article-byline-row">
+          <div>
+            <div class="article-author-name">Ely Hamani</div>
+          </div>
+        </div>
+        <div class="article-body">
+          <h3>Your FYP Is Now Your Financial Advisor</h3>
+          <p>Remember when investing was boring? You'd call your guy at the brokerage, he'd mutter something about diversification, you'd buy index funds, and nothing exciting would happen for forty years. Bliss. Then the internet got faster, smartphones got smarter, and somewhere along the way, a twenty-three-year-old on TikTok started explaining options trading between bites of a breakfast burrito — and that's the new normal? The stock market has always been a place where psychology and money collide, but social media has turned that collision into a full-scale pileup, and the rest of us are stuck in traffic behind it.</p>
+
+          <h3>The Origins</h3>
+          <p>If you need a single moment to understand what's changed, look no further than January 2021, when a subreddit called r/WallStreetBets collectively decided to send GameStop's stock to the moon. GameStop, the mall-based video game retailer that had all the financial vitality of a Blockbuster Video, shot up over 1,700% in a matter of weeks. Hedge funds hemorrhaged billions. Congress held hearings. Common people who had never owned a stock in their lives downloaded Robinhood during their lunch breaks and bought in because their group chat told them to. It was, depending on your perspective, either a glorious populist uprising or a masterclass in "hype" replacing analysis.</p>
+
+          <p>What happened wasn't magic, it was just too quick to notice. Reddit posts became tweets became TikToks became news segments became more Reddit posts, and the whole feedback loop took about forty-eight hours to lap itself. In the old world, a bad investment thesis might take weeks to spread through word of mouth. Now, an investing idea with zero fundamental backing can reach ten million people before the market opens. Further, investing has become readily accessible to anyone with internet connection and a smart device. Speed and accessibility changed the playing field for good.</p>
+
+          <p>What makes this particularly dangerous isn't that ordinary people are investing — which actually increases market efficiency — it's that the information traveling at viral speed is often stripped of context, nuance, or anything resembling a balance sheet. A fifteen-second video can tell you what to buy. It cannot tell you why, or what happens when everyone else is trying to sell at the same time. The gap between those two things is where a lot of people's savings went to die — a common result of "rug pull" schemes that are becoming increasingly prevalent in the era of misinformation.</p>
+
+          <h3>Modern Herd Behavior</h3>
+          <p>Economists have known about herd behavior for decades: the tendency for people to mimic the financial decisions of a crowd rather than rely on their own information. It's not stupidity; it's actually a rational response to uncertainty: "People are prone to conform more because they are uncertain about the correctness of their beliefs" (Cross et al., 2017). If you don't know what a stock is worth, and a thousand other people seem confident about it, following the crowd feels like a reasonable shortcut. The problem is that social media has supercharged the crowd, amplified its voice, and hidden the fact that most of those thousand people are also just following someone else.</p>
+
+          <p>The platforms themselves aren't exactly innocent bystanders. Engagement algorithms reward content that provokes excitement, urgency, and emotion. Which, as it turns out, describes a lot of financial content that probably shouldn't exist. "This stock is going to 10x" performs better than "here is a measured analysis of this company's debt-to-equity ratio." Outrage and FOMO drive clicks. Clicks drive reach. Reach drives more people into the trade. By the time the algorithm is done with you, you've watched forty videos about the same ticker and your brain has pattern-matched this into something that feels like due diligence. It is not.</p>
+
+          <h3>Attention Leaves, and So Does Your Money</h3>
+          <p>Here's the cruel irony of attention-driven markets: the same mechanism that inflates the bubble is the one that pops it. A stock rises because everyone is talking about it. It falls because everyone stopped. There's no earnings miss, no scandal, no fundamental shift in the business — just the collective gaze of the internet moving on to the next thing. For retail investors who bought near the peak, that indifference is financially devastating. The hedge funds and early movers have usually exited by then, profits intact, leaving the latecomers holding assets that are now worth a fraction of what they paid.</p>
+
+          <p>This volatility isn't just painful for individual investors, it starts to distort the broader market in ways that matter. When prices swing wildly based on attention rather than fundamentals, it becomes harder for the market to do its actual job, which is to allocate capital efficiently toward productive companies. A business that is genuinely building something valuable shouldn't have its stock price whipsawed because it went viral on a Wednesday. And yet increasingly, that's the environment we're operating in. Volatility that used to require a geopolitical crisis can now be triggered by a single influential post.</p>
+
+          <p>The people who get hurt most are almost always the ones who could least afford it. Research consistently shows that retail investors tend to buy after prices have already spiked and sell after they've already crashed — the exact opposite of what you're supposed to do. Sophisticated institutional investors, meanwhile, have the tools and the speed to navigate these swings, or even profit from them. Social media promised to level the playing field between Wall Street and Main Street. In practice, it often just gave Main Street a faster way to lose money on tips it got from strangers on the internet.</p>
+
+          <h3>Paying Attention to Attention</h3>
+          <p>None of this means you should close your brokerage account and stuff cash in a mattress. It means the landscape has genuinely changed, and understanding that change is now part of being a competent investor. The fundamentals haven't stopped mattering — earnings, cash flow, competitive moats — they've just been temporarily drowned out by noise. Learning to distinguish the signal from the hype has become table stakes, which also means financial literacy and education has become more important than ever.</p>
+
+          <p>The next time a stock starts trending on your feed, the most valuable thing you can do before touching your portfolio is a simple one: ask yourself whether you're responding to information, or just to the fact that everyone else seems excited. That awareness might be the most financially sophisticated approach social media never taught you.</p>
+        </div>
+      
+      </div>
+
+      <div class="article-page-footer">
+        <a href="articles.html" class="btn btn-outline-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          <i class="fa-solid fa-arrow-left"></i> Back to All Articles
+        </a>
+        <a href="winter-2026.html" class="btn btn-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          Read Full Issue
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="footer-logo">
+          <span class="footer-name">The University of Chicago<br>Financial Journal</span>
+        </div>
+        <p class="footer-tagline">A student-led publication dedicated to making finance accessible, rigorous, and relevant to the UChicago community.</p>
+        <div class="footer-social">
+          <a href="mailto:uchicagofj@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="journals.html">Journals</a>
+          <a href="articles.html">Articles by Topic</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Issues</div>
+        <div class="footer-links">
+          <a href="winter-2026.html">Winter 2026</a>
+          <a href="fall-2025.html">Fall 2025</a>
+          <a href="spring-2025.html">Spring 2025</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <div class="footer-links">
+          <a href="about.html#join">Join the Journal</a>
+          <a href="mailto:uchicagofj@gmail.com">Contact Us</a>
+          <a href="about.html#team">Meet the Team</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 The University of Chicago Financial Journal. All rights reserved.</span>
+      <span>University of Chicago &middot; Hyde Park, Chicago</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

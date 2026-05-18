@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Article — The University of Chicago Financial Journal">
+  <title>Article — UFJ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .article-page-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+    .article-page-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 2.5rem;
+      transition: color var(--transition);
+    }
+    .article-page-back:hover { color: var(--crimson); }
+    .article-page-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-issue {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .article-page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-byline {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+    .article-page-author {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .article-page-meta {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .article-page-body h2,
+    .article-page-body h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--text-dark);
+      margin: 2rem 0 0.75rem;
+    }
+    .article-page-body h2 { font-size: 1.4rem; }
+    .article-page-body h3 { font-size: 1.15rem; }
+    .article-page-body p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body ol,
+    .article-page-body ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body li {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .article-page-footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .article-refs {
+      background: var(--off-white);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    .article-refs h3 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .article-refs ol {
+      padding-left: 1.25rem;
+    }
+    .article-refs li {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav solid" id="nav">
+    <a href="index.html" class="nav-brand">
+      <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="nav-logo">
+      <span class="nav-name">The University of Chicago<br>Financial Journal</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="journals.html">Journals</a></li>
+      <li><a href="articles.html" class="active">Articles by Topic</a></li>
+    </ul>
+  </nav>
+
+  <section class="section section-white" style="padding-top: calc(var(--nav-height) + 2rem);">
+    <div class="article-page-wrap">
+
+      <a href="articles.html" class="article-page-back">
+        <i class="fa-solid fa-arrow-left"></i> All Articles
+      </a>
+
+      <div class="article-page-eyebrow">
+        <span class="category-tag-solid technology">Finance &amp; Innovation</span>
+        <span class="article-page-issue">Vol. 2, Issue 3 · <a href="winter-2026.html" style="color:inherit;">Winter 2026</a></span>
+      </div>
+
+      <h1 class="article-page-title">Article</h1>
+
+      <div class="article-page-byline">
+        <div>
+          <div class="article-page-author"></div>
+          <div class="article-page-meta">University of Chicago Financial Journal · Winter 2026</div>
+        </div>
+      </div>
+
+      <div class="article-page-body">
+
+        <div class="article-kicker">
+          <span class="category-tag-solid technology">Finance &amp; Innovation</span>
+          <span class="article-issue-tag">Winter 2026</span>
+        </div>
+        <h2 class="article-headline">The Psychedelic Shift: From Counterculture to Capital Markets</h2>
+        <p class="article-dek">Psilocybin, MDMA, and ketamine are moving from criminalization to clinical trials to venture capital. Investment is accelerating faster than the infrastructure to support these therapies safely — and that gap is both an economic risk and a patient safety concern.</p>
+        <div class="article-byline-row">
+          <div>
+            <div class="article-author-name">Indira Naylor</div>
+          </div>
+        </div>
+        <div class="article-body">
+          <p>Psychedelics have undergone a remarkable transformation in less than a decade, shifting from symbols of counterculture to the focus of major financial investment. Substances such as psilocybin, LSD, and MDMA were once classified alongside heroin and widely considered outside the boundaries of legitimate medicine. This shift is captured well by New York Times writer Andrew Jacobs, who describes how, after decades of "demonization and criminalization," psychedelic drugs are now "on the cusp of entering mainstream psychiatry," with "profound implications" for a field that has seen limited pharmacological innovation in recent years.</p>
+
+          <p>This renewed interest is reflected in ongoing clinical trials exploring their use in treating conditions such as major depressive disorder (MDD) and post-traumatic stress disorder (PTSD). At the same time, they are attracting venture capital funding, publicly traded biotechnology firms, and a rapidly expanding network of specialized clinics. The speed of this shift has been striking. It is so rapid that the financial ecosystem surrounding psychedelic therapy now resembles the emerging pharmaceutical industry. Yet many of the clinical standards, regulatory systems, and professional training structures that typically support new medical treatments are still in the process of being built. This rapid shift has caused the psychedelic therapy industry to develop under a venture-capital and consumer-demand model that is advancing faster than clinical validation and regulatory infrastructure, creating a mismatch between financial incentives and medical readiness.</p>
+
+          <h3>A Background into Psychedelic Medicine</h3>
+          <p>Psychedelic medicine is not simply a recreational drug rebranded as healthcare. It is instead a specific treatment in which psychoactive compounds are administered in controlled clinical sessions in a regulated manner. The most common compounds are psilocybin (the active ingredient in "mushrooms"), MDMA, and ketamine. A typical treatment session begins with screening for psychiatric risk, followed by preparatory meetings with clinicians, supervised dosing, and follow-up therapy sessions to help patients process the experience. Therapy is therefore an essential component of the treatment process, as psychedelics are not simply medications that can be prescribed and taken at home. Instead, their effectiveness depends on structured clinical support before, during, and after the dosing session.</p>
+
+          <p>Clinical research has played a central role in the recent resurgence of interest in psychedelic therapies, particularly in their potential to treat difficult psychiatric conditions. For instance, the FDA granted "Breakthrough Therapy Designation" to MDMA for the treatment of posttraumatic stress disorder (PTSD). The study's treatment combined psychotherapeutic techniques with three administrations of MDMA, and found it effective in patients with severe PTSD. Further, psilocybin studies focusing on treatment-resistance depression (TRD) and anxiety have been conducted at institutions such as Johns Hopkins University and Imperial College London. These experiments found a correlation between the administration of psilocybin treatment and improvements to depression symptom severity.</p>
+
+          <h3>The Economic Model</h3>
+          <p>Economically, these treatments differ from traditional pharmaceuticals. A conventional drug scales by manufacturing more pills once approved. Psychedelic therapies scale by providing supervised treatment sessions, which require trained clinicians and dedicated clinical time. Each session can last six to eight hours and often involves two providers monitoring a single patient. The main limiting factor is not production of these compounds, but professional clinician and infrastructure. Therefore, the industry is a combination of innovative biotechnology and healthcare service — the value coming from both the molecule and the therapeutic experience surrounding it. This characteristic has major implications for pricing, insurance coverage, and investment expectations.</p>
+
+          <h3>A Patient-Driven Market</h3>
+          <p>Unlike most medical treatments, psychedelic therapy is not spreading only through doctors, hospitals, or pharmaceutical companies. Public interest has developed alongside the research. Podcasts, documentaries, and online communities frequently discuss "microdosing" psychedelics for mood, creativity, and mental health. Without medical guidance, individuals may misunderstand appropriate dosing, overlook psychiatric risk factors, or attempt unsupervised use outside of controlled therapeutic settings — all of which carry significant safety risks.</p>
+
+          <p>This creates an atypical healthcare market since demand is driven more so from the patients rather than medical innovation. Traditionally, new treatments spread after physicians gain confidence in clinical evidence and begin recommending them. However, in this case interest has grown among patients first, particularly among individuals with disorders who have yet to find relief from existing treatments. The expansion of ketamine clinics in the United States illustrates this shift. Ketamine is legally prescribable, and specialized clinics offer supervised treatment sessions even though insurers and regulators have yet to determine long-term guidelines — consumer demand is outpacing regulatory and institutional standards.</p>
+
+          <p>This matters financially because markets respond to expected future demand. Investors and companies are not reacting to successful clinical trials, but also to visible public interest in alternative mental health treatment. When potential patients already believe a therapy will help them, firms anticipate a ready customer base once regulations allow broader access. However, when consumer demand is intense, it can create pressure to commercialize treatments before standardized training and safety protocols are fully established.</p>
+
+          <h3>The Appeal of Investing in Psychedelics</h3>
+          <p>Over the past several years, many companies focused on psychedelic-assisted treatments have gone public, including Compass Pathways, MindMed, and Atai Life Sciences. Venture capital firms such as Noetic Fund and Christian Angermayer — a major early backer of Atai Life Sciences — have funded drug development and clinic networks designed to deliver supervised treatments. Much of this investment reflects a broader shift in healthcare markets toward mental health services, where traditional antidepressants often show limited effectiveness for patients with treatment-resistant depression. For investors, psychedelics appear to offer both a large unmet medical need and the possibility of patentable treatment protocols.</p>
+
+          <p>However, the industry does not resemble a typical pharmaceutical market because psychedelic therapies scale through treatment capacity and delivery rather than drug production. Each treatment involves significant professional labor, and therefore revenue depends less on chemical production and more on availability of trained therapists and clinical facilities. As a result, the rapid influx of investment and commercial interest has outpaced the development of the clinical workforce, regulatory frameworks, and infrastructure needed to support these therapies at scale. In this sense, the psychedelic medicine market is expanding more like a specialized healthcare provider than a traditional mass-manufactured drug company.</p>
+
+          <p>This matters for investor valuation. Financial markets often value early pharmaceutical companies based on the expectation of approval and its potential for rapid expansion and large prescription volumes. However, psychedelic therapies do not follow this pattern because they require insurance reimbursement, training programs, and regulated supervision. This means that investment capital is entering the industry on a pharmaceutical timeline, while delivery of care and revenue is more so on a healthcare services timeline. This gap is an economic risk surrounding the sector.</p>
+
+          <h3>Innovation Without Infrastructure</h3>
+          <p>Modern medicine typically expands through a structured process of establishing safety and effectiveness through clinical trials, the development of treatment guidelines, guided training for physicians, reimbursement from insurers, and finally widespread adoption. Psychedelic therapy is developing in a different order. Investment, clinic expansion, and consumer demand are growing while infrastructure and regulatory guidelines are yet to be established.</p>
+
+          <p>This mismatch matters economically because healthcare is highly regulated for a reason. Psychedelic-assisted treatments involve patients with serious psychiatric conditions and require supervised clinical sessions that include preparation, dosing, and follow-up therapy. Determining who qualifies for treatment, how providers should be trained, and how risks are mitigated requires time. Financial markets, however, run on faster timelines that are based on expectations.</p>
+
+          <p>The result is a familiar pattern in innovation-driven industries: capital moves faster than infrastructure. Venture capital funding and public markets may price psychedelic companies based on expectations of rapid expansion in treatment demand. However, if regulations become stricter, insurance reimbursement provides limited, or training requirements constrain the number of qualified providers, revenue growth may fall short of these expectations. In this scenario, companies could face valuation corrections as the financial market adjusts to the slower realities of healthcare implementation.</p>
+
+          <p>Psychedelic therapies may become an important tool in mental health care, and early research shows incredible potential and real improvements to mental health in patients. The downside is timing: investment and public demand are growing faster than the systems needed to deliver treatment safely. Regulation, training, and insurance coverage are still developing. If commercialization moves ahead of infrastructure, both financial expectations and patient safety could suffer. The central risk facing the psychedelic therapy industry is therefore not simply whether treatments work, but whether the healthcare system can safely scale them at the pace financial markets are currently assuming.</p>
+        </div>
+      
+      </div>
+
+      <div class="article-page-footer">
+        <a href="articles.html" class="btn btn-outline-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          <i class="fa-solid fa-arrow-left"></i> Back to All Articles
+        </a>
+        <a href="winter-2026.html" class="btn btn-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          Read Full Issue
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="footer-logo">
+          <span class="footer-name">The University of Chicago<br>Financial Journal</span>
+        </div>
+        <p class="footer-tagline">A student-led publication dedicated to making finance accessible, rigorous, and relevant to the UChicago community.</p>
+        <div class="footer-social">
+          <a href="mailto:uchicagofj@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="journals.html">Journals</a>
+          <a href="articles.html">Articles by Topic</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Issues</div>
+        <div class="footer-links">
+          <a href="winter-2026.html">Winter 2026</a>
+          <a href="fall-2025.html">Fall 2025</a>
+          <a href="spring-2025.html">Spring 2025</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <div class="footer-links">
+          <a href="about.html#join">Join the Journal</a>
+          <a href="mailto:uchicagofj@gmail.com">Contact Us</a>
+          <a href="about.html#team">Meet the Team</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 The University of Chicago Financial Journal. All rights reserved.</span>
+      <span>University of Chicago &middot; Hyde Park, Chicago</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

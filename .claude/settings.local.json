@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(open:*)",
+      "Bash(npx surge:*)",
+      "Bash(pdftotext \"/Users/lucasawad/Desktop/ClaudeFolder/UChicago Financial Journal Website/Articles/UFJ Fall 2025 - Google Docs.pdf\" -)",
+      "Bash(brew install *)",
+      "Bash(pdftotext \"/Users/lucasawad/Desktop/ClaudeFolder/UChicago Financial Journal Website/Articles/UFJ Winter 2026 - Google Docs.pdf\" /tmp/winter2026.txt)",
+      "Read(//tmp/**)",
+      "Bash(python3 *)",
+      "Bash(xargs sed *)",
+      "Bash(git *)"
+    ]
+  }
+}

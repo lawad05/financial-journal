@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Article — The University of Chicago Financial Journal">
+  <title>Article — UFJ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .article-page-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+    .article-page-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 2.5rem;
+      transition: color var(--transition);
+    }
+    .article-page-back:hover { color: var(--crimson); }
+    .article-page-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-issue {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .article-page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-byline {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+    .article-page-author {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .article-page-meta {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .article-page-body h2,
+    .article-page-body h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--text-dark);
+      margin: 2rem 0 0.75rem;
+    }
+    .article-page-body h2 { font-size: 1.4rem; }
+    .article-page-body h3 { font-size: 1.15rem; }
+    .article-page-body p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body ol,
+    .article-page-body ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body li {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .article-page-footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .article-refs {
+      background: var(--off-white);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    .article-refs h3 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .article-refs ol {
+      padding-left: 1.25rem;
+    }
+    .article-refs li {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav solid" id="nav">
+    <a href="index.html" class="nav-brand">
+      <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="nav-logo">
+      <span class="nav-name">The University of Chicago<br>Financial Journal</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="journals.html">Journals</a></li>
+      <li><a href="articles.html" class="active">Articles by Topic</a></li>
+    </ul>
+  </nav>
+
+  <section class="section section-white" style="padding-top: calc(var(--nav-height) + 2rem);">
+    <div class="article-page-wrap">
+
+      <a href="articles.html" class="article-page-back">
+        <i class="fa-solid fa-arrow-left"></i> All Articles
+      </a>
+
+      <div class="article-page-eyebrow">
+        <span class="category-tag-solid markets">Markets</span>
+        <span class="article-page-issue">Vol. 2, Issue 2 · <a href="fall-2025.html" style="color:inherit;">Fall 2025</a></span>
+      </div>
+
+      <h1 class="article-page-title">Article</h1>
+
+      <div class="article-page-byline">
+        <div>
+          <div class="article-page-author"></div>
+          <div class="article-page-meta">University of Chicago Financial Journal · Fall 2025</div>
+        </div>
+      </div>
+
+      <div class="article-page-body">
+
+        <div class="article-kicker">
+          <span class="category-tag-solid markets">Markets</span>
+          <span class="article-issue-tag">Fall 2025</span>
+        </div>
+        <h2 class="article-headline">When the Bull Market Leaves the Drive-Thru: Fast Food's Quiet Dependence on Big Tech Gains</h2>
+        <p class="article-dek">Lower-income Americans are quietly pulling back on fast food, while higher-income, stock-owning households keep spending. The QSR sector's hidden question: what happens when the tech tailwind disappears?</p>
+        <div class="article-byline-row">
+          <div>
+            <div class="article-author-name">Antonio Macedo</div>
+          </div>
+        </div>
+        <div class="article-body">
+          <p>There seems to be a contradiction in the U.S. economy: restaurant operators complain about falling foot traffic and cautious customers, yet aggregate consumer spending and the stock market remain strong. The answer to that puzzle sits in two places: the drive-thru and the trading screen. Lower-income Americans are quietly pulling back on fast food, while higher income, stock owning households keep spending thanks to a prolonged, big tech-driven bull market. The question for the QSR sector isn't just if traffic will rebound — it's what happens if the market tailwind disappears.</p>
+
+          <h3>The "Recession" That Doesn't Show Up in GDP</h3>
+          <p>Recent earnings calls from big QSR names paint a consistent picture of weak traffic, especially among budget-conscious customers. In the first quarter of 2025, McDonald's reported a nearly double digit drop in traffic from low and middle income consumers. It also experienced its largest U.S. same-store sales drop since 2020 and singled out low and middle-income customers as the main source of the decline.</p>
+
+          <p>Industry data back this up. The National Restaurant Association has recorded net declines in customer traffic for eight consecutive months, even as many operators still report positive same-store sales because of higher prices. This consistent traffic decline is one of the most concrete signs that a full blown recession should be occurring within the sector, but it isn't.</p>
+
+          <p>This weakness is easy to miss — consumer spending remains quite strong, and GDP isn't signaling recession. But at the level of a $10 combo meal, the downturn is obvious. For many low-income households, fast food has crossed from "cheap treat" into "luxury." This kind of thinking gives an idea as to why consumer sentiment is at an all time low, but the market is seemingly not reacting accordingly.</p>
+
+          <h3>A Bull Market Props Up the Top Half</h3>
+          <p>On the other side of the split, higher-income households are looking resilient. Studies from the Boston Fed and McKinsey show that spending growth has been much more resilient among consumers earning over six figures, who are less likely to cut back and more likely to maintain or upgrade their purchases.</p>
+
+          <p>The stock market is playing a big role here. Big tech and related giants now represent roughly a third of the S&P 500 on their own, and nearly half if you include adjacent mega-caps. That concentration means that strong performance in a narrow slice of tech can keep the entire index hitting new highs, boosting the wealth of the households most likely to own equities.</p>
+
+          <p>The result: a gigantic yet risky wealth effect. Wealthier consumers, buoyed by portfolio gains and relatively strong wage growth, continue to eat out, travel, and spend. Recent reporting even suggests that for some chains, traffic from higher-income guests is growing nearly as fast as it's falling among low-income diners. This produces a misleadingly stable average.</p>
+
+          <h3>What If the Music Stops?</h3>
+          <p>If QSR is in a recession at the bottom while being propped up by a tech-driven wealth effect at the top, a sharp correction in tech stocks is not just a stock problem — it's also a fast-food problem.</p>
+
+          <p>If the energy crisis is not resolved and big tech momentum stalls, the households currently offsetting low-income weakness could start cutting back as well. The same tech wobble that drags the S&P down could also drag QSR traffic down from the "comfortable" tier of consumers that have been dining out freely.</p>
+
+          <p>That doesn't guarantee a collapse in fast-food demand as people still need convenient meals, but it does remove a hidden stabilizer. QSR chains might be forced to lean harder into value menus, promotional pricing, and cost cutting, pressuring margins and profitability.</p>
+
+          <h3>Two Futures for Fast Food</h3>
+          <p>If the current environment holds, QSR chains can wait out the uncertainty driving down consumer sentiment and causing low income consumers to stay at home. Same-store sales may inch higher as companies lean on pricing, loyalty apps, and menu tweaks, quietly shifting toward higher-margin items and more targeted promotions. Growth will slow, but the model more or less works as management teams refine strategies and ride the market tailwind.</p>
+
+          <p>If that tailwind fades and the tech rally stops, the adjustment becomes more painful. With less support from wealth and confidence effects, QSR brands would have to buy back their customers with real value: sharper discounts, simpler menus, and tighter cost controls. Franchisees might delay remodels, scale back expansion plans, or close weaker stores altogether. In both cases, the sector adapts — either gradually through strategic tweaks, or abruptly through margin compression. But these outcomes remain closely tied to how long the current political and economic uncertainty, and the tech trade beneath it, can last.</p>
+
+          <div class="article-refs">
+            <div class="article-refs-title">Sources</div>
+            <p>Diodato, Chris. "S&P 500 Index Concentration Reaches New Highs." Advisor Perspectives, 21 Jan. 2025.</p>
+            <p>Hagler, Rees, and Dhiren Patki. "Why Has Consumer Spending Remained So Resilient?" Federal Reserve Bank of Boston, 13 Aug. 2025.</p>
+            <p>Krauskopf, Lewis. "AI Stock Wobble Points to US Market Reliance on Tech." Reuters, 6 Nov. 2025.</p>
+            <p>Littman, Julie. "McDonald's US Traffic Slides Due to Economic Uncertainty." Restaurant Dive, 1 May 2025.</p>
+            <p>"Same-Store Sales and Customer Traffic." National Restaurant Association, 31 Oct. 2025.</p>
+            <p>Tinsley, David, et al. "Consumer Checkpoint: The Tale of Two Wallets." Bank of America Institute, Oct. 2025.</p>
+          </div>
+        </div>
+      
+      </div>
+
+      <div class="article-page-footer">
+        <a href="articles.html" class="btn btn-outline-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          <i class="fa-solid fa-arrow-left"></i> Back to All Articles
+        </a>
+        <a href="fall-2025.html" class="btn btn-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          Read Full Issue
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="footer-logo">
+          <span class="footer-name">The University of Chicago<br>Financial Journal</span>
+        </div>
+        <p class="footer-tagline">A student-led publication dedicated to making finance accessible, rigorous, and relevant to the UChicago community.</p>
+        <div class="footer-social">
+          <a href="mailto:uchicagofj@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="journals.html">Journals</a>
+          <a href="articles.html">Articles by Topic</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Issues</div>
+        <div class="footer-links">
+          <a href="winter-2026.html">Winter 2026</a>
+          <a href="fall-2025.html">Fall 2025</a>
+          <a href="spring-2025.html">Spring 2025</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <div class="footer-links">
+          <a href="about.html#join">Join the Journal</a>
+          <a href="mailto:uchicagofj@gmail.com">Contact Us</a>
+          <a href="about.html#team">Meet the Team</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 The University of Chicago Financial Journal. All rights reserved.</span>
+      <span>University of Chicago &middot; Hyde Park, Chicago</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

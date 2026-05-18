@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Article — The University of Chicago Financial Journal">
+  <title>Article — UFJ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .article-page-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+    .article-page-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 2.5rem;
+      transition: color var(--transition);
+    }
+    .article-page-back:hover { color: var(--crimson); }
+    .article-page-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-issue {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .article-page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-byline {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+    .article-page-author {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .article-page-meta {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .article-page-body h2,
+    .article-page-body h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--text-dark);
+      margin: 2rem 0 0.75rem;
+    }
+    .article-page-body h2 { font-size: 1.4rem; }
+    .article-page-body h3 { font-size: 1.15rem; }
+    .article-page-body p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body ol,
+    .article-page-body ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body li {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .article-page-footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .article-refs {
+      background: var(--off-white);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    .article-refs h3 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .article-refs ol {
+      padding-left: 1.25rem;
+    }
+    .article-refs li {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav solid" id="nav">
+    <a href="index.html" class="nav-brand">
+      <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="nav-logo">
+      <span class="nav-name">The University of Chicago<br>Financial Journal</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="journals.html">Journals</a></li>
+      <li><a href="articles.html" class="active">Articles by Topic</a></li>
+    </ul>
+  </nav>
+
+  <section class="section section-white" style="padding-top: calc(var(--nav-height) + 2rem);">
+    <div class="article-page-wrap">
+
+      <a href="articles.html" class="article-page-back">
+        <i class="fa-solid fa-arrow-left"></i> All Articles
+      </a>
+
+      <div class="article-page-eyebrow">
+        <span class="category-tag-solid technology">Technology</span>
+        <span class="article-page-issue">Vol. 2, Issue 1 · <a href="spring-2025.html" style="color:inherit;">Spring 2025</a></span>
+      </div>
+
+      <h1 class="article-page-title">Article</h1>
+
+      <div class="article-page-byline">
+        <div>
+          <div class="article-page-author"></div>
+          <div class="article-page-meta">University of Chicago Financial Journal · Spring 2025</div>
+        </div>
+      </div>
+
+      <div class="article-page-body">
+
+        <div class="article-kicker">
+          <span class="category-tag-solid technology">Technology</span>
+          <span class="article-issue-tag">Spring 2025</span>
+        </div>
+        <h2 class="article-headline">Office Space or Headspace? Wall Street's Remote-Work Reckoning</h2>
+        <p class="article-dek">An analysis of remote vs. in-office work at JPMorgan, Morgan Stanley, and Goldman Sachs.</p>
+        <div class="article-byline-row">
+          <span class="article-author-name">Jack De Picciotto</span>
+        </div>
+        <div class="article-body">
+          <p>Remote work may have felt like a revolution — but for Wall Street's biggest banks, it's starting to look like a costly detour. In the aftermath of the COVID-19 pandemic, firms like JPMorgan, Goldman Sachs, and Morgan Stanley adopted remote policies out of necessity. What began as a stopgap quickly became popular with employees. Yet today, those same firms are walking back that flexibility with force.</p>
+
+          <p>Leaders across these banks contend that remote work, while convenient, erodes the pillars that sustain high-performance finance: mentorship, innovation, culture, and long-term well-being. For a business model built on apprenticeship and rapid, collaborative problem-solving, the hidden costs of staying remote can outweigh the near-term benefits.</p>
+
+          <h4>Mental Health and Well-Being</h4>
+          <p>Employee experience across JPMorgan, Goldman Sachs, and Morgan Stanley reveals a complicated picture. Many at JPMorgan lauded the hybrid period for being "beneficial for mental health, family life and workplace diversity." But the pendulum swung back in early 2025 when JPMorgan announced a full-time office mandate, prompting hundreds of intranet comments about rising stress, commuting costs, and childcare burdens. Roughly 950 employees signed a petition urging the firm to retain hybrid work. CEO Jamie Dimon's town-hall response was blunt: "Don't waste time on it. I don't care how many people sign that petition." The message was clear: employees unhappy with the policy could work elsewhere.</p>
+
+          <p>Goldman Sachs had its own flashpoints. A leaked 2021 internal survey captured how remote work blurred boundaries for juniors: first-year analysts described "inhumane" 100-hour WFH weeks that "severely affected their mental health." "I was not eating, showering or doing anything else other than working from morning until after midnight," wrote one respondent. By 2023, most Goldman staff had returned to the office.</p>
+
+          <p>Morgan Stanley charted a similar course: when its wealth management division implemented a four-days-in-office guideline for 2025, the memo acknowledged pandemic fatigue but asserted that "the vast majority of us do our best work when we are together in person."</p>
+
+          <h4>Mentorship and Apprenticeship</h4>
+          <p>If there is one theme uniting all three firms, it is the conviction that apprenticeship cannot thrive remotely. JPMorgan's Jamie Dimon has tied the office mandate directly to training the next generation: "Being together greatly enhances mentoring, learning, brainstorming and getting things done." He has warned that fully remote arrangements "don't work for young people," undermining spontaneity, culture, and management.</p>
+
+          <p>Goldman CEO David Solomon describes Goldman as an "apprenticeship culture" where in-office time is foundational to teaching and innovation. "For a business like ours, which is an innovative, collaborative apprenticeship culture, this is not ideal for us" to be remote. Former Morgan Stanley CEO James Gorman put it most starkly: "This is not an employee choice." People don't choose their promotion or pay, and they don't choose to stay home five days a week.</p>
+
+          <h4>Innovation and the Hybrid Reality</h4>
+          <p>A second shared rationale is that proximity improves creativity and execution. JPMorgan, Goldman, and Morgan Stanley each argue that when teams are co-located, ideas flow and decisions accelerate. Goldman ties its innovative edge to physical proximity: traders shouting across a floor, bankers huddling to refine a model, the "lightbulb moments" that Slack can't replicate.</p>
+
+          <p>Despite hard lines in public, none of the three is pretending it's 2019. Hybrid has survived, especially where teams set clear in-person anchors — shared office days for mentoring, pipeline reviews, and training — and reserve remote days for deep work or logistics. The difference is the default: in-office is the norm to which exceptions are made, not vice versa.</p>
+
+          <p>For top investment banks, remote work isn't just a logistical choice; it's a strategic bet on how excellence is produced. The evidence from JPMorgan, Goldman Sachs, and Morgan Stanley points to a consistent view: while working from home can boost morale and convenience for some, it also blurs boundaries, weakens mentorship, and dulls the informal, fast-paced collaboration that drives innovation. The signal for future analysts is unmistakable: flexibility is valuable, but proximity remains power.</p>
+        </div>
+      
+      </div>
+
+      <div class="article-page-footer">
+        <a href="articles.html" class="btn btn-outline-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          <i class="fa-solid fa-arrow-left"></i> Back to All Articles
+        </a>
+        <a href="spring-2025.html" class="btn btn-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          Read Full Issue
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="footer-logo">
+          <span class="footer-name">The University of Chicago<br>Financial Journal</span>
+        </div>
+        <p class="footer-tagline">A student-led publication dedicated to making finance accessible, rigorous, and relevant to the UChicago community.</p>
+        <div class="footer-social">
+          <a href="mailto:uchicagofj@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="journals.html">Journals</a>
+          <a href="articles.html">Articles by Topic</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Issues</div>
+        <div class="footer-links">
+          <a href="winter-2026.html">Winter 2026</a>
+          <a href="fall-2025.html">Fall 2025</a>
+          <a href="spring-2025.html">Spring 2025</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <div class="footer-links">
+          <a href="about.html#join">Join the Journal</a>
+          <a href="mailto:uchicagofj@gmail.com">Contact Us</a>
+          <a href="about.html#team">Meet the Team</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 The University of Chicago Financial Journal. All rights reserved.</span>
+      <span>University of Chicago &middot; Hyde Park, Chicago</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

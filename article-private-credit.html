@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Article — The University of Chicago Financial Journal">
+  <title>Article — UFJ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .article-page-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+    .article-page-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 2.5rem;
+      transition: color var(--transition);
+    }
+    .article-page-back:hover { color: var(--crimson); }
+    .article-page-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-issue {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .article-page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-byline {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+    .article-page-author {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .article-page-meta {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .article-page-body h2,
+    .article-page-body h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--text-dark);
+      margin: 2rem 0 0.75rem;
+    }
+    .article-page-body h2 { font-size: 1.4rem; }
+    .article-page-body h3 { font-size: 1.15rem; }
+    .article-page-body p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body ol,
+    .article-page-body ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body li {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .article-page-footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .article-refs {
+      background: var(--off-white);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    .article-refs h3 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .article-refs ol {
+      padding-left: 1.25rem;
+    }
+    .article-refs li {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav solid" id="nav">
+    <a href="index.html" class="nav-brand">
+      <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="nav-logo">
+      <span class="nav-name">The University of Chicago<br>Financial Journal</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="journals.html">Journals</a></li>
+      <li><a href="articles.html" class="active">Articles by Topic</a></li>
+    </ul>
+  </nav>
+
+  <section class="section section-white" style="padding-top: calc(var(--nav-height) + 2rem);">
+    <div class="article-page-wrap">
+
+      <a href="articles.html" class="article-page-back">
+        <i class="fa-solid fa-arrow-left"></i> All Articles
+      </a>
+
+      <div class="article-page-eyebrow">
+        <span class="category-tag-solid markets">Markets</span>
+        <span class="article-page-issue">Vol. 2, Issue 2 · <a href="fall-2025.html" style="color:inherit;">Fall 2025</a></span>
+      </div>
+
+      <h1 class="article-page-title">Article</h1>
+
+      <div class="article-page-byline">
+        <div>
+          <div class="article-page-author"></div>
+          <div class="article-page-meta">University of Chicago Financial Journal · Fall 2025</div>
+        </div>
+      </div>
+
+      <div class="article-page-body">
+
+        <div class="article-kicker">
+          <span class="category-tag-solid markets">Markets</span>
+          <span class="article-issue-tag">Fall 2025</span>
+        </div>
+        <h2 class="article-headline">The Rise of Private Credit: Are Banks Being Replaced by Shadow Lenders?</h2>
+        <p class="article-dek">A $2 trillion private credit boom is reshaping corporate lending — with Blackstone, Apollo, and Ares stepping in where banks have retreated. But the opacity, leverage, and regulatory gaps echo the pre-2008 shadow banking playbook.</p>
+        <div class="article-byline-row">
+          <div>
+            <div class="article-author-name">Jack De Picciotto</div>
+          </div>
+        </div>
+        <div class="article-body">
+          <p>Traditional U.S. banks are retreating from high-risk lending, constrained by post-2008 regulations and volatile markets. Into the void have stepped private credit funds — nonbank lenders like Blackstone Credit, Apollo Global Management, and Ares Management — fueling a $2 trillion private credit boom. These shadow lenders now finance everything from leveraged buyouts to middle-market acquisitions, raising urgent questions about whether credit risk is quietly migrating into a largely unregulated, opaque financial system. This shift does not simply represent innovation; it may signal a dangerous repeat of the shadow banking buildup that helped trigger the 2008 financial crisis.</p>
+
+          <h3>Banks Pull Back</h3>
+          <p>In the wake of the financial crisis, banks faced tougher capital rules and oversight. This made financing speculative or highly leveraged deals more expensive and less attractive. Rising rates and volatile markets since 2022 have added to the caution. When banks couldn't offload $80 billion in buyout loans in 2022, many reduced exposure further.</p>
+
+          <p>As a result, syndicated loan issuance declined 15% year-on-year in early 2025. Former Goldman Sachs executive Mike Koester noted that volatility makes it harder for banks to price and place syndicated deals. This risk aversion opened the door for private lenders.</p>
+
+          <h3>Private Credit's Rapid Rise</h3>
+          <p>Private credit refers to loans made outside the traditional banking system. These direct loans bypass bond markets and often involve just a few funds. Private credit assets under management have grown from a few hundred billion in 2010 to over $1 trillion today, rivaling the high-yield and leveraged loan markets. Growth surged after 2019 as low rates pushed investors toward higher-yield alternatives.</p>
+
+          <p>Major players like Apollo and Ares now manage credit portfolios worth hundreds of billions. Apollo's credit business alone jumped from $75 billion in 2018 to $268 billion in 2023. BlackRock expects global assets in the sector to reach $3.5 trillion by 2028.</p>
+
+          <p>Private funds can execute deals quickly, especially during market stress. In 2025, U.S.-China tariff tensions disrupted syndicated markets. Banks paused, but private lenders stepped in. Their flexibility and speed are giving them an edge.</p>
+
+          <h3>Mega-Deals Go Private</h3>
+          <p>Direct lenders now finance billion-dollar transactions once handled by banks:</p>
+          <ul>
+            <li>Zendesk (2022): $10 billion LBO financed by a consortium of direct lenders.</li>
+            <li>Jeppesen (2023): Blackstone and Apollo provided $4 billion in debt.</li>
+            <li>Vista Equity (2023): Issued $4.8 billion in private credit for a software acquisition.</li>
+            <li>Noosa Yogurt (2025): A $200 million unitranche loan replaced a Citigroup-led bank loan.</li>
+          </ul>
+          <p>Private credit financed 60 percent of U.S. leveraged buyouts in 2023, up from just 7 percent five years earlier. While banks have regained footing in calmer conditions, direct lenders have permanently shifted the credit landscape.</p>
+
+          <h3>Risks in the Shadows</h3>
+          <p>Despite its benefits, the growth of private credit brings a set of complex and potentially destabilizing risks. Chief among them is opacity. Unlike public markets, private credit operates behind closed doors. These loans are not rated by credit agencies or regularly traded, and their valuations are based on internal models rather than market prices. This can delay the recognition of losses and mask the true volatility of credit portfolios.</p>
+
+          <p>Another concern is the steady weakening of underwriting standards. Borrowers in the private credit space often carry higher debt loads and benefit from looser or even non-existent financial covenants. These light protections reduce lender control and bear unsettling similarities to the covenant-lite structures that proliferated ahead of the 2008 crisis.</p>
+
+          <p>The creditworthiness of borrowers is also a point of vulnerability. Many firms turning to private credit are smaller, highly leveraged, and lack public ratings. According to the IMF, more than a third of these borrowers now have interest expenses that exceed their earnings — an unsustainable position in a high-rate environment.</p>
+
+          <p>Liquidity mismatch further amplifies the danger. While most private credit funds lock in investor capital for years, a growing number are offering semi-liquid structures, particularly to retail investors. If redemptions spike during a downturn, these funds may be forced to sell assets under pressure, magnifying market stress.</p>
+
+          <p>Additionally, the notion that banks are insulated from this shift is misleading. Many provide credit lines to private funds, invest in them, or structure their deals. Federal Reserve data suggests banks have roughly $79 billion in such exposures. Should private credit funds falter, the effects would likely reverberate across the regulated banking sector.</p>
+
+          <p>Finally, regulatory oversight has not kept pace. Private credit funds face no capital requirements, stress testing, or consistent disclosure mandates. While the SEC has proposed modest reforms, oversight remains piecemeal. Without stronger frameworks, risks could accumulate undetected until they spill over into broader markets.</p>
+
+          <p>As one investor recently remarked, shadow lenders now write the biggest checks in corporate America. Their growing role has turned them into kingmakers, but with little public accountability.</p>
+
+          <h3>A Crisis Repeating in Slow Motion?</h3>
+          <p>This expansion of private credit mirrors the structure and logic of the pre-2008 shadow banking system: financial risk pushed into the unregulated corners of the market, where return-seeking behavior overwhelms prudence. Though modern private credit funds differ in funding structure and asset type, their explosive growth, lack of transparency, and weak oversight are all red flags.</p>
+
+          <p>Jamie Dimon and IMF officials have voiced alarm. Investors believe they are protected by structure and sophistication, but the last crisis taught that correlation, leverage, and poor underwriting can unravel with speed. The assumption that these funds will quietly absorb losses may prove overly optimistic. Unlike banks, they are not required to carry capital buffers or submit to stress tests. That makes the system more fragile, not less.</p>
+
+          <p>As one advisor put it, this isn't innovation. It's déjà vu from 2008, only bigger.</p>
+
+          <p>Private credit is not merely replacing banks in certain lending markets. It is recreating the same systemic blind spots that led to the last financial crisis, but on a much larger scale. Regulators must not mistake complexity for resilience. Without robust oversight and greater transparency, private credit is poised to become the next fault line in global finance.</p>
+
+          <div class="article-refs">
+            <div class="article-refs-title">Sources</div>
+            <p>Fillat, José L., et al. "Could the Growth of Private Credit Pose a Risk to Financial System Stability?" Federal Reserve Bank of Boston, 21 May 2025.</p>
+            <p>Anand, Nupur, and Saeed Azhar. "Companies turn to private credit during tariff turmoil for loans." Reuters, 29 May 2025.</p>
+            <p>Amure, Tobi Opeyemi. "Jamie Dimon of JPMorgan Raises Alarm Over $2 Trillion Industry's Influence on Wall Street." Investopedia, 26 Aug. 2025.</p>
+            <p>Guilford, Jonathan, and Neil Unmack. "Direct lenders' golden moment is over." Reuters Breakingviews, 11 Oct. 2024.</p>
+            <p>International Monetary Fund. "Fast-Growing $2 Trillion Private Credit Market Warrants Closer Watch." IMF Blog, 8 Apr. 2024.</p>
+          </div>
+        </div>
+      
+      </div>
+
+      <div class="article-page-footer">
+        <a href="articles.html" class="btn btn-outline-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          <i class="fa-solid fa-arrow-left"></i> Back to All Articles
+        </a>
+        <a href="fall-2025.html" class="btn btn-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          Read Full Issue
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="footer-logo">
+          <span class="footer-name">The University of Chicago<br>Financial Journal</span>
+        </div>
+        <p class="footer-tagline">A student-led publication dedicated to making finance accessible, rigorous, and relevant to the UChicago community.</p>
+        <div class="footer-social">
+          <a href="mailto:uchicagofj@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="journals.html">Journals</a>
+          <a href="articles.html">Articles by Topic</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Issues</div>
+        <div class="footer-links">
+          <a href="winter-2026.html">Winter 2026</a>
+          <a href="fall-2025.html">Fall 2025</a>
+          <a href="spring-2025.html">Spring 2025</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <div class="footer-links">
+          <a href="about.html#join">Join the Journal</a>
+          <a href="mailto:uchicagofj@gmail.com">Contact Us</a>
+          <a href="about.html#team">Meet the Team</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 The University of Chicago Financial Journal. All rights reserved.</span>
+      <span>University of Chicago &middot; Hyde Park, Chicago</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

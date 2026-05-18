@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About the University of Chicago Financial Journal — our mission, team, and how to get involved.">
+  <title>About Us — The University of Chicago Financial Journal</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* ── Coverage Areas ── */
+    .coverage-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .coverage-item {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      border-left: 4px solid;
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .coverage-item:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .coverage-item.markets    { border-color: #2E6DA0; }
+    .coverage-item.technology { border-color: #3D2B7A; }
+    .coverage-item.poliecon   { border-color: #2D6B4A; }
+    .coverage-item.oncampus   { border-color: #7A4800; }
+
+    .coverage-item-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .coverage-item h4 {
+      font-size: 1rem;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .coverage-item p {
+      font-size: 0.875rem;
+      color: var(--text-light);
+      line-height: 1.65;
+    }
+
+    /* ── Team Section ── */
+    .team-section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .team-card-inner {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .team-card-inner:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    /* ── Join Section ── */
+    .join-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .join-item {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .join-item-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .join-item h4 {
+      color: white;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 0.5rem;
+    }
+
+    .join-item p {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .coverage-grid { grid-template-columns: 1fr; }
+      .join-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       NAVIGATION
+  ════════════════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-brand">
+      <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="nav-logo">
+      <span class="nav-name">The University of Chicago<br>Financial Journal</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About Us</a></li>
+      <li><a href="journals.html">Journals</a></li>
+      <li><a href="articles.html">Articles by Topic</a></li>
+    </ul>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       PAGE HERO
+  ════════════════════════════════════════ -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-hero-eyebrow">The University of Chicago Financial Journal</div>
+      <h1 class="page-hero-title">About Us</h1>
+      <div class="page-hero-divider"></div>
+      <p class="page-hero-subtitle">A student-led publication dedicated to making finance understandable, rigorous, and relevant for the entire UChicago community.</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       MISSION
+  ════════════════════════════════════════ -->
+  <section class="section section-white">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <span class="section-eyebrow">Our Mission</span>
+          <h2>The University of Chicago Financial Journal</h2>
+          <div class="divider" style="margin: 1rem 0 1.5rem;"></div>
+          <p>The UChicago Financial Journal is a student-run publication founded in 2023 to make finance understandable, relevant, and engaging for students across the University of Chicago. Open to all years and majors, the Journal gives students the chance to research, analyze, and publish original work on real financial questions.</p>
+          <p>Through argumentative essays, research-driven commentary, and timely analysis across areas like technology, political economy, markets, and campus- and Chicago-level financial news, our goal is twofold: to develop student talent — improving clarity, argumentation, and technical fluency — and to inform our campus by delivering accessible, high-quality perspectives on the forces shaping markets, policy, and daily life.</p>
+          <p>The Journal exists to lower the barrier to "speaking finance" — because understanding why companies move, why rates matter, or why elections move currencies shouldn't just belong to people recruiting for banking. It should be part of being an informed student here.</p>
+        </div>
+        <div class="about-visual">
+          <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       WHAT WE DO — PILLARS
+  ════════════════════════════════════════ -->
+  <section class="section section-offwhite">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-eyebrow">What We Do</span>
+        <h2 class="section-title">Three Core Goals</h2>
+        <p class="section-subtitle">Everything we publish serves one of three purposes.</p>
+      </div>
+
+      <div class="pillars-grid">
+
+        <div class="pillar fade-up">
+          <div class="pillar-icon">📊</div>
+          <h3>Research & Publish</h3>
+          <p>We give students the platform and editorial support to research, draft, and publish original financial analysis — covering everything from equity valuations to macroeconomic policy.</p>
+        </div>
+
+        <div class="pillar fade-up fade-up-delay-1">
+          <div class="pillar-icon">🎓</div>
+          <h3>Develop Student Talent</h3>
+          <p>Members work in coverage groups that function like mini research teams, tracking a specific industry or theme over time — building conviction, analytical clarity, and the ability to communicate finance in plain English.</p>
+        </div>
+
+        <div class="pillar fade-up fade-up-delay-2">
+          <div class="pillar-icon">🌍</div>
+          <h3>Inform Campus</h3>
+          <p>We deliver accessible, high-quality perspectives on the forces shaping markets, policy, and daily life — making financial literacy a part of campus culture, not just a recruiting tool.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       COVERAGE AREAS
+  ════════════════════════════════════════ -->
+  <section class="section section-white">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about-text">
+          <span class="section-eyebrow">How We're Organized</span>
+          <h2>Coverage Groups</h2>
+          <div class="divider" style="margin: 1rem 0 1.5rem;"></div>
+          <p>The Journal operates coverage groups that function like mini research teams. Each group tracks a specific industry or theme, monitors earnings, regulation, and macro drivers, and produces ongoing briefings and deeper pieces.</p>
+          <p>By following an industry over time instead of writing one-off assignments, members learn to think like analysts — building conviction and communicating finance with precision.</p>
+        </div>
+
+        <div class="coverage-grid">
+
+          <div class="coverage-item markets fade-up">
+            <div class="coverage-item-icon">📈</div>
+            <h4>Markets</h4>
+            <p>Equities, fixed income, commodities, and macro trends driving global financial markets.</p>
+          </div>
+
+          <div class="coverage-item technology fade-up fade-up-delay-1">
+            <div class="coverage-item-icon">💡</div>
+            <h4>Technology</h4>
+            <p>Fintech, AI in finance, digital assets, and technology's structural impact on the economy.</p>
+          </div>
+
+          <div class="coverage-item poliecon fade-up fade-up-delay-2">
+            <div class="coverage-item-icon">🏛️</div>
+            <h4>Political Economy</h4>
+            <p>Fiscal policy, trade, geopolitics, regulatory analysis, and the intersection of power and capital.</p>
+          </div>
+
+          <div class="coverage-item" style="border-color: #5A6B2A;" fade-up fade-up-delay-3">
+            <div class="coverage-item-icon">💊</div>
+            <h4>Finance &amp; Innovation</h4>
+            <p>Emerging financial tools, healthcare economics, quantitative methods, and capital markets at the frontier.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       TEAM
+  ════════════════════════════════════════ -->
+  <section class="section section-offwhite" id="team">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-eyebrow">The People Behind the Journal</span>
+        <h2 class="section-title">Our Team</h2>
+        <p class="section-subtitle">Board members, editors, and writers from across the University of Chicago.</p>
+      </div>
+
+      <!-- Founders -->
+      <div class="team-section-label">Founders</div>
+      <div class="team-grid leaders" style="margin-bottom: 3rem;">
+
+        <div class="team-card fade-up">
+          <div class="team-card-inner">
+            <div class="team-avatar large">AB</div>
+            <div class="team-name">Ana Barcinski</div>
+            <div class="team-role">Founder</div>
+            <a href="https://www.linkedin.com/in/ana-barcinski/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.75rem;font-size:0.78rem;color:var(--text-muted);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--crimson)'" onmouseout="this.style.color='var(--text-muted)'"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+          </div>
+        </div>
+
+        <div class="team-card fade-up fade-up-delay-1">
+          <div class="team-card-inner">
+            <div class="team-avatar large">OH</div>
+            <div class="team-name">Owen Humphries</div>
+            <div class="team-role">Founder</div>
+            <a href="https://www.linkedin.com/in/owen-humphries-137096214/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.75rem;font-size:0.78rem;color:var(--text-muted);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--crimson)'" onmouseout="this.style.color='var(--text-muted)'"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+          </div>
+        </div>
+
+        <div class="team-card fade-up fade-up-delay-2">
+          <div class="team-card-inner">
+            <div class="team-avatar large">MM</div>
+            <div class="team-name">Mauricio Malavenda</div>
+            <div class="team-role">Founder</div>
+            <a href="https://www.linkedin.com/in/mauricio-malavenda-43a899254/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.75rem;font-size:0.78rem;color:var(--text-muted);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--crimson)'" onmouseout="this.style.color='var(--text-muted)'"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Leadership -->
+      <div class="team-section-label">Leadership</div>
+      <div class="team-grid leaders" style="margin-bottom: 3rem;">
+
+        <div class="team-card fade-up">
+          <div class="team-card-inner">
+            <div class="team-avatar large">MC</div>
+            <div class="team-name">Mateo Castaneda</div>
+            <div class="team-role">Deputy Editor</div>
+            <a href="https://www.linkedin.com/in/mateocastaneda/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.75rem;font-size:0.78rem;color:var(--text-muted);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--crimson)'" onmouseout="this.style.color='var(--text-muted)'"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+          </div>
+        </div>
+
+        <div class="team-card fade-up fade-up-delay-1">
+          <div class="team-card-inner">
+            <div class="team-avatar large">YR</div>
+            <div class="team-name">Yoav Rosenthal</div>
+            <div class="team-role">Deputy Editor</div>
+            <a href="https://www.linkedin.com/in/yoav-rosenthal-a19a8a215/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.75rem;font-size:0.78rem;color:var(--text-muted);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--crimson)'" onmouseout="this.style.color='var(--text-muted)'"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+          </div>
+        </div>
+
+        <div class="team-card fade-up fade-up-delay-2">
+          <div class="team-card-inner">
+            <div class="team-avatar large">SP</div>
+            <div class="team-name">Sophia Paesano</div>
+            <div class="team-role">Deputy Editor</div>
+            <a href="https://www.linkedin.com/in/sophiapaesano/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.75rem;font-size:0.78rem;color:var(--text-muted);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--crimson)'" onmouseout="this.style.color='var(--text-muted)'"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Writers -->
+      <div class="team-section-label">Writers</div>
+      <div class="team-grid">
+
+        <div class="team-card fade-up">
+          <div class="team-card-inner">
+            <div class="team-avatar" style="background: var(--poliecon);">AG</div>
+            <div class="team-name">Armaan Gill</div>
+            <div class="team-role" style="color: #2D6B4A;">Political Economy</div>
+          </div>
+        </div>
+
+        <div class="team-card fade-up fade-up-delay-1">
+          <div class="team-card-inner">
+            <div class="team-avatar" style="background: var(--poliecon);">EH</div>
+            <div class="team-name">Ely Hamani</div>
+            <div class="team-role" style="color: #2D6B4A;">Political Economy</div>
+          </div>
+        </div>
+
+        <div class="team-card fade-up fade-up-delay-2">
+          <div class="team-card-inner">
+            <div class="team-avatar" style="background: var(--poliecon);">ES</div>
+            <div class="team-name">Emily Sensenich</div>
+            <div class="team-role" style="color: #2D6B4A;">Political Economy</div>
+          </div>
+        </div>
+
+        <div class="team-card fade-up fade-up-delay-3">
+          <div class="team-card-inner">
+            <div class="team-avatar" style="background: var(--poliecon);">RS</div>
+            <div class="team-name">Rose Shulman-Garcia</div>
+            <div class="team-role" style="color: #2D6B4A;">Political Economy</div>
+          </div>
+        </div>
+
+        <div class="team-card fade-up">
+          <div class="team-card-inner">
+            <div class="team-avatar" style="background: var(--markets);">AM</div>
+            <div class="team-name">Antonio Macedo</div>
+            <div class="team-role" style="color: #2E6DA0;">Markets</div>
+          </div>
+        </div>
+
+        <div class="team-card fade-up fade-up-delay-1">
+          <div class="team-card-inner">
+            <div class="team-avatar" style="background: var(--markets);">JD</div>
+            <div class="team-name">Jack De Picciotto</div>
+            <div class="team-role" style="color: #2E6DA0;">Markets</div>
+          </div>
+        </div>
+
+        <div class="team-card fade-up fade-up-delay-2">
+          <div class="team-card-inner">
+            <div class="team-avatar" style="background: var(--markets);">TD</div>
+            <div class="team-name">Thibaud Dubois-Denis</div>
+            <div class="team-role" style="color: #2E6DA0;">Markets</div>
+          </div>
+        </div>
+
+        <div class="team-card fade-up fade-up-delay-3">
+          <div class="team-card-inner">
+            <div class="team-avatar" style="background: var(--markets);">ZM</div>
+            <div class="team-name">Zoe McDonald</div>
+            <div class="team-role" style="color: #2E6DA0;">Markets</div>
+          </div>
+        </div>
+
+        <div class="team-card fade-up">
+          <div class="team-card-inner">
+            <div class="team-avatar" style="background: var(--markets);">SC</div>
+            <div class="team-name">Sam Cohn</div>
+            <div class="team-role" style="color: #2E6DA0;">Markets</div>
+          </div>
+        </div>
+
+        <div class="team-card fade-up fade-up-delay-1">
+          <div class="team-card-inner">
+            <div class="team-avatar" style="background: var(--markets);">FG</div>
+            <div class="team-name">Fabricio Grillo</div>
+            <div class="team-role" style="color: #2E6DA0;">Markets</div>
+          </div>
+        </div>
+
+        <div class="team-card fade-up fade-up-delay-2">
+          <div class="team-card-inner">
+            <div class="team-avatar" style="background: var(--markets);">NK</div>
+            <div class="team-name">Nathaniel Kelley</div>
+            <div class="team-role" style="color: #2E6DA0;">Markets</div>
+          </div>
+        </div>
+
+        <div class="team-card fade-up fade-up-delay-3">
+          <div class="team-card-inner">
+            <div class="team-avatar" style="background: var(--markets);">PS</div>
+            <div class="team-name">Percy Stillman</div>
+            <div class="team-role" style="color: #2E6DA0;">Markets</div>
+          </div>
+        </div>
+
+        <div class="team-card fade-up">
+          <div class="team-card-inner">
+            <div class="team-avatar" style="background: var(--technology);">TK</div>
+            <div class="team-name">Tomas Kay</div>
+            <div class="team-role" style="color: #3D2B7A;">Finance &amp; Innovation</div>
+          </div>
+        </div>
+
+        <div class="team-card fade-up fade-up-delay-1">
+          <div class="team-card-inner">
+            <div class="team-avatar" style="background: var(--technology);">TK</div>
+            <div class="team-name">Taran Kamat</div>
+            <div class="team-role" style="color: #3D2B7A;">Finance &amp; Innovation</div>
+          </div>
+        </div>
+
+        <div class="team-card fade-up fade-up-delay-2">
+          <div class="team-card-inner">
+            <div class="team-avatar" style="background: var(--technology);">IN</div>
+            <div class="team-name">Indira Naylor</div>
+            <div class="team-role" style="color: #3D2B7A;">Finance &amp; Innovation</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       JOIN US
+  ════════════════════════════════════════ -->
+  <section class="cta-section" id="join">
+    <div class="cta-inner">
+      <span class="section-eyebrow light">Get Involved</span>
+      <h2>Join the Journal</h2>
+      <p>We welcome writers, researchers, and editors from all years and majors. No prior finance experience required — just curiosity and a commitment to rigorous thinking.</p>
+    </div>
+    <div class="container" style="position: relative; z-index: 1;">
+      <div class="join-grid">
+        <div class="join-item">
+          <div class="join-item-icon">✍️</div>
+          <h4>Write</h4>
+          <p>Pitch and publish original articles, commentary, and analysis across our four coverage areas.</p>
+        </div>
+        <div class="join-item">
+          <div class="join-item-icon">🔍</div>
+          <h4>Research</h4>
+          <p>Join a coverage group and follow an industry over time — building real analytical depth and conviction.</p>
+        </div>
+        <div class="join-item">
+          <div class="join-item-icon">✏️</div>
+          <h4>Edit</h4>
+          <p>Help shape articles from pitch to publication, developing your editorial voice and financial communication skills.</p>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top: 2.5rem;">
+        <a href="mailto:uchicagofj@gmail.com" class="btn btn-white">Contact Us to Apply</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="footer-logo">
+          <span class="footer-name">The University of Chicago<br>Financial Journal</span>
+        </div>
+        <p class="footer-tagline">A student-led publication dedicated to making finance accessible, rigorous, and relevant to the UChicago community.</p>
+        <div class="footer-social">
+          <a href="mailto:uchicagofj@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="journals.html">Journals</a>
+          <a href="articles.html">Articles by Topic</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Topics</div>
+        <div class="footer-links">
+          <a href="articles.html">Markets</a>
+          <a href="articles.html">Technology</a>
+          <a href="articles.html">Political Economy</a>
+          <a href="articles.html">On Campus</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <div class="footer-links">
+          <a href="#join">Join the Journal</a>
+          <a href="mailto:uchicagofj@gmail.com">Contact Us</a>
+          <a href="#team">Meet the Team</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 The University of Chicago Financial Journal. All rights reserved.</span>
+      <span>University of Chicago · Hyde Park, Chicago</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

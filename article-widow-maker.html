@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Article — The University of Chicago Financial Journal">
+  <title>Article — UFJ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .article-page-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+    .article-page-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 2.5rem;
+      transition: color var(--transition);
+    }
+    .article-page-back:hover { color: var(--crimson); }
+    .article-page-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-issue {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .article-page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-byline {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+    .article-page-author {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .article-page-meta {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .article-page-body h2,
+    .article-page-body h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--text-dark);
+      margin: 2rem 0 0.75rem;
+    }
+    .article-page-body h2 { font-size: 1.4rem; }
+    .article-page-body h3 { font-size: 1.15rem; }
+    .article-page-body p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body ol,
+    .article-page-body ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body li {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .article-page-footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .article-refs {
+      background: var(--off-white);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    .article-refs h3 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .article-refs ol {
+      padding-left: 1.25rem;
+    }
+    .article-refs li {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav solid" id="nav">
+    <a href="index.html" class="nav-brand">
+      <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="nav-logo">
+      <span class="nav-name">The University of Chicago<br>Financial Journal</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="journals.html">Journals</a></li>
+      <li><a href="articles.html" class="active">Articles by Topic</a></li>
+    </ul>
+  </nav>
+
+  <section class="section section-white" style="padding-top: calc(var(--nav-height) + 2rem);">
+    <div class="article-page-wrap">
+
+      <a href="articles.html" class="article-page-back">
+        <i class="fa-solid fa-arrow-left"></i> All Articles
+      </a>
+
+      <div class="article-page-eyebrow">
+        <span class="category-tag-solid markets">Markets</span>
+        <span class="article-page-issue">Vol. 2, Issue 3 · <a href="winter-2026.html" style="color:inherit;">Winter 2026</a></span>
+      </div>
+
+      <h1 class="article-page-title">Article</h1>
+
+      <div class="article-page-byline">
+        <div>
+          <div class="article-page-author"></div>
+          <div class="article-page-meta">University of Chicago Financial Journal · Winter 2026</div>
+        </div>
+      </div>
+
+      <div class="article-page-body">
+
+        <div class="article-kicker">
+          <span class="category-tag-solid markets">Markets</span>
+          <span class="article-issue-tag">Winter 2026</span>
+        </div>
+        <h2 class="article-headline">Widow-Maker to Wake-Up Call</h2>
+        <p class="article-dek">For decades, shorting Japanese Government Bonds was financial suicide. Now, with 40-year yields above 4% for the first time, the world's most stable bond market is signaling a new global rate regime — with serious consequences for U.S. Treasuries.</p>
+        <div class="article-byline-row">
+          <div>
+            <div class="article-author-name">Zoe McDonald</div>
+          </div>
+        </div>
+        <div class="article-body">
+          <p>For years, shorting Japanese Government Bonds (JGBs) was considered such a risky trade that it was named the "Widow-maker." The world's second-largest government bond market could go days without a single benchmark bond being traded. Today, however, Japan's bond market is at a historic inflection point. Last month, after decades of stability under the Bank of Japan's extensive yield curve controls and aggressive handling of surging inflation, Japanese Government Bonds' 40-year yields pushed above 4% for the first time, rattling global markets.</p>
+
+          <p>The implications for the global fixed-income market might be serious. Japan's bond market is deeply intertwined with global fixed income, in particular U.S. Treasurys. Analysts noted that the sell-off in Japanese bonds fed into higher U.S. Treasury yields the day after the original spike in JGB yields. In addition, the yen fell sharply against the USD. The strength of this impact is reinforced by the country's outsized influence on global capital flows. Both domestic and foreign investors have used low yields to lever up positions in higher-yielding assets like U.S. Treasurys and stocks. The question is how durable these market moves will be.</p>
+
+          <h3>The End of an Era</h3>
+          <p>To understand the gravity of this shift, the fiscal landscape of Japan must be examined. After decades of near-zero inflation, Japan is now experiencing substantial price pressures, making long-term bonds with low fixed payments less attractive and pushing investors to sell at a discount. This increases bond yields. The boost in yields also came as PM Sanae Takaichi announced a snap election that could give her a fiscal spending mandate. The PM unveiled a $135bn stimulus package in November and reiterated that she intends to implement a two-year holiday for Japan's 8% tax on food.</p>
+
+          <p>Recently, PM Takaichi's party won in a landslide election. Investors have priced this in as a mandate for high fiscal spending, with yields jumping sharply again. The country's debt currently comes in at $9 trillion, an immense figure even before accounting for interest payments. If nominal growth fails to outpace borrowing costs, Japan risks entering an environment where debt compounds faster than the economy expands.</p>
+
+          <p>Demographic factors further complicate the outlook. Japan's aging population depletes domestic savings. This likely leads to an increase in already high foreign reliance. The long end of the JGB market is becoming increasingly reliant on foreign investors. Furthermore, Japanese investors and institutions are among the biggest foreign holders of sovereign debt in the world. At the end of 2024, they were the top overseas holders of U.S. Treasurys. Beyond the US, European sovereign bonds are the most exposed. With rising yields on JGBs, Japanese investors could bring more capital home to take advantage of this, imperiling the global bond market.</p>
+
+          <p>For years, the Bank of Japan used yield curve controls and massive bond-buying programs to keep yields near zero, bond prices high, and to fight deflation. At its height, the BOJ owned close to 50% of all the outstanding government bonds in the market. JGBs once stabilized the bond market. The recent panic is a sharp pivot from the perceived stability. Warning signs appeared as early as 2024 when the Bank of Japan slowed the pace of its bond purchases and hiked short-term interest rates faster than expected. This resulted in a chaotic unwind of the "carry trade" in which investors borrow JPY at low rates and lend in other currencies with higher rates.</p>
+
+          <h3>Why This Matters Beyond Japan</h3>
+          <p>What was a sleepy, reliable corner of the global fixed-income markets has had its first major shake-up in two decades. U.S. Treasurys face the most risk from the growing volatility associated with JGBs. Beyond market mechanics, the shift also raises broader questions about trust in the strength of global financial institutions and their ability to manage domestic fiscal conditions. For some, the turmoil in the JGB market might be an opportunity, but for most, it signals a concerning waning of Japanese fiscal strength.</p>
+
+          <h3>A New Global Rate Regime?</h3>
+          <p>The knock-on effect for the global bond market is impending, especially as Japanese investors are no longer set to invest as much overseas. This could cause a sustained rise in long-term bond risk premiums, a steeper yield curve across major markets, and meaningfully tighter financial conditions worldwide, according to CNBC. Japanese bonds once anchored the lower bound of yield expectations. A shift in this dynamic could mean that global market rates could structurally move higher. If so, the global fixed-income landscape may be entering a new regime.</p>
+
+          <div class="article-refs">
+            <div class="article-refs-title">Sources</div>
+            <p>CNBC. "Japan bond yield: US10Y, US Treasury, gilts, bunds, Takaichi trade." February 20, 2026.</p>
+            <p>New York Times. "JGB trade excitement." February 18, 2026.</p>
+            <p>J.P. Morgan Asset Management. "Weekly Bond Bulletin." jpmorgan.com/insights/fixed-income.</p>
+          </div>
+        </div>
+      
+      </div>
+
+      <div class="article-page-footer">
+        <a href="articles.html" class="btn btn-outline-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          <i class="fa-solid fa-arrow-left"></i> Back to All Articles
+        </a>
+        <a href="winter-2026.html" class="btn btn-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          Read Full Issue
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="footer-logo">
+          <span class="footer-name">The University of Chicago<br>Financial Journal</span>
+        </div>
+        <p class="footer-tagline">A student-led publication dedicated to making finance accessible, rigorous, and relevant to the UChicago community.</p>
+        <div class="footer-social">
+          <a href="mailto:uchicagofj@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="journals.html">Journals</a>
+          <a href="articles.html">Articles by Topic</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Issues</div>
+        <div class="footer-links">
+          <a href="winter-2026.html">Winter 2026</a>
+          <a href="fall-2025.html">Fall 2025</a>
+          <a href="spring-2025.html">Spring 2025</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <div class="footer-links">
+          <a href="about.html#join">Join the Journal</a>
+          <a href="mailto:uchicagofj@gmail.com">Contact Us</a>
+          <a href="about.html#team">Meet the Team</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 The University of Chicago Financial Journal. All rights reserved.</span>
+      <span>University of Chicago &middot; Hyde Park, Chicago</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

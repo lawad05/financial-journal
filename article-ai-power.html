@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Article — The University of Chicago Financial Journal">
+  <title>Article — UFJ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .article-page-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+    .article-page-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 2.5rem;
+      transition: color var(--transition);
+    }
+    .article-page-back:hover { color: var(--crimson); }
+    .article-page-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-issue {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .article-page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-byline {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+    .article-page-author {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .article-page-meta {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .article-page-body h2,
+    .article-page-body h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--text-dark);
+      margin: 2rem 0 0.75rem;
+    }
+    .article-page-body h2 { font-size: 1.4rem; }
+    .article-page-body h3 { font-size: 1.15rem; }
+    .article-page-body p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body ol,
+    .article-page-body ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body li {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .article-page-footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .article-refs {
+      background: var(--off-white);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    .article-refs h3 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .article-refs ol {
+      padding-left: 1.25rem;
+    }
+    .article-refs li {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav solid" id="nav">
+    <a href="index.html" class="nav-brand">
+      <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="nav-logo">
+      <span class="nav-name">The University of Chicago<br>Financial Journal</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="journals.html">Journals</a></li>
+      <li><a href="articles.html" class="active">Articles by Topic</a></li>
+    </ul>
+  </nav>
+
+  <section class="section section-white" style="padding-top: calc(var(--nav-height) + 2rem);">
+    <div class="article-page-wrap">
+
+      <a href="articles.html" class="article-page-back">
+        <i class="fa-solid fa-arrow-left"></i> All Articles
+      </a>
+
+      <div class="article-page-eyebrow">
+        <span class="category-tag-solid markets">Markets</span>
+        <span class="article-page-issue">Vol. 2, Issue 2 · <a href="fall-2025.html" style="color:inherit;">Fall 2025</a></span>
+      </div>
+
+      <h1 class="article-page-title">Article</h1>
+
+      <div class="article-page-byline">
+        <div>
+          <div class="article-page-author"></div>
+          <div class="article-page-meta">University of Chicago Financial Journal · Fall 2025</div>
+        </div>
+      </div>
+
+      <div class="article-page-body">
+
+        <div class="article-kicker">
+          <span class="category-tag-solid markets">Markets</span>
+          <span class="article-issue-tag">Fall 2025</span>
+        </div>
+        <h2 class="article-headline">AI Compute and the Change in North American Power Markets</h2>
+        <p class="article-dek">AI infrastructure is creating structural demand shocks in electricity markets that traditional grid planning cannot absorb. For power traders and infrastructure investors, the opportunity is no longer cyclical — it's permanent.</p>
+        <div class="article-byline-row">
+          <div>
+            <div class="article-author-name">Thibaud Dubois-Denis</div>
+          </div>
+        </div>
+        <div class="article-body">
+          <p>The proliferation of AI training infrastructure has proven to place significant demand pressure across North American electricity markets. Goldman Sachs projects AI-specific compute will add 160 TWh of incremental demand by 2030, roughly equal to Florida's total annual consumption. NVIDIA's largest customers have executed multi Giga Watt power supply agreements, positioning technology firms as active energy market participants rather than passive consumers.</p>
+
+          <h3>Geographical Constraint</h3>
+          <p>Unlike previous data center buildouts that sought cheap hydropower in the Pacific Northwest, AI infrastructure is clustered around tech hubs — regions where power grids are already strained. GPU clusters need reliable and low cost electricity in specific locations, not just anywhere power is available. This is creating severe pressure on regional grids. In Texas (ERCOT nodal system), electricity price spreads in areas with heavy GPU concentration have widened more than 50% year-over-year. In the Mid Atlantic (PJM), the queue of projects waiting to connect to the grid has reached 270 GW with average wait times exceeding five years.</p>
+
+          <p>The core problem is timing, as major grid upgrades in the US take 7 to 10 years from planning to completion, while AI companies are expanding on quarterly cycles. Demand is growing faster than the infrastructure can respond, creating a structural supply deficit.</p>
+
+          <h3>Difference with AI Demand</h3>
+          <p>Traditional industrial users reduce electricity consumption when prices spike. Factories slow production, as per basic economics. On the other hand, AI operators cannot. For them, shutting down GPU clusters to save on electricity costs means delayed model training and competitive disadvantage. The opportunity cost of interruption is greater than the power bill savings for these firms. This changes how electricity gets priced; AI firms will pay prices that would not be economical for regular firms since margins on computers are worth the costs. Federal regulators are even questioning whether AI infrastructure should get priority in grid connection queues, which would further dynamize the shift in North American power markets.</p>
+
+          <p>This results in a feedback loop: high AI profitability (as well as a lot of hype from stock speculators and investors) justifies extreme electricity prices which then disrupts pricing models.</p>
+
+          <h3>Trading Opportunities Emerging from Grid Stress</h3>
+          <p>Three instruments are becoming particularly relevant:</p>
+          <p><strong>Congestion Rights:</strong> as price differences widen between power generation areas and consumption zones, traders can profit from betting on transmission bottlenecks.</p>
+          <p><strong>Virtual Power Agreements:</strong> AI firms are using virtuals not solely for renewable energy credits, but as hedges against price spikes in regions where they operate data centers. Meta has recently created a new power trading subsidiary that likely will aim to save money from hedging.</p>
+          <p><strong>Real-time volatility:</strong> increase in bottlenecks means greater uncertainty and volatility, thus creating opportunities for traders who can forecast these deviations. Hedge funds are already positioning for this shift.</p>
+
+          <p>Unlike traditional electricity demand forecasting based on weather and industries, AI buildout follows VC investing cycles and semiconductor supply. Traders who can anticipate where AI companies will expand next, relative to grid constraints, can extract returns from location-based price differences — underlining a new change in how power markets are traded due to the proliferation of AI.</p>
+
+          <h3>The Long-Term Structural Shift</h3>
+          <p>The winners will be those who can anticipate where AI infrastructure will expand before it becomes public knowledge and understand which parts of the grid will face the worst bottlenecks. Traders should more and more treat power as a commodity tied to AI deployment rather than a regulated utility service.</p>
+
+          <p>Unlike semiconductors where supply shortages can eventually be solved with enough capital and time, power grid constraints face regulatory, environmental, and physical limits that money alone cannot quickly overcome — such as battery storage and renewable sources only generating power in certain conditions.</p>
+
+          <p>The power grid, and not the chip supply chain, may be the ultimate constraint determining which companies dominate the AI race. For power traders and infrastructure investors, the opportunity is structural rather than cyclical. AI demand will continue to increase price volatility, expand geographic price differences, and create a market where understanding grid infrastructure and location becomes a source of persistent advantage.</p>
+        </div>
+      
+      </div>
+
+      <div class="article-page-footer">
+        <a href="articles.html" class="btn btn-outline-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          <i class="fa-solid fa-arrow-left"></i> Back to All Articles
+        </a>
+        <a href="fall-2025.html" class="btn btn-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          Read Full Issue
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="footer-logo">
+          <span class="footer-name">The University of Chicago<br>Financial Journal</span>
+        </div>
+        <p class="footer-tagline">A student-led publication dedicated to making finance accessible, rigorous, and relevant to the UChicago community.</p>
+        <div class="footer-social">
+          <a href="mailto:uchicagofj@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="journals.html">Journals</a>
+          <a href="articles.html">Articles by Topic</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Issues</div>
+        <div class="footer-links">
+          <a href="winter-2026.html">Winter 2026</a>
+          <a href="fall-2025.html">Fall 2025</a>
+          <a href="spring-2025.html">Spring 2025</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <div class="footer-links">
+          <a href="about.html#join">Join the Journal</a>
+          <a href="mailto:uchicagofj@gmail.com">Contact Us</a>
+          <a href="about.html#team">Meet the Team</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 The University of Chicago Financial Journal. All rights reserved.</span>
+      <span>University of Chicago &middot; Hyde Park, Chicago</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

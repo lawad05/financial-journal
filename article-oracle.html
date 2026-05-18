@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Article — The University of Chicago Financial Journal">
+  <title>Article — UFJ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .article-page-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+    .article-page-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 2.5rem;
+      transition: color var(--transition);
+    }
+    .article-page-back:hover { color: var(--crimson); }
+    .article-page-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-issue {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .article-page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-byline {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+    .article-page-author {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .article-page-meta {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .article-page-body h2,
+    .article-page-body h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--text-dark);
+      margin: 2rem 0 0.75rem;
+    }
+    .article-page-body h2 { font-size: 1.4rem; }
+    .article-page-body h3 { font-size: 1.15rem; }
+    .article-page-body p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body ol,
+    .article-page-body ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body li {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .article-page-footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .article-refs {
+      background: var(--off-white);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    .article-refs h3 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .article-refs ol {
+      padding-left: 1.25rem;
+    }
+    .article-refs li {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav solid" id="nav">
+    <a href="index.html" class="nav-brand">
+      <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="nav-logo">
+      <span class="nav-name">The University of Chicago<br>Financial Journal</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="journals.html">Journals</a></li>
+      <li><a href="articles.html" class="active">Articles by Topic</a></li>
+    </ul>
+  </nav>
+
+  <section class="section section-white" style="padding-top: calc(var(--nav-height) + 2rem);">
+    <div class="article-page-wrap">
+
+      <a href="articles.html" class="article-page-back">
+        <i class="fa-solid fa-arrow-left"></i> All Articles
+      </a>
+
+      <div class="article-page-eyebrow">
+        <span class="category-tag-solid markets">Industry Coverage</span>
+        <span class="article-page-issue">Vol. 2, Issue 2 · <a href="fall-2025.html" style="color:inherit;">Fall 2025</a></span>
+      </div>
+
+      <h1 class="article-page-title">Article</h1>
+
+      <div class="article-page-byline">
+        <div>
+          <div class="article-page-author"></div>
+          <div class="article-page-meta">University of Chicago Financial Journal · Fall 2025</div>
+        </div>
+      </div>
+
+      <div class="article-page-body">
+
+        <div class="article-kicker">
+          <span class="category-tag-solid technology">Industry Coverage</span>
+          <span class="article-issue-tag">Fall 2025</span>
+        </div>
+        <h2 class="article-headline">Oracle's Debt-Fueled AI Gamble: From Market Darling to Credit Risk</h2>
+        <p class="article-dek">Oracle's collapse from an all-time high to a 30% drawdown in weeks offers a sobering case study in how quickly market euphoria transforms into skepticism when fundamentals fail to keep pace with ambitious visions.</p>
+        <div class="article-byline-row">
+          <div>
+            <div class="article-author-name">Tomas Kay</div>
+          </div>
+        </div>
+        <div class="article-body">
+          <p>Oracle appeared unstoppable, or so the research thesis held when work on this article began in September — an excellent month for Oracle. The stock of the revered database giant, founded 48 years ago to sell "relational" databases, had surged to an all-time high on September 10, buoyed by blockbuster optimism. For a brief period, co-founder Larry Ellison, a legendary and enduring figure in Silicon Valley, overtook Elon Musk as the richest person in the world. The company's $300 billion, five-year commitment from OpenAI and its astounding remaining performance obligations — now up 438% year-over-year to $523 billion — were often cited as exemplary of a once-in-generation AI infrastructure land grab.</p>
+
+          <p>That optimistic narrative has collapsed. Oracle's stock fell 10.83% on December 11 and slipped another 4.66% on December 12 after its December 10 Q2 Earnings Release, extending a drawdown that has left it down more than 30% from its September 10 peak. This sudden reversal offers a sobering case study in the speed at which market euphoria can transform into skepticism when financial fundamentals fail to keep pace with ambitious visions. Now, Oracle is a bellwether for investor sentiment towards AI.</p>
+
+          <h3>The AI Investment Thesis and Its Cracks</h3>
+          <p>The AI investment thesis appeared to be supported by Oracle's recent growth metrics. It still has many positive figures to report. In fiscal Q2 2026, Oracle reported total revenue of $16.1 billion, representing 14% year-over-year growth, only slightly below consensus expectations and a much higher than expected $455 billion contract backlog. On top of that, the company's cloud business remained a bright spot: Cloud Revenue was $8 billion (up 34%) and Cloud Infrastructure Revenue was $4.1 billion (up 68%).</p>
+
+          <p>However, warning indicators are appearing beneath this upbeat exterior. Credit default swaps — which are essentially derivatives that offer insurance against the risk of a bond issuer not paying creditors — started to increase gradually. Oracle is now amongst the top 20 most traded corporate credit default swaps, which is unusual for a non-financial company, and it now costs three times more to insure against the risk of Oracle defaulting than it does Microsoft.</p>
+
+          <h3>The Debt Burden</h3>
+          <p>A fundamental conflict is reflected in the discrepancy between Oracle's credit risk and stock performance: the company is leaning heavily on unprecedented borrowing to fund its accelerating AI aspirations. Oracle's debt has grown by $11bn to $88bn and its total debt to operating profit (before depreciation and amortization) is 4.2, substantially higher than the traditionally safe range of zero to three. On top of this, Oracle reported negative $10 billion in free cash flow for fiscal Q2 2026 (almost twice StreetAccount's consensus for Q2), and management also increased the full-year capital expenditure forecast to $50 billion.</p>
+
+          <p>In credit markets, this played out sharply: Bloomberg reporting described Oracle's investment-grade notes as trading "more like junk," with investors in the $18 billion high-grade note September bond sale sitting on paper losses of roughly $1.35 billion. All major ratings agencies cite Oracle's high debt-to-EBITDA ratio (higher than 400% per Moody's) as reasons for its credit downgrading — all three major rating agencies have shared their concerns about Oracle's elevated risk, and Morgan Stanley has recommended dumping Oracle's bonds.</p>
+
+          <h3>OpenAI Dependency and Execution Risk</h3>
+          <p>Furthermore, Oracle may be overexposed to a customer currently in the glaring spotlight over profitability concerns. OpenAI has agreed to purchase $300 billion of computing capacity from Oracle over five years, accounting for over half of Oracle's $500 billion in pledged revenue. To service these payments, OpenAI must significantly increase its own revenue. This is a future under pressure as Google, Anthropic, and open-source alternatives gain ground at the same time as OpenAI is in the spotlight for mounting worries of an unpredictable AI bubble — its software products have yet to prove they can generate returns that justify the extraordinary investment levels we are seeing. This event has sent shockwaves through the market with AI-related stocks like Nvidia, AMD, Coreweave, and Micron seeing sympathy drops.</p>
+
+          <p>Execution timing risk has also joined the narrative. Oracle already has limited experience building physical infrastructure and was intending to get data center complexes online years ahead of typical industry timelines. Already, Bloomberg has reported that, according to people close to the work, some US data centers Oracle is developing for OpenAI have had completion dates pushed from 2027 to 2028 due to labor and material shortages (Oracle disputed that characterization in follow-on coverage). It is becoming clearer that Oracle's enormous infrastructure investments will materially precede actual revenue conversion.</p>
+
+          <h3>Structural Disadvantages vs. Hyperscalers</h3>
+          <p>The differences between Oracle and its hyperscaler competitors highlight the company's particular weaknesses. In the words of The Economist, "its larger rivals look nothing like a utility." Even though they also make significant investments in AI infrastructure, Amazon, Microsoft, and Google Cloud have more diverse revenue streams and better credit ratings. Oracle's lower credit rating poses an acute problem at a time when capital requirements are skyrocketing, since it must contend with financing costs that are higher than those of its rivals.</p>
+
+          <p>The 126 basis points annually to insure Oracle's debt — much higher than competitors — are the most striking example of how the market's initial enthusiasm for this strategy is giving way to skepticism.</p>
+
+          <p>From this it is clear that under outward signals of extreme strength can be concealed underlying weaknesses that beget acknowledgement. In the case of Oracle, that acknowledgement has arrived swiftly. The ongoing episode has become a live barometer of whether AI infrastructure will translate into durable, profitable growth, and whether the narrative surrounding AI infrastructure can be extended.</p>
+
+          <p>Oracle serves as a warning to investors about the dangers of continuously extending current trends, with its downfall from market darling occurring rapidly. Database management systems and enterprise software, the company's core business, continue to generate significant operating cash flow. However, Oracle lacks the capital needed for the bold move to become an AI infrastructure hyperscaler, which has led to a debt-fueled gamble on ongoing demand from OpenAI. The credit markets — where investors demand 126 basis points annually to insure Oracle's debt — are the most striking example of how the market's initial enthusiasm for this strategy is giving way to skepticism.</p>
+
+          <div class="article-refs">
+            <div class="article-refs-title">Sources</div>
+            <p>Reuters. "Global markets CDS explainer." December 11, 2025.</p>
+            <p>Oracle Investor Relations. Q2 FY2026 Earnings Release.</p>
+            <p>The Economist. "Oracle and the hard truths about software." December 11, 2025.</p>
+            <p>Cohan, Peter. "Oracle Stock Down 15%: Why Higher Risk Makes ORCL a Sell." Forbes, December 11, 2025.</p>
+            <p>Bloomberg. "Oracle's $300 Billion OpenAI Deal Has Investors Worried About Its AI Spending." December 12, 2025.</p>
+            <p>Bloomberg. "Oracle runs into more bond trouble." Evening Briefing: Americas, December 12, 2025.</p>
+            <p>Bloomberg. "Some Oracle data centers for OpenAI delayed to 2028 from 2027." December 12, 2025.</p>
+            <p>Bloomberg. "Oracle posts weak cloud sales, raising fear of delayed payoff." December 10, 2025.</p>
+          </div>
+        </div>
+      
+      </div>
+
+      <div class="article-page-footer">
+        <a href="articles.html" class="btn btn-outline-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          <i class="fa-solid fa-arrow-left"></i> Back to All Articles
+        </a>
+        <a href="fall-2025.html" class="btn btn-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          Read Full Issue
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="footer-logo">
+          <span class="footer-name">The University of Chicago<br>Financial Journal</span>
+        </div>
+        <p class="footer-tagline">A student-led publication dedicated to making finance accessible, rigorous, and relevant to the UChicago community.</p>
+        <div class="footer-social">
+          <a href="mailto:uchicagofj@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="journals.html">Journals</a>
+          <a href="articles.html">Articles by Topic</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Issues</div>
+        <div class="footer-links">
+          <a href="winter-2026.html">Winter 2026</a>
+          <a href="fall-2025.html">Fall 2025</a>
+          <a href="spring-2025.html">Spring 2025</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <div class="footer-links">
+          <a href="about.html#join">Join the Journal</a>
+          <a href="mailto:uchicagofj@gmail.com">Contact Us</a>
+          <a href="about.html#team">Meet the Team</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 The University of Chicago Financial Journal. All rights reserved.</span>
+      <span>University of Chicago &middot; Hyde Park, Chicago</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

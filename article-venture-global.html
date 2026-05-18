@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Article — The University of Chicago Financial Journal">
+  <title>Article — UFJ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .article-page-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+    .article-page-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 2.5rem;
+      transition: color var(--transition);
+    }
+    .article-page-back:hover { color: var(--crimson); }
+    .article-page-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-issue {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .article-page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-byline {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+    .article-page-author {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .article-page-meta {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .article-page-body h2,
+    .article-page-body h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--text-dark);
+      margin: 2rem 0 0.75rem;
+    }
+    .article-page-body h2 { font-size: 1.4rem; }
+    .article-page-body h3 { font-size: 1.15rem; }
+    .article-page-body p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body ol,
+    .article-page-body ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body li {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .article-page-footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .article-refs {
+      background: var(--off-white);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    .article-refs h3 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .article-refs ol {
+      padding-left: 1.25rem;
+    }
+    .article-refs li {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav solid" id="nav">
+    <a href="index.html" class="nav-brand">
+      <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="nav-logo">
+      <span class="nav-name">The University of Chicago<br>Financial Journal</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="journals.html">Journals</a></li>
+      <li><a href="articles.html" class="active">Articles by Topic</a></li>
+    </ul>
+  </nav>
+
+  <section class="section section-white" style="padding-top: calc(var(--nav-height) + 2rem);">
+    <div class="article-page-wrap">
+
+      <a href="articles.html" class="article-page-back">
+        <i class="fa-solid fa-arrow-left"></i> All Articles
+      </a>
+
+      <div class="article-page-eyebrow">
+        <span class="category-tag-solid markets">Markets</span>
+        <span class="article-page-issue">Vol. 2, Issue 1 · <a href="spring-2025.html" style="color:inherit;">Spring 2025</a></span>
+      </div>
+
+      <h1 class="article-page-title">Article</h1>
+
+      <div class="article-page-byline">
+        <div>
+          <div class="article-page-author"></div>
+          <div class="article-page-meta">University of Chicago Financial Journal · Spring 2025</div>
+        </div>
+      </div>
+
+      <div class="article-page-body">
+
+        <div class="article-kicker">
+          <span class="category-tag-solid markets">Markets</span>
+          <span class="article-issue-tag">Spring 2025</span>
+        </div>
+        <h2 class="article-headline">Venture Global Bull Case</h2>
+        <div class="article-byline-row">
+          <span class="article-author-name">Nathaniel Kelley</span>
+        </div>
+        <div class="article-body">
+          <p>When Venture Global launched its IPO on January 24th it was meant to be a sign of great things to come. The firm, which had disrupted the LNG industry with its low-cost development method, was riding the tailwinds of increasing global gas demand over the past decade and the re-election of Donald Trump, a friend to Oil and Gas firms. Yet despite this the stock would have dreadful returns in the months to follow with its value cratering from $110 billion to around $20 billion. I think that this performance does not properly reflect the long-term value of Venture Global and that the stock (as of May 3, 2025) is currently underpriced.</p>
+
+          <h4>The Role of LNG in Global Energy</h4>
+          <p>The role that LNG plays in the global energy industry is crucial. By super chilling natural gas into a liquid, transporting natural gas on ships becomes economically viable. This is crucial as it vastly expands the scope and flexibility of the market for natural gas. Where pipelines could only send gas from one point to another at incredible capital costs, fleets of LNG tankers allow for greater optionality and responsiveness as seen after the Russian invasion of Ukraine. Some of the leading developers and operators of LNG terminals in the US include Cheniere Energy, Sempra LNG, Golden Pass, and Venture Global.</p>
+
+          <p>When Venture Global's bankers first revealed the structure of the IPO, they implicitly valued the firm at $110 billion — making them not just the most valuable LNG firm but more valuable than BP's market cap of $85 billion at the time. This valuation was absurd, and the IPO was restructured to $65 billion. The stock would fall below its IPO price of $27 on the first day of trading and never looked back. As of May 3, 2025, the stock is trading at $8.82.</p>
+
+          <h4>The Three Headwinds</h4>
+          <p>The fall of LNG's Icarus has three main drivers. First is a large arbitration battle with Shell, BP, and other customers over Venture Global's marketing of LNG cargos. They are accused of violating their SPAs when they sold cargoes while their Calcasieu Pass terminal was still commissioning — customers seek $5 billion in lost profits. The second issue is increasing construction costs: Venture Global's Calcasieu Pass and Plaquemines LNG terminals have both seen cost increases in the billions as tariffs and reliability issues have dogged their development. The last major headwind is a shifting contracting environment: European and Asian utilities are preferring shorter terms from multiple sources of supply.</p>
+
+          <h4>The Bull Case</h4>
+          <p>While these three threats have done a number to Venture Global's stock price, they are not as severe as the market has made them out to be. Starting with the arbitration case, there is still a chance that Venture Global could escape relatively unharmed. Even if they lose the case, it is just a one-time charge, not a recurring drag on earnings. Fundamentally, there are simply too few terminals and too few people with the knowledge of how to build them for customers to be choosy with who they work with.</p>
+
+          <p>Venture Global's use of midscale trains becomes important in addressing cost concerns — the smaller size means they can be constructed off site for cheaper on a MTPA basis than the larger trains used by competitors. While Venture Global might be under pressure from cost increases, these pressures will be more acute for their competitors. On contracting, portfolio buyers (oil supermajors) and major gas E&amp;Ps such as Devon Energy and EQT are strong enough to underwrite the construction of major LNG terminals that Venture Global plans to build.</p>
+
+          <p>The true source of the bull case is in the underlying fundamentals of gas and LNG. JP Morgan Chase sees US LNG producing a third of global supply by 2030. The modularity of Venture Global's terminal construction means they are best positioned to profit in an uncertain demand environment: they can develop supplies in smaller increments and serve utilities who are not looking to commit to massive long-term SPAs. Venture Global could act as something of a marginal producer, increasing production in small increments to meet the needs of a customer base racked with uncertainty.</p>
+        </div>
+      
+      </div>
+
+      <div class="article-page-footer">
+        <a href="articles.html" class="btn btn-outline-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          <i class="fa-solid fa-arrow-left"></i> Back to All Articles
+        </a>
+        <a href="spring-2025.html" class="btn btn-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          Read Full Issue
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="footer-logo">
+          <span class="footer-name">The University of Chicago<br>Financial Journal</span>
+        </div>
+        <p class="footer-tagline">A student-led publication dedicated to making finance accessible, rigorous, and relevant to the UChicago community.</p>
+        <div class="footer-social">
+          <a href="mailto:uchicagofj@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="journals.html">Journals</a>
+          <a href="articles.html">Articles by Topic</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Issues</div>
+        <div class="footer-links">
+          <a href="winter-2026.html">Winter 2026</a>
+          <a href="fall-2025.html">Fall 2025</a>
+          <a href="spring-2025.html">Spring 2025</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <div class="footer-links">
+          <a href="about.html#join">Join the Journal</a>
+          <a href="mailto:uchicagofj@gmail.com">Contact Us</a>
+          <a href="about.html#team">Meet the Team</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 The University of Chicago Financial Journal. All rights reserved.</span>
+      <span>University of Chicago &middot; Hyde Park, Chicago</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

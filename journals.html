@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse all published issues of the University of Chicago Financial Journal.">
+  <title>Journals — The University of Chicago Financial Journal</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* ── Journal Full Cards ── */
+    .journal-full-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .journal-full-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .journal-full-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .journal-full-cover {
+      background: linear-gradient(160deg, var(--crimson-dark) 0%, var(--crimson-mid) 60%, #A00000 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .journal-full-cover::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .journal-full-vol-label {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .journal-full-vol-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      font-weight: 700;
+      color: white;
+      line-height: 1;
+      position: relative;
+      z-index: 1;
+    }
+
+    .journal-full-ufj {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-top: 0.75rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .journal-full-badge {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      background: var(--gold);
+      color: white;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.5rem;
+      border-radius: 3px;
+      z-index: 2;
+    }
+
+    .journal-full-body {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .journal-full-issue {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      margin-bottom: 0.4rem;
+    }
+
+    .journal-full-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.4rem;
+    }
+
+    .journal-full-date {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .journal-full-desc {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      flex: 1;
+    }
+
+    .journal-full-articles {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .journal-full-articles span {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .journal-full-actions {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    /* ── Archive Notice ── */
+    .archive-notice {
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      font-size: 0.875rem;
+      color: var(--text-light);
+      margin-bottom: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .archive-notice i {
+      color: var(--crimson);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 900px) {
+      .journal-full-card { grid-template-columns: 180px 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .journal-full-card { grid-template-columns: 1fr; }
+      .journal-full-cover { min-height: 200px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       NAVIGATION
+  ════════════════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-brand">
+      <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="nav-logo">
+      <span class="nav-name">The University of Chicago<br>Financial Journal</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="journals.html" class="active">Journals</a></li>
+      <li><a href="articles.html">Articles by Topic</a></li>
+    </ul>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       PAGE HERO
+  ════════════════════════════════════════ -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-hero-eyebrow">Published Volumes</div>
+      <h1 class="page-hero-title">Our Journals</h1>
+      <div class="page-hero-divider"></div>
+      <p class="page-hero-subtitle">Every issue of the UChicago Financial Journal, from our inaugural edition through the present.</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       JOURNALS
+  ════════════════════════════════════════ -->
+  <section class="section section-white">
+    <div class="container">
+
+      <div class="journal-full-grid">
+
+        <!-- Vol. 2, Issue 3 — Winter 2026 (Latest) -->
+        <div class="journal-full-card fade-up">
+          <div class="journal-full-cover">
+            <span class="journal-full-badge">Latest</span>
+            <div class="journal-full-vol-label">Volume 2 · Issue 3</div>
+            <div class="journal-full-vol-number">III</div>
+            <div class="journal-full-ufj">UFJ · Winter 2026</div>
+          </div>
+          <div class="journal-full-body">
+            <div>
+              <div class="journal-full-issue">Vol. 2, Issue 3</div>
+              <div class="journal-full-title">Winter 2026 Edition</div>
+              <div class="journal-full-date">Winter 2026</div>
+              <p class="journal-full-desc">This issue explores the attention economy's grip on retail investors, private equity's expansion into sports franchises, Japan's bond market reckoning, GLP-1 drug economics, and Monte Carlo simulation in medicine.</p>
+              <div class="journal-full-articles">
+                <span>7 articles</span> across Political Economy, Markets, and Finance &amp; Innovation
+              </div>
+            </div>
+            <div class="journal-full-actions">
+              <a href="winter-2026.html" class="btn btn-crimson" style="font-size: 0.82rem; padding: 0.65rem 1.25rem;">Read Now</a>
+              <a href="Articles/UFJ%20Winter%202026%20-%20Google%20Docs.pdf" class="btn btn-outline-crimson" style="font-size: 0.82rem; padding: 0.65rem 1.25rem;" download>Download PDF</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vol. 2, Issue 2 — Fall 2025 -->
+        <div class="journal-full-card fade-up fade-up-delay-1">
+          <div class="journal-full-cover">
+            <div class="journal-full-vol-label">Volume 2 · Issue 2</div>
+            <div class="journal-full-vol-number">II</div>
+            <div class="journal-full-ufj">UFJ · Fall 2025</div>
+          </div>
+          <div class="journal-full-body">
+            <div>
+              <div class="journal-full-issue">Vol. 2, Issue 2</div>
+              <div class="journal-full-title">Fall 2025 Edition</div>
+              <div class="journal-full-date">Fall 2025</div>
+              <p class="journal-full-desc">Covering Fannie Mae and Freddie Mac privatization, sports betting as an unregulated financial market, the progressive tax mobility problem, the rise of private credit, and AI's demands on North American power grids.</p>
+              <div class="journal-full-articles">
+                <span>8 articles</span> across Political Economy, Markets, and Industry Coverage
+              </div>
+            </div>
+            <div class="journal-full-actions">
+              <a href="fall-2025.html" class="btn btn-crimson" style="font-size: 0.82rem; padding: 0.65rem 1.25rem;">Read Now</a>
+              <a href="Articles/UFJ%20Fall%202025%20-%20Google%20Docs.pdf" class="btn btn-outline-crimson" style="font-size: 0.82rem; padding: 0.65rem 1.25rem;" download>Download PDF</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vol. 2, Issue 1 — Spring 2025 -->
+        <div class="journal-full-card fade-up fade-up-delay-2">
+          <div class="journal-full-cover">
+            <div class="journal-full-vol-label">Volume 2 · Issue 1</div>
+            <div class="journal-full-vol-number">I</div>
+            <div class="journal-full-ufj">UFJ · Spring 2025</div>
+          </div>
+          <div class="journal-full-body">
+            <div>
+              <div class="journal-full-issue">Vol. 2, Issue 1</div>
+              <div class="journal-full-title">Spring 2025 Edition</div>
+              <div class="journal-full-date">Spring 2025</div>
+              <p class="journal-full-desc">Our inaugural issue examines tariff-driven market volatility, AI in asset management, venture capital deal structures, the fintech revolution in payments, and the federal deficit's impact on long-term rates.</p>
+              <div class="journal-full-articles">
+                <span>10 articles</span> across Political Economy, Markets, and Technology
+              </div>
+            </div>
+            <div class="journal-full-actions">
+              <a href="spring-2025.html" class="btn btn-crimson" style="font-size: 0.82rem; padding: 0.65rem 1.25rem;">Read Now</a>
+              <a href="Articles/UFJ%20Spring%202025%20-%20Google%20Docs.pdf" class="btn btn-outline-crimson" style="font-size: 0.82rem; padding: 0.65rem 1.25rem;" download>Download PDF</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SUBMIT CTA
+  ════════════════════════════════════════ -->
+  <div class="cta-section">
+    <div class="cta-inner">
+      <span class="section-eyebrow light">Contribute</span>
+      <h2>Write for the Next Issue</h2>
+      <p>We publish two issues per year — Spring and Fall. Submissions open at the beginning of each quarter. All UChicago students are welcome to pitch.</p>
+      <div class="cta-actions">
+        <a href="mailto:uchicagofj@gmail.com" class="btn btn-white">Submit a Pitch</a>
+        <a href="about.html#join" class="btn btn-outline-white">Join the Team</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="footer-logo">
+          <span class="footer-name">The University of Chicago<br>Financial Journal</span>
+        </div>
+        <p class="footer-tagline">A student-led publication dedicated to making finance accessible, rigorous, and relevant to the UChicago community.</p>
+        <div class="footer-social">
+          <a href="mailto:uchicagofj@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="journals.html">Journals</a>
+          <a href="articles.html">Articles by Topic</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Topics</div>
+        <div class="footer-links">
+          <a href="articles.html">Markets</a>
+          <a href="articles.html">Technology</a>
+          <a href="articles.html">Political Economy</a>
+          <a href="articles.html">On Campus</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Issues</div>
+        <div class="footer-links">
+          <a href="winter-2026.html">Winter 2026</a>
+          <a href="fall-2025.html">Fall 2025</a>
+          <a href="spring-2025.html">Spring 2025</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <div class="footer-links">
+          <a href="about.html#join">Join the Journal</a>
+          <a href="mailto:uchicagofj@gmail.com">Contact Us</a>
+          <a href="about.html#team">Meet the Team</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 The University of Chicago Financial Journal. All rights reserved.</span>
+      <span>University of Chicago · Hyde Park, Chicago</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

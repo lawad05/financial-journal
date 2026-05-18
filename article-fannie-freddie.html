@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Article — The University of Chicago Financial Journal">
+  <title>Article — UFJ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .article-page-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+    .article-page-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 2.5rem;
+      transition: color var(--transition);
+    }
+    .article-page-back:hover { color: var(--crimson); }
+    .article-page-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-issue {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .article-page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-byline {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+    .article-page-author {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .article-page-meta {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .article-page-body h2,
+    .article-page-body h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--text-dark);
+      margin: 2rem 0 0.75rem;
+    }
+    .article-page-body h2 { font-size: 1.4rem; }
+    .article-page-body h3 { font-size: 1.15rem; }
+    .article-page-body p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body ol,
+    .article-page-body ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-page-body li {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .article-page-footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .article-refs {
+      background: var(--off-white);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    .article-refs h3 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .article-refs ol {
+      padding-left: 1.25rem;
+    }
+    .article-refs li {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav solid" id="nav">
+    <a href="index.html" class="nav-brand">
+      <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="nav-logo">
+      <span class="nav-name">The University of Chicago<br>Financial Journal</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="journals.html">Journals</a></li>
+      <li><a href="articles.html" class="active">Articles by Topic</a></li>
+    </ul>
+  </nav>
+
+  <section class="section section-white" style="padding-top: calc(var(--nav-height) + 2rem);">
+    <div class="article-page-wrap">
+
+      <a href="articles.html" class="article-page-back">
+        <i class="fa-solid fa-arrow-left"></i> All Articles
+      </a>
+
+      <div class="article-page-eyebrow">
+        <span class="category-tag-solid poliecon">Political Economy</span>
+        <span class="article-page-issue">Vol. 2, Issue 2 · <a href="fall-2025.html" style="color:inherit;">Fall 2025</a></span>
+      </div>
+
+      <h1 class="article-page-title">Article</h1>
+
+      <div class="article-page-byline">
+        <div>
+          <div class="article-page-author"></div>
+          <div class="article-page-meta">University of Chicago Financial Journal · Fall 2025</div>
+        </div>
+      </div>
+
+      <div class="article-page-body">
+
+        <div class="article-kicker">
+          <span class="category-tag-solid poliecon">Political Economy</span>
+          <span class="article-issue-tag">Fall 2025</span>
+        </div>
+        <h2 class="article-headline">Uncle Sam's First Real IPO: Why Taking Fannie and Freddie Public Is a Risky Bet</h2>
+        <p class="article-dek">The push to privatize Fannie Mae and Freddie Mac is being driven more by political optics than financial logic — and could destabilize America's $12-trillion mortgage market.</p>
+        <div class="article-byline-row">
+          <div>
+            <div class="article-author-name">Rose Shulman-Garcia</div>
+          </div>
+        </div>
+        <div class="article-body">
+          <p>It could become the largest IPO in history. It could raise $30 billion in new equity. And according to the Trump administration, it could "restore" Fannie Mae and Freddie Mac to the private market after 17 years in federal conservatorship. Behind this bold language lies a concerning reality: the push to take the government-backed mortgage giants public is being driven more by political optics than any semblance of financial logic.</p>
+
+          <p>In the years coming out of the Great Depression, 25% of the nation's outstanding mortgage debt was in default. In an effort to support affordable housing, Fannie Mae was formed as a part of FDR's New Deal. Its initial goal was to support local banks by providing federal money to finance home loans. Banks could only lend as much as they held in deposits; they were incredibly restricted, and rates were high. Fannie Mae would buy loans from these restricted lenders and provide immediate cash. Fannie pooled mortgages to guarantee payment of principal and interest to large investors who were not traditional mortgage investors. Lenders could then sell their loans and use that money to issue more mortgages, which drastically lowered rates and increased mortgage availability.</p>
+
+          <p>Fannie Mae's ownership changed in a multitude of ways in the decades after its founding. Most notably, Fannie was already privatized once before in 1968 to remove its debt from the federal budget, however they were put under conservatorship after the 2008 crisis.</p>
+
+          <p>Freddie Mac was formed in 1970 as a government-chartered private company in response to Fannie Mae's monopoly status. Freddie was formed to make the market more competitive, so they share a nearly identical function, and was similarly put under conservatorship. Like Fannie, Freddie buys and securitizes loans, which frees lenders up to issue more loans. The major difference is that Freddie works with substantially smaller lenders, often credit unions or community banks.</p>
+
+          <p>Currently, Fannie and Freddie are government sponsored enterprises, or GSEs, a hybrid of being both private and owned by the government. They are publicly traded, but the government acts similar to a holding company that exerts massive influence in the finances and operations of the two companies. This would be the most significant public offering of a government-controlled enterprise in modern U.S. history.</p>
+
+          <h3>What the Proposed IPO Would Actually Be — And Why You Should Care</h3>
+          <p>While a government-backed secondary market that originated in the 1930s may seem incredibly irrelevant to us graduating college nearly a hundred years later, this history explains why we are precisely the demographic that will be most impacted by changes to Fannie and Freddie. According to the Federal Reserve Bank of New York, "as of June 2025, loans securitized by government-sponsored enterprises (GSEs) like Fannie Mae and Freddie Mac comprise around 52 percent of all balances of outstanding mortgage debt at roughly $6.5 trillion." And of that, 58% of all agency loan purchases come from first-time home buyers.</p>
+
+          <p>As many graduates plan to move to major cities where there are already rental crises, the support Fannie and Freddie give to multifamily affordability and rental conditions become increasingly relevant. Changes in the government-sponsored enterprises will impact the next generation of renters and homeowners immensely, as instability in the mortgage market could raise borrowing costs for first-time homebuyers, make it harder to qualify for loans, and impact rental affordability. Far from restoring stability, a rushed or politically engineered IPO could raise mortgage rates, weaken investor demand, and undermine confidence in the institutions that guarantee America's $12-trillion mortgage market. This proposal is not meaningful reform. This potential IPO is a political stunt dressed as capital markets policy.</p>
+
+          <h3>IPO Optics Against Market Reality</h3>
+          <p>The administration's pitch is that the IPO could be the biggest of all time, relieve the government of $30 billion in debt, and transform one of the world's most important secondary markets. How can all three be true at once? Who actually benefits? If executed poorly, as the current process strongly suggests, the lending environment could easily become more fragile, not less.</p>
+
+          <p>In a typical IPO, the government would work in the background while experts model risk, determine capital needs, and craft a structure that supports long-term stability. This process has been unusually public, personality-driven, and chaotic. CEOs of major banks have reportedly made repeated visits to the White House, where they are accused of tailoring pitches directly to the president and incorporating celebrity cameos. Meanwhile, Fannie Mae has experienced senior leadership turnover, internal controversies, and high-profile firings.</p>
+
+          <p>The message to markets is clear. It is a political process first, financial second. That matters because Fannie and Freddie underpin roughly 60% of all U.S. mortgages. Their role is essential as they provide liquidity by purchasing loans from lenders and converting them into securities. For this system to function, investors need predictability. They need clarity around capital requirements, guarantee fee setting, and the independence of risk pricing from politics.</p>
+
+          <p>The current spectacle offers the opposite. It signals that short-term political goals may drive decisions on structure, valuation, and governance. When markets detect political influence creeping into financial decision-making, they demand higher returns to compensate. In housing finance, that translates directly into higher mortgage rates.</p>
+
+          <h3>Why an IPO is not Feasible</h3>
+          <p>The biggest obstacle to a clean IPO is also the issue the White House discusses the least: capital. Under existing regulatory requirements, Fannie and Freddie require on the order of $150 to 300 billion in capital to exit conservatorship under current regulatory standards. According to the Wall Street Journal, "Trump officials have been envisioning IPOs that value the combined firms at roughly $500 billion and raise roughly $30 billion." A $30 billion equity sale, while a historical amount, would barely dent that gap.</p>
+
+          <p>Without adequate capital, the firms cannot responsibly return to private ownership. Instead, the administration risks creating a worst-case scenario. The current government-sponsored entities would become public enough to face shareholder scrutiny but still government-controlled enough to remain vulnerable to political pressure. This hybrid structure would be unstable and unattractive to long-term private investors.</p>
+
+          <h3>The Overlooked Risk: The TBA Market</h3>
+          <p>Compounding the risk, the conversation around a potential IPO has almost completely ignored the anchor of American housing finance: the TBA (To-Be-Announced) market for GSE mortgage-backed securities.</p>
+
+          <p>The TBA market is the second most liquid bond market in the United States, behind only Treasuries. In 2024 alone, an average of $345 billion in GSE mortgage-backed securities traded every day. It attracts trillions of dollars in global capital to the U.S. housing system and ensures that families across the nation have access to 30-year, fixed-rate mortgages at stable, relatively affordable rates.</p>
+
+          <p>There is no international equivalent; the TBA market is a uniquely American innovation that delivers unique benefits. The fact that the U.S. can even support a 30 year fixed rate mortgage is a result of the secondary market these GSEs provide — outside the U.S. longer term fixed rate mortgages are virtually unheard of. The TBA market's stability rests on a single condition: investors must believe that GSE mortgage-backed securities will remain liquid, predictable, and insulated from political turmoil. If a chaotic, politicized IPO leads investors to demand a premium for governance uncertainty, the shock would reverberate through the entire housing system. Mortgage rates would rise, liquidity would thin, and regional disparities in credit access would widen — which would undo decades of progress toward a unified national mortgage market. The administration's IPO rhetoric ignores all of this.</p>
+
+          <h3>The Case for Privatization and Its Limits</h3>
+          <p>An interesting argument in favour of privatization can be formed by making a parallel to the reasons why Fannie Mae went private in the 70s. If the GSEs are taken off the government's balance sheet, not only would the taxpayer be off the hook for insuring any financial troubles, but the government would raise a significant amount of money. There is also a sentiment that appeals to creative destruction — thrusting them into the public market will force them to innovate and provide new mortgage structures without the restrictions of the government. However, this could lead to a 2008-like scenario where, to keep pace with private competitors, they began taking on increasingly risky mortgages. Each time these GSEs have strayed from their core mission of making mortgages more accessible, there have been horrific consequences for the American homebuyer.</p>
+
+          <h3>Alternative Reform Pathways</h3>
+          <p>The IPO is often framed as a benefit for taxpayers, but the actual distribution of benefits tells a different story. While the administration could claim a policy victory and investment banks can earn enormous underwriting fees, there still remains the rest of the US. Borrowers could face higher mortgage costs if political risk premiums rise. Investors would buy shares in undercapitalized and politically influenced firms. Taxpayers could once again be responsible if instability triggers future losses — the same cycle that led to the 2008 bailout. Housing finance is too central to the U.S. economy to be reshaped by a rushed transaction.</p>
+
+          <p>Reforming Fannie and Freddie is not only possible, it is necessary. But the sequencing matters. A responsible path would establish clear, enforceable capital requirements and allow time to meet them. They would create a predictable, apolitical framework for setting guarantee fees and explicitly protect TBA market liquidity. Introduce private capital ahead of taxpayers, but in realistic, sustainable amounts.</p>
+
+          <p>Only once these foundations are in place should policymakers consider an IPO. Anything earlier risks systemic stability for political theatrics.</p>
+
+          <p>Housing finance rarely captures national attention, but its stability affects everything from mortgage rates to the broader economy. While the administration may be drawn to the optics of a massive equity sale, the risks to market stability and household borrowing costs are real. In the political economy of housing finance, careful design of such an IPO must come before spectacle. Spectacle is winning and the country's housing system may pay the price.</p>
+        </div>
+      
+      </div>
+
+      <div class="article-page-footer">
+        <a href="articles.html" class="btn btn-outline-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          <i class="fa-solid fa-arrow-left"></i> Back to All Articles
+        </a>
+        <a href="fall-2025.html" class="btn btn-crimson" style="font-size:0.82rem;padding:0.65rem 1.25rem;">
+          Read Full Issue
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <img src="LOGOS/b48fbae3-41e7-4ca4-add9-871c8c324b3f.png" alt="UFJ Logo" class="footer-logo">
+          <span class="footer-name">The University of Chicago<br>Financial Journal</span>
+        </div>
+        <p class="footer-tagline">A student-led publication dedicated to making finance accessible, rigorous, and relevant to the UChicago community.</p>
+        <div class="footer-social">
+          <a href="mailto:uchicagofj@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="journals.html">Journals</a>
+          <a href="articles.html">Articles by Topic</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Issues</div>
+        <div class="footer-links">
+          <a href="winter-2026.html">Winter 2026</a>
+          <a href="fall-2025.html">Fall 2025</a>
+          <a href="spring-2025.html">Spring 2025</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <div class="footer-links">
+          <a href="about.html#join">Join the Journal</a>
+          <a href="mailto:uchicagofj@gmail.com">Contact Us</a>
+          <a href="about.html#team">Meet the Team</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 The University of Chicago Financial Journal. All rights reserved.</span>
+      <span>University of Chicago &middot; Hyde Park, Chicago</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
