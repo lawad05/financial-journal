@@ -316,26 +316,30 @@
       <span class="section-eyebrow light">Get In Touch</span>
       <h2>Want to get in touch?</h2>
       <p>We'd love to hear from you — whether it's a pitch, a question, or just a hello.</p>
-      <form class="contact-form" id="contactForm">
-        <input type="text" id="contactName" placeholder="Your name" required>
-        <input type="email" id="contactEmail" placeholder="Your email" required>
-        <textarea id="contactMessage" placeholder="Your message" required></textarea>
+      <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="3d982b65-dcea-4d52-967b-960072bd3900">
+        <input type="hidden" name="subject" value="UFJ Website Inquiry">
+        <input type="hidden" name="redirect" value="false">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Your email" required>
+        <textarea name="message" placeholder="Your message" required></textarea>
         <button type="submit">Send Message</button>
       </form>
       <p class="contact-form-success" id="contactSuccess">Thanks for reaching out — we'll get back to you soon.</p>
       <script>
         document.getElementById('contactForm').addEventListener('submit', function(e) {
           e.preventDefault();
-          var name = document.getElementById('contactName').value;
-          var email = document.getElementById('contactEmail').value;
-          var message = document.getElementById('contactMessage').value;
-          var subject = encodeURIComponent('UFJ Inquiry from ' + name);
-          var body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message);
-          window.location.href = 'mailto:anabarcinski@uchicago.edu?subject=' + subject + '&body=' + body;
-          this.reset();
-          document.getElementById('contactSuccess').style.display = 'block';
+          var form = this;
+          fetch(form.action, { method: 'POST', body: new FormData(form) })
+            .then(function(res) { return res.json(); })
+            .then(function(data) {
+              if (data.success) {
+                form.reset();
+                document.getElementById('contactSuccess').style.display = 'block';
+              }
+            });
         });
-      <\/script>
+      </script>
     </div>
   </div>
 
