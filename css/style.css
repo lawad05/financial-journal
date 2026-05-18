@@ -304,18 +304,27 @@ p { line-height: 1.75; }
 .nav-dropdown-menu {
   display: none;
   position: absolute;
-  top: calc(100% + 8px);
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
+  padding-top: 8px;
+  min-width: 140px;
+  list-style: none;
+  z-index: 200;
+}
+
+.nav-dropdown-menu::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 8px;
+  left: 0; right: 0; bottom: 0;
   background: rgba(30, 10, 10, 0.95);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: 8px;
-  padding: 0.4rem 0;
-  min-width: 140px;
-  list-style: none;
-  z-index: 200;
   box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  z-index: -1;
 }
 
 .nav-dropdown:hover .nav-dropdown-menu { display: block; }
